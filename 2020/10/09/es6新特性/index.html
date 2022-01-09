@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>es6新特性 | 丁程程</title><meta name="description" content="Symbol表示独一无二的值，最大的用法是用来定义对象的唯一属性名 基本用法Symbol函数栈不能用new命令，因为是原始数据类型，不是对象。可以接受一个字符串作为参数，为新创建的Symbol提供 描述 ，用于显示在控制台或者作为字符串的时候，便于区分 let s1 &#x3D; Symbol(&amp;apos;aa&amp;apos;); let s2 &#x3D; Symbol(&amp;apos;aa&amp;apos;); console"><meta name="keywords" content="es6,es6新特性,symbol"><meta name="author" content="kukuboy"><meta name="copyright" content="kukuboy"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.dingyahui.top/2020/10/09/es6%E6%96%B0%E7%89%B9%E6%80%A7/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="5ikvc7vIXROQINye"/><meta property="og:type" content="article"><meta property="og:title" content="es6新特性"><meta property="og:url" content="http://blog.dingyahui.top/2020/10/09/es6%E6%96%B0%E7%89%B9%E6%80%A7/"><meta property="og:site_name" content="丁程程"><meta property="og:description" content="Symbol表示独一无二的值，最大的用法是用来定义对象的唯一属性名 基本用法Symbol函数栈不能用new命令，因为是原始数据类型，不是对象。可以接受一个字符串作为参数，为新创建的Symbol提供 描述 ，用于显示在控制台或者作为字符串的时候，便于区分 let s1 &#x3D; Symbol(&amp;apos;aa&amp;apos;); let s2 &#x3D; Symbol(&amp;apos;aa&amp;apos;); console"><meta property="og:image" content="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg"><meta property="article:published_time" content="2020-10-09T02:09:39.000Z"><meta property="article:modified_time" content="2022-01-09T06:16:05.319Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="组件挂载式使用" href="http://blog.dingyahui.top/2020/11/10/%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E5%BC%8F%E4%BD%BF%E7%94%A8/"><link rel="next" title="canvas相关知识" href="http://blog.dingyahui.top/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8cd73797550189106d56bebdf789e93";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="//at.alicdn.com/t/font_1976744_al05mfcijzk.css"><meta name="generator" content="Hexo 4.2.1"></head><body><canvas class="fireworks"></canvas><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/zwj.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">41</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">70</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">38</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw iconfont icon-youxi"></i><span> 游戏</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Symbol"><span class="toc-number">1.</span> <span class="toc-text">Symbol</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本用法"><span class="toc-number">1.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symbol-for"><span class="toc-number">1.2.</span> <span class="toc-text">Symbol.for()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symbol-keyFor"><span class="toc-number">1.3.</span> <span class="toc-text">Symbol.keyFor()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Map"><span class="toc-number">2.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maps-和-Objects-的区别"><span class="toc-number">2.1.</span> <span class="toc-text">Maps 和 Objects 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map-中的-key"><span class="toc-number">2.2.</span> <span class="toc-text">Map 中的 key</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#key-是字符串"><span class="toc-number">2.2.1.</span> <span class="toc-text">key 是字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key-是对象"><span class="toc-number">2.2.2.</span> <span class="toc-text">key 是对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key-是函数"><span class="toc-number">2.2.3.</span> <span class="toc-text">key 是函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key-是-NaN"><span class="toc-number">2.2.4.</span> <span class="toc-text">key 是 NaN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map-的迭代"><span class="toc-number">2.3.</span> <span class="toc-text">Map 的迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for…of"><span class="toc-number">2.3.1.</span> <span class="toc-text">for…of</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach"><span class="toc-number">2.3.2.</span> <span class="toc-text">forEach()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map-对象的操作"><span class="toc-number">2.4.</span> <span class="toc-text">Map 对象的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Map-与-Array的转换"><span class="toc-number">2.4.1.</span> <span class="toc-text">Map 与 Array的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Map-的克隆"><span class="toc-number">2.4.2.</span> <span class="toc-text">Map 的克隆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Map-的合并"><span class="toc-number">2.4.3.</span> <span class="toc-text">Map 的合并</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-对象"><span class="toc-number">3.</span> <span class="toc-text">Set 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Set-中的特殊值"><span class="toc-number">3.1.</span> <span class="toc-text">Set 中的特殊值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类型转换"><span class="toc-number">3.2.</span> <span class="toc-text">类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Array"><span class="toc-number">3.2.1.</span> <span class="toc-text">Array</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set-对象作用"><span class="toc-number">3.3.</span> <span class="toc-text">Set 对象作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组去重"><span class="toc-number">3.3.1.</span> <span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并集"><span class="toc-number">3.3.2.</span> <span class="toc-text">并集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交集"><span class="toc-number">3.3.3.</span> <span class="toc-text">交集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#差集"><span class="toc-number">3.3.4.</span> <span class="toc-text">差集</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">丁程程</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw iconfont icon-youxi"></i><span> 游戏</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">es6新特性</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 10:09:39"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-10-09</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2022-01-09 14:16:05"><i class="fas fa-history fa-fw"></i> 更新于 2022-01-09</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right post-meta__separator"></i><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/es6/">es6</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="far fa-comments fa-fw post-meta__icon"></i><span>评论数:</span><a href="/2020/10/09/es6%E6%96%B0%E7%89%B9%E6%80%A7/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/10/09/es6%E6%96%B0%E7%89%B9%E6%80%A7/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h1><p><em>表示独一无二的值，最大的用法是用来定义对象的唯一属性名</em></p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p><em>Symbol函数栈不能用new命令，因为是原始数据类型，不是对象。可以接受一个字符串作为参数，为新创建的Symbol提供 <strong>描述</strong> ，用于显示在控制台或者作为字符串的时候，便于区分</em></p>
+<pre><code>let s1 = Symbol(&apos;aa&apos;);
+let s2 = Symbol(&apos;aa&apos;);
+console.log(s1===s2); // false
+typeof(s1); // &quot;symbol&quot;
+console.log(s1) // Symbol(aa)</code></pre><h2 id="Symbol-for"><a href="#Symbol-for" class="headerlink" title="Symbol.for()"></a>Symbol.for()</h2><p><em>Symbol.for() 类似单例模式，首先会在全局搜索被登记的 Symbol 中是否有该字符串参数作为名称的 Symbol 值，如果有即返回该 Symbol 值，若没有则新建并返回一个以该字符串参数为名称的 Symbol 值，并登记在全局环境中供搜索。</em></p>
+<pre><code>let yellow = Symbol(&quot;Yellow&quot;);
+let yellow1 = Symbol.for(&quot;Yellow&quot;);
+yellow === yellow1;      // false
+
+let yellow2 = Symbol.for(&quot;Yellow&quot;);
+yellow1 === yellow2;     // true</code></pre><h2 id="Symbol-keyFor"><a href="#Symbol-keyFor" class="headerlink" title="Symbol.keyFor()"></a>Symbol.keyFor()</h2><p><em>Symbol.keyFor() 返回一个已登记的 Symbol 类型值的 key ，用来检测该字符串参数作为名称的 Symbol 值是否已被登记。</em></p>
+<pre><code>let yellow1 = Symbol.for(&quot;Yellow&quot;);
+Symbol.keyFor(yellow1);    // &quot;Yellow&quot;</code></pre><h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><p><em>Map 对象保存键值对。任何值(对象或者原始值) 都可以作为一个键或一个值。</em></p>
+<h2 id="Maps-和-Objects-的区别"><a href="#Maps-和-Objects-的区别" class="headerlink" title="Maps 和 Objects 的区别"></a>Maps 和 Objects 的区别</h2><ul>
+<li>一个 Object 的键只能是字符串或者 Symbols，但一个 Map 的键可以是任意值。</li>
+<li>Map 中的键值是有序的（FIFO 原则），而添加到对象中的键则不是。</li>
+<li>Map 的键值对个数可以从 size 属性获取，而 Object 的键值对个数只能手动计算。</li>
+<li>Object 都有自己的原型，原型链上的键名有可能和你自己在对象上的设置的键名产生冲突。</li>
+</ul>
+<h2 id="Map-中的-key"><a href="#Map-中的-key" class="headerlink" title="Map 中的 key"></a>Map 中的 key</h2><h3 id="key-是字符串"><a href="#key-是字符串" class="headerlink" title="key 是字符串"></a>key 是字符串</h3><pre><code>var myMap = new Map();
+var keyString = &quot;a string&quot;; 
+
+myMap.set(keyString, &quot;和键&apos;a string&apos;关联的值&quot;);
+
+myMap.get(keyString);    // &quot;和键&apos;a string&apos;关联的值&quot;
+myMap.get(&quot;a string&quot;);   // &quot;和键&apos;a string&apos;关联的值&quot;
+                        // 因为 keyString === &apos;a string&apos;</code></pre><h3 id="key-是对象"><a href="#key-是对象" class="headerlink" title="key 是对象"></a>key 是对象</h3><pre><code>var myMap = new Map();  
+var keyObj = {}, 
+
+myMap.set(keyObj, &quot;和键 keyObj 关联的值&quot;);
+
+myMap.get(keyObj); // &quot;和键 keyObj 关联的值&quot;
+myMap.get({}); // undefined, 因为 keyObj !== {}</code></pre><h3 id="key-是函数"><a href="#key-是函数" class="headerlink" title="key 是函数"></a>key 是函数</h3><pre><code>var myMap = new Map();
+var keyFunc = function () {}, // 函数
+
+myMap.set(keyFunc, &quot;和键 keyFunc 关联的值&quot;);
+
+myMap.get(keyFunc); // &quot;和键 keyFunc 关联的值&quot;
+myMap.get(function() {}) // undefined, 因为 keyFunc !== function () {}</code></pre><h3 id="key-是-NaN"><a href="#key-是-NaN" class="headerlink" title="key 是 NaN"></a>key 是 NaN</h3><pre><code>var myMap = new Map();  
+myMap.set(NaN, &quot;not a number&quot;);
+
+myMap.get(NaN); // &quot;not a number&quot;
+
+var otherNaN = Number(&quot;foo&quot;);
+myMap.get(otherNaN); // &quot;not a number&quot;
+虽然 NaN 和任何值甚至和自己都不相等(NaN !== NaN 返回true)，NaN作为Map的键来说是没有区别的。</code></pre><h2 id="Map-的迭代"><a href="#Map-的迭代" class="headerlink" title="Map 的迭代"></a>Map 的迭代</h2><p><em>对 Map 进行遍历，以下两个最高级。</em></p>
+<h3 id="for…of"><a href="#for…of" class="headerlink" title="for…of"></a>for…of</h3><pre><code>var myMap = new Map();
+myMap.set(0, &quot;zero&quot;);
+myMap.set(1, &quot;one&quot;);
+
+// 将会显示两个 log。 一个是 &quot;0 = zero&quot; 另一个是 &quot;1 = one&quot;
+for (var [key, value] of myMap) {
+console.log(key + &quot; = &quot; + value);
+}
+for (var [key, value] of myMap.entries()) {
+console.log(key + &quot; = &quot; + value);
+}
+/* 这个 entries 方法返回一个新的 Iterator 对象，它按插入顺序包含了 Map 对象中每个元素的 [key, value] 数组。 */
+
+// 将会显示两个log。 一个是 &quot;0&quot; 另一个是 &quot;1&quot;
+for (var key of myMap.keys()) {
+console.log(key);
+}
+/* 这个 keys 方法返回一个新的 Iterator 对象， 它按插入顺序包含了 Map 对象中每个元素的键。 */
+
+// 将会显示两个log。 一个是 &quot;zero&quot; 另一个是 &quot;one&quot;
+for (var value of myMap.values()) {
+console.log(value);
+}
+/* 这个 values 方法返回一个新的 Iterator 对象，它按插入顺序包含了 Map 对象中每个元素的值。 */</code></pre><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><pre><code>var myMap = new Map();
+myMap.set(0, &quot;zero&quot;);
+myMap.set(1, &quot;one&quot;);
+
+// 将会显示两个 logs。 一个是 &quot;0 = zero&quot; 另一个是 &quot;1 = one&quot;
+myMap.forEach(function(value, key) {
+console.log(key + &quot; = &quot; + value);
+}, myMap)</code></pre><h2 id="Map-对象的操作"><a href="#Map-对象的操作" class="headerlink" title="Map 对象的操作"></a>Map 对象的操作</h2><h3 id="Map-与-Array的转换"><a href="#Map-与-Array的转换" class="headerlink" title="Map 与 Array的转换"></a>Map 与 Array的转换</h3><pre><code>var kvArray = [[&quot;key1&quot;, &quot;value1&quot;], [&quot;key2&quot;, &quot;value2&quot;]];
+
+// Map 构造函数可以将一个 二维 键值对数组转换成一个 Map 对象
+var myMap = new Map(kvArray);
+
+// 使用 Array.from 函数可以将一个 Map 对象转换成一个二维键值对数组
+var outArray = Array.from(myMap);</code></pre><h3 id="Map-的克隆"><a href="#Map-的克隆" class="headerlink" title="Map 的克隆"></a>Map 的克隆</h3><pre><code>var myMap1 = new Map([[&quot;key1&quot;, &quot;value1&quot;], [&quot;key2&quot;, &quot;value2&quot;]]);
+var myMap2 = new Map(myMap1);
+
+console.log(original === clone); 
+// 打印 false。 Map 对象构造函数生成实例，迭代出新的对象。</code></pre><h3 id="Map-的合并"><a href="#Map-的合并" class="headerlink" title="Map 的合并"></a>Map 的合并</h3><pre><code>var first = new Map([[1, &apos;one&apos;], [2, &apos;two&apos;], [3, &apos;three&apos;],]);
+var second = new Map([[1, &apos;uno&apos;], [2, &apos;dos&apos;]]);
+
+// 合并两个 Map 对象时，如果有重复的键值，则后面的会覆盖前面的，对应值即 uno，dos， three
+var merged = new Map([...first, ...second]);</code></pre><h1 id="Set-对象"><a href="#Set-对象" class="headerlink" title="Set 对象"></a>Set 对象</h1><p><em>Set 对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用。</em></p>
+<h2 id="Set-中的特殊值"><a href="#Set-中的特殊值" class="headerlink" title="Set 中的特殊值"></a>Set 中的特殊值</h2><p><em>Set 对象存储的值总是唯一的，所以需要判断两个值是否恒等。有几个特殊值需要特殊对待：</em></p>
+<ul>
+<li><p>+0 与 -0 在存储判断唯一性的时候是恒等的，所以不重复；</p>
+</li>
+<li><p>undefined 与 undefined 是恒等的，所以不重复；</p>
+</li>
+<li><p>NaN 与 NaN 是不恒等的，但是在 Set 中只能存一个，不重复。代码</p>
+<pre><code>let mySet = new Set();
+
+mySet.add(1); // Set(1) {1}
+mySet.add(5); // Set(2) {1, 5}
+mySet.add(5); // Set(2) {1, 5} 这里体现了值的唯一性
+mySet.add(&quot;some text&quot;); 
+// Set(3) {1, 5, &quot;some text&quot;} 这里体现了类型的多样性
+var o = {a: 1, b: 2}; 
+mySet.add(o);
+mySet.add({a: 1, b: 2}); 
+// Set(5) {1, 5, &quot;some text&quot;, {…}, {…}} 
+// 这里体现了对象之间引用不同不恒等，即使值相同，Set 也能存储</code></pre></li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><pre><code>// Array 转 Set
+var mySet = new Set([&quot;value1&quot;, &quot;value2&quot;, &quot;value3&quot;]);
+// 用...操作符，将 Set 转 Array
+var myArray = [...mySet];
+String
+// String 转 Set
+var mySet = new Set(&apos;hello&apos;);  // Set(4) {&quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;o&quot;}
+// 注：Set 中 toString 方法是不能将 Set 转换成 String</code></pre><h2 id="Set-对象作用"><a href="#Set-对象作用" class="headerlink" title="Set 对象作用"></a>Set 对象作用</h2><h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><pre><code>var mySet = new Set([1, 2, 3, 4, 4]);
+[...mySet]; // [1, 2, 3, 4]</code></pre><h3 id="并集"><a href="#并集" class="headerlink" title="并集"></a>并集</h3><pre><code>var a = new Set([1, 2, 3]);
+var b = new Set([4, 3, 2]);
+var union = new Set([...a, ...b]); // {1, 2, 3, 4}</code></pre><h3 id="交集"><a href="#交集" class="headerlink" title="交集"></a>交集</h3><pre><code>var a = new Set([1, 2, 3]);
+var b = new Set([4, 3, 2]);
+var intersect = new Set([...a].filter(x =&gt; b.has(x))); // {2, 3}</code></pre><h3 id="差集"><a href="#差集" class="headerlink" title="差集"></a>差集</h3><pre><code>var a = new Set([1, 2, 3]);
+var b = new Set([4, 3, 2]);
+var difference = new Set([...a].filter(x =&gt; !b.has(x))); // {1}</code></pre></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">kukuboy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.dingyahui.top/2020/10/09/es6%E6%96%B0%E7%89%B9%E6%80%A7/">http://blog.dingyahui.top/2020/10/09/es6%E6%96%B0%E7%89%B9%E6%80%A7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.dingyahui.top" target="_blank">丁程程</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/es6/">es6</a><a class="post-meta__tags" href="/tags/es6%E6%96%B0%E7%89%B9%E6%80%A7/">es6新特性</a><a class="post-meta__tags" href="/tags/symbol/">symbol</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechatPay.png" alt="万一你" onclick="window.open('/img/wechatPay.png')"/><div class="post-qr-code__desc">万一你</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="扫了呢" onclick="window.open('/img/alipay.jpg')"/><div class="post-qr-code__desc">扫了呢</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/11/10/%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E5%BC%8F%E4%BD%BF%E7%94%A8/"><img class="prev-cover" data-src="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">组件挂载式使用</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"><img class="next-cover" data-src="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">canvas相关知识</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2021/02/25/js遍历/" title="js遍历"><img class="relatedPosts_cover" data-src="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-25</div><div class="relatedPosts_title">js遍历</div></div></a></div><div class="relatedPosts_item"><a href="/2020/07/28/前端细节知识点/" title="前端细节知识点"><img class="relatedPosts_cover" data-src="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-28</div><div class="relatedPosts_title">前端细节知识点</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'OXMpc23ouNcJM90vFtdyOsIN-gzGzoHsz',
+  appKey: '7dvA6AdSIvjSbSvwaAzwq09I',
+  placeholder: '留下你的邮箱，被回复可以收到邮件奥,如果留言失效，可以发邮件给我2294211995@qq.com',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: true,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" style="background-image: url(https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By kukuboy</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="icp"><a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener"><img class="icp-icon" src="/img/icp.png"/><span>豫ICP备20023310号</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script></body></html>

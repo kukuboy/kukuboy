@@ -1,0 +1,871 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>canvas相关知识 | 丁程程</title><meta name="description" content="此文章做个人笔记，仅供参阅，来源：Canvas 基本介绍Canvas API 提供了一个通过JavaScript 和 HTML的&lt;canvas&gt;元素来绘制图形的方式。它可以用于动画、游戏画面、数据可视化、图片编辑以及实时视频处理等方面。Canvas API主要聚焦于2D图形。而同样使用&lt;\canvas&gt;元素的 WebGL API 则用于绘制硬件加速的2D和3D图形。  基本"><meta name="keywords" content="canvas"><meta name="author" content="kukuboy"><meta name="copyright" content="kukuboy"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.dingyahui.top/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="5ikvc7vIXROQINye"/><meta property="og:type" content="article"><meta property="og:title" content="canvas相关知识"><meta property="og:url" content="http://blog.dingyahui.top/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"><meta property="og:site_name" content="丁程程"><meta property="og:description" content="此文章做个人笔记，仅供参阅，来源：Canvas 基本介绍Canvas API 提供了一个通过JavaScript 和 HTML的&lt;canvas&gt;元素来绘制图形的方式。它可以用于动画、游戏画面、数据可视化、图片编辑以及实时视频处理等方面。Canvas API主要聚焦于2D图形。而同样使用&lt;\canvas&gt;元素的 WebGL API 则用于绘制硬件加速的2D和3D图形。  基本"><meta property="og:image" content="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg"><meta property="article:published_time" content="2020-09-22T03:05:47.000Z"><meta property="article:modified_time" content="2022-01-09T06:16:05.318Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="es6新特性" href="http://blog.dingyahui.top/2020/10/09/es6%E6%96%B0%E7%89%B9%E6%80%A7/"><link rel="next" title="vue-router实现404" href="http://blog.dingyahui.top/2020/09/21/vue-router%E5%AE%9E%E7%8E%B0404/"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8cd73797550189106d56bebdf789e93";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="//at.alicdn.com/t/font_1976744_al05mfcijzk.css"><meta name="generator" content="Hexo 4.2.1"></head><body><canvas class="fireworks"></canvas><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/zwj.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">41</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">70</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">38</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw iconfont icon-youxi"></i><span> 游戏</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本介绍"><span class="toc-number">1.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本使用"><span class="toc-number">2.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#检查支持性"><span class="toc-number">3.</span> <span class="toc-text">检查支持性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绘制矩形"><span class="toc-number">4.</span> <span class="toc-text">绘制矩形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绘制路径"><span class="toc-number">5.</span> <span class="toc-text">绘制路径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#移动笔触"><span class="toc-number">5.1.</span> <span class="toc-text">移动笔触</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绘制直线"><span class="toc-number">5.2.</span> <span class="toc-text">绘制直线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#圆弧"><span class="toc-number">5.3.</span> <span class="toc-text">圆弧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矩形"><span class="toc-number">5.4.</span> <span class="toc-text">矩形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Path2D-对象"><span class="toc-number">5.5.</span> <span class="toc-text">Path2D 对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#色彩-Colors"><span class="toc-number">6.</span> <span class="toc-text">色彩 Colors</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#颜色标准"><span class="toc-number">6.1.</span> <span class="toc-text">颜色标准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#透明度-globalAlpha"><span class="toc-number">7.</span> <span class="toc-text">透明度 globalAlpha</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线型-Line-styles"><span class="toc-number">8.</span> <span class="toc-text">线型 Line styles</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#渐变-Gradients"><span class="toc-number">9.</span> <span class="toc-text">渐变 Gradients</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#阴影-Shadows"><span class="toc-number">10.</span> <span class="toc-text">阴影 Shadows</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Canvas-填充规则"><span class="toc-number">11.</span> <span class="toc-text">Canvas 填充规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绘制文本"><span class="toc-number">12.</span> <span class="toc-text">绘制文本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#绘制文本-1"><span class="toc-number">12.1.</span> <span class="toc-text">绘制文本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有样式的文本"><span class="toc-number">12.2.</span> <span class="toc-text">有样式的文本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预测量文本宽度"><span class="toc-number">12.3.</span> <span class="toc-text">预测量文本宽度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绘制图片"><span class="toc-number">13.</span> <span class="toc-text">绘制图片</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#缩放-Scaling"><span class="toc-number">13.1.</span> <span class="toc-text">缩放 Scaling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切片-Slicing"><span class="toc-number">13.2.</span> <span class="toc-text">切片 Slicing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态的保存和恢复"><span class="toc-number">13.3.</span> <span class="toc-text">状态的保存和恢复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动-Translating"><span class="toc-number">13.4.</span> <span class="toc-text">移动 Translating</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#旋转-Rotating"><span class="toc-number">13.5.</span> <span class="toc-text">旋转 Rotating</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缩放-Scaling-1"><span class="toc-number">13.6.</span> <span class="toc-text">缩放 Scaling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变形-Transforms"><span class="toc-number">13.7.</span> <span class="toc-text">变形 Transforms</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新图案覆盖原则"><span class="toc-number">13.8.</span> <span class="toc-text">新图案覆盖原则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#裁切路径"><span class="toc-number">14.</span> <span class="toc-text">裁切路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本动画"><span class="toc-number">15.</span> <span class="toc-text">基本动画</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#动画的基本步骤"><span class="toc-number">15.1.</span> <span class="toc-text">动画的基本步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有安排的更新画布-Scheduled-updates"><span class="toc-number">15.2.</span> <span class="toc-text">有安排的更新画布 Scheduled updates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鼠标追踪动画"><span class="toc-number">15.3.</span> <span class="toc-text">鼠标追踪动画</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#像素操作"><span class="toc-number">16.</span> <span class="toc-text">像素操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ImageData-对象"><span class="toc-number">16.1.</span> <span class="toc-text">ImageData 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个ImageData对象"><span class="toc-number">16.2.</span> <span class="toc-text">创建一个ImageData对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#得到场景像素数据"><span class="toc-number">16.3.</span> <span class="toc-text">得到场景像素数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在场景中写入像素数据"><span class="toc-number">16.4.</span> <span class="toc-text">在场景中写入像素数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缩放和反锯齿"><span class="toc-number">16.5.</span> <span class="toc-text">缩放和反锯齿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存图片"><span class="toc-number">16.6.</span> <span class="toc-text">保存图片</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#点击区域和无障碍访问"><span class="toc-number">17.</span> <span class="toc-text">点击区域和无障碍访问</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#点击区域"><span class="toc-number">17.1.</span> <span class="toc-text">点击区域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#焦点圈"><span class="toc-number">17.2.</span> <span class="toc-text">焦点圈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容兼容"><span class="toc-number">17.3.</span> <span class="toc-text">内容兼容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARIA-规则"><span class="toc-number">17.4.</span> <span class="toc-text">ARIA 规则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能优化"><span class="toc-number">18.</span> <span class="toc-text">性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在离屏canvas上预渲染相似的图形或重复的对象"><span class="toc-number">18.1.</span> <span class="toc-text">在离屏canvas上预渲染相似的图形或重复的对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免浮点数的坐标点，用整数取而代之"><span class="toc-number">18.2.</span> <span class="toc-text">避免浮点数的坐标点，用整数取而代之</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不要在用drawImage时缩放图像"><span class="toc-number">18.3.</span> <span class="toc-text">不要在用drawImage时缩放图像_</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用多层画布去画一个复杂的场景"><span class="toc-number">18.4.</span> <span class="toc-text">使用多层画布去画一个复杂的场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用CSS设置大的背景图"><span class="toc-number">18.5.</span> <span class="toc-text">用CSS设置大的背景图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用CSS-transforms特性缩放画布"><span class="toc-number">18.6.</span> <span class="toc-text">用CSS transforms特性缩放画布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关闭透明度"><span class="toc-number">18.7.</span> <span class="toc-text">关闭透明度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更多的贴士"><span class="toc-number">18.8.</span> <span class="toc-text">更多的贴士</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">丁程程</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw iconfont icon-youxi"></i><span> 游戏</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw iconfont icon-shuji"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">canvas相关知识</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-09-22 11:05:47"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-09-22</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2022-01-09 14:16:05"><i class="fas fa-history fa-fw"></i> 更新于 2022-01-09</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right post-meta__separator"></i><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/canvas/">canvas</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="far fa-comments fa-fw post-meta__icon"></i><span>评论数:</span><a href="/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>此文章做个人笔记，仅供参阅，来源：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API" target="_blank" rel="noopener">Canvas</a></p>
+<h1 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h1><p><strong>Canvas API 提供了一个通过JavaScript 和 HTML的&lt;canvas&gt;元素来绘制图形的方式。它可以用于动画、游戏画面、数据可视化、图片编辑以及实时视频处理等方面。<br>Canvas API主要聚焦于2D图形。而同样使用&lt;\canvas&gt;元素的 WebGL API 则用于绘制硬件加速的2D和3D图形。</strong></p>
+<hr>
+<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><pre><code>&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;
+---
+const canvas = document.getElementById(&apos;canvas&apos;);
+const ctx = canvas.getContext(&apos;2d&apos;);</code></pre><hr>
+<h1 id="检查支持性"><a href="#检查支持性" class="headerlink" title="检查支持性"></a>检查支持性</h1><pre><code>&lt;canvas id=&quot;tutorial&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+canvas在此不被支持
+&lt;/canvas&gt;
+
+var canvas = document.getElementById(&apos;tutorial&apos;);
+
+if (canvas.getContext){
+var ctx = canvas.getContext(&apos;2d&apos;);
+// drawing code here
+} else {
+// canvas-unsupported code here
+}</code></pre><h1 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h1><p><strong>不同于 SVG,&lt;canvas&gt; 只支持两种形式的图形绘制：矩形和路径（由一系列点连成的线段）。所有其他类型的图形都是通过一条或者多条路径组合而成的。不过，我们拥有众多路径生成的方法让复杂图形的绘制成为了可能</strong></p>
+<p><strong>canvas提供了三种方法绘制矩形</strong></p>
+<pre><code>fillRect(x, y, width, height)
+绘制一个填充的矩形
+strokeRect(x, y, width, height)
+绘制一个矩形的边框
+clearRect(x, y, width, height)
+清除指定矩形区域，让清除部分完全透明。</code></pre><h1 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h1><p><strong>图形的基本元素是路径。路径是通过不同颜色和宽度的线段或曲线相连形成的不同形状的点的集合。一个路径，甚至一个子路径，都是闭合的。使用路径绘制图形需要一些额外的步骤。</strong></p>
+<ol>
+<li>首先，你需要创建路径起始点。</li>
+<li>然后你使用画图命令去画出路径。</li>
+<li>之后你把路径封闭。</li>
+<li>一旦路径生成，你就能通过描边或填充路径区域来渲染图形。</li>
+</ol>
+<p><strong>以下是所要用到的函数：</strong></p>
+<pre><code>beginPath()
+新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径。
+closePath()
+闭合路径之后图形绘制命令又重新指向到上下文中。
+stroke()
+通过线条来绘制图形轮廓。
+fill()
+通过填充路径的内容区域生成实心的图形。</code></pre><ol>
+<li><p>生成路径的第一步叫做beginPath()。本质上，路径是由很多子路径构成，这些子路径都是在一个列表中，所有的子路径（线、弧形、等等）构成图形。而每次这个方法调用之后，列表清空重置，然后我们就可以重新绘制新的图形。  </p>
+<blockquote>
+<p>注意：当前路径为空，即调用beginPath()之后，或者canvas刚建的时候，第一条路径构造命令通常被视为是moveTo（），无论实际上是什么。出于这个原因，你几乎总是要在设置路径之后专门指定你的起始位置。</p>
+</blockquote>
+</li>
+<li><p>调用函数指定绘制路径</p>
+</li>
+<li><p>就是闭合路径closePath(),不是必需的。这个方法会通过绘制一条从当前点到开始点的直线来闭合图形。如果图形是已经闭合了的，即当前点为开始点，该函数什么也不做。</p>
+<p> 绘制三角形的代码如下：</p>
+<pre><code>function draw() {
+var canvas = document.getElementById(&apos;canvas&apos;);
+if (canvas.getContext) {
+    var ctx = canvas.getContext(&apos;2d&apos;);
+
+    ctx.beginPath();
+    ctx.moveTo(75, 50);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 25);
+    ctx.fill();
+}
+}</code></pre></li>
+</ol>
+<h2 id="移动笔触"><a href="#移动笔触" class="headerlink" title="移动笔触"></a>移动笔触</h2><pre><code>moveTo(x, y)
+将笔触移动到指定的坐标x以及y上。
+当canvas初始化或者beginPath()调用后，你通常会使用moveTo()函数设置起点。我们也能够使用moveTo()绘制一些不连续的路径。看一下下面的笑脸例子。我将用到moveTo()方法（红线处）的地方标记了。</code></pre><h2 id="绘制直线"><a href="#绘制直线" class="headerlink" title="绘制直线"></a>绘制直线</h2><pre><code>lineTo(x, y)
+绘制一条从当前位置到指定x以及y位置的直线。
+该方法有两个参数：x以及y ，代表坐标系中直线结束的点。开始点和之前的绘制路径有关，之前路径的结束点就是接下来的开始点，等等。。。开始点也可以通过moveTo()函数改变。</code></pre><h2 id="圆弧"><a href="#圆弧" class="headerlink" title="圆弧"></a>圆弧</h2><pre><code>绘制圆弧或者圆，我们使用arc()方法。当然可以使用arcTo()，不过这个的实现并不是那么的可靠，所以我们这里不作介绍。
+
+arc(x, y, radius, startAngle, endAngle, anticlockwise)
+画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。
+arcTo(x1, y1, x2, y2, radius)
+根据给定的控制点和半径画一段圆弧，再以直线连接两个控制点。
+这里详细介绍一下arc方法，该方法有六个参数：x,y为绘制圆弧所在圆上的圆心坐标。radius为半径。startAngle以及endAngle参数用弧度定义了开始以及结束的弧度。这些都是以x轴为基准。参数anticlockwise为一个布尔值。为true时，是逆时针方向，否则顺时针方向。
+
+注意：arc()函数中表示角的单位是弧度，不是角度。角度与弧度的js表达式:
+
+弧度=(Math.PI/180)*角度。</code></pre><h2 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h2><pre><code>直接在画布上绘制矩形的三个额外方法，正如我们开始所见的绘制矩形，同样，也有rect()方法，将一个矩形路径增加到当前路径上。
+
+rect(x, y, width, height)
+绘制一个左上角坐标为（x,y），宽高为width以及height的矩形。
+当该方法执行的时候，moveTo()方法自动设置坐标参数（0,0）。也就是说，当前笔触自动重置回默认坐标。</code></pre><h2 id="Path2D-对象"><a href="#Path2D-对象" class="headerlink" title="Path2D 对象"></a>Path2D 对象</h2><pre><code>Path2D()会返回一个新初始化的Path2D对象（可能将某一个路径作为变量——创建一个它的副本，或者将一个包含SVG path数据的字符串作为变量）。
+new Path2D();     // 空的Path对象
+new Path2D(path); // 克隆Path对象
+new Path2D(d);    // 从SVG建立Path对象
+在这个例子中，我们创造了一个矩形和一个圆。它们都被存为Path2D对象，后面再派上用场。随着新的Path2D API产生，几种方法也相应地被更新来使用Path2D对象而不是当前路径。在这里，带路径参数的stroke和fill可以把对象画在画布上。
+function draw() {
+var canvas = document.getElementById(&apos;canvas&apos;);
+if (canvas.getContext){
+    var ctx = canvas.getContext(&apos;2d&apos;);
+
+    var rectangle = new Path2D();
+    rectangle.rect(10, 10, 50, 50);
+
+    var circle = new Path2D();
+    circle.moveTo(125, 35);
+    circle.arc(100, 35, 25, 0, 2 * Math.PI);
+
+    ctx.stroke(rectangle);
+    ctx.fill(circle);
+}
+}</code></pre><h1 id="色彩-Colors"><a href="#色彩-Colors" class="headerlink" title="色彩 Colors"></a>色彩 Colors</h1><pre><code>fillStyle = color
+设置图形的填充颜色。
+strokeStyle = color
+设置图形轮廓的颜色。</code></pre><p><strong>注意: 一旦您设置了 strokeStyle 或者 fillStyle 的值，那么这个新值就会成为新绘制的图形的默认值。如果你要给每个图形上不同的颜色，你需要重新设置 fillStyle 或 strokeStyle 的值。</strong></p>
+<h2 id="颜色标准"><a href="#颜色标准" class="headerlink" title="颜色标准"></a>颜色标准</h2><pre><code>// 这些 fillStyle 的值均为 &apos;橙色&apos;
+ctx.fillStyle = &quot;orange&quot;;
+ctx.fillStyle = &quot;#FFA500&quot;;
+ctx.fillStyle = &quot;rgb(255,165,0)&quot;;
+ctx.fillStyle = &quot;rgba(255,165,0,1)&quot;;</code></pre><h1 id="透明度-globalAlpha"><a href="#透明度-globalAlpha" class="headerlink" title="透明度 globalAlpha"></a>透明度 globalAlpha</h1><p><strong>globalAlpha = transparencyValue<br>这个属性影响到 canvas 里所有图形的透明度，有效的值范围是 0.0 （完全透明）到 1.0（完全不透明），默认是 1.0。</strong></p>
+<h1 id="线型-Line-styles"><a href="#线型-Line-styles" class="headerlink" title="线型 Line styles"></a>线型 Line styles</h1><blockquote>
+<p>可以通过一系列属性来设置线的样式。  </p>
+</blockquote>
+<ol>
+<li>lineWidth 属性<br>这个属性设置当前绘线的粗细。属性值必须为正数。默认值是1.0。</li>
+</ol>
+<blockquote>
+<p>较为准确的情况下，由于机制为由中心向两边延伸，宽度为1时可坐标可多加0.5</p>
+</blockquote>
+<ol start="2">
+<li><p>lineCap 属性<br>属性 lineCap 的值决定了线段端点显示的样子。它可以为下面的三种的其中之一：butt，round 和 square。默认是 butt。square默认比butt长出宽度的一半</p>
+</li>
+<li><p>lineJoin 属性<br>lineJoin 的属性值决定了图形中两线段连接处所显示的样子。它可以是这三种之一：round, bevel 和 miter。默认是 miter。拐角的连接样式</p>
+</li>
+<li><p>miterLimit 属性<br>miterLimit 属性就是用来设定外延交点与连接点的最大距离，如果交点距离大于此值，连接效果会变成了 bevel。</p>
+</li>
+<li><p>虚线<br>用 setLineDash 方法和 lineDashOffset 属性来制定虚线样式. setLineDash 方法接受一个数组，来指定线段与间隙的交替；lineDashOffset 属性设置起始偏移量.</p>
+<p> ctx.setLineDash([4, 2]);<br> ctx.lineDashOffset = -offset;</p>
+</li>
+</ol>
+<h1 id="渐变-Gradients"><a href="#渐变-Gradients" class="headerlink" title="渐变 Gradients"></a>渐变 Gradients</h1><p>就好像一般的绘图软件一样，我们可以用线性或者径向的渐变来填充或描边。我们用下面的方法新建一个 canvasGradient 对象，并且赋给图形的 fillStyle 或 strokeStyle 属性。</p>
+<pre><code>createLinearGradient(x1, y1, x2, y2)
+createLinearGradient 方法接受 4 个参数，表示渐变的起点 (x1,y1) 与终点 (x2,y2)。
+createRadialGradient(x1, y1, r1, x2, y2, r2)
+createRadialGradient 方法接受 6 个参数，前三个定义一个以 (x1,y1) 为原点，半径为 r1 的圆，后三个参数则定义另一个以 (x2,y2) 为原点，半径为 r2 的圆。
+
+var lineargradient = ctx.createLinearGradient(0,0,150,150);
+var radialgradient = ctx.createRadialGradient(75,75,0,75,75,100);
+
+创建出 canvasGradient 对象后，我们就可以用 addColorStop 方法给它上色了。
+
+gradient.addColorStop(position, color)
+addColorStop 方法接受 2 个参数，position 参数必须是一个 0.0 与 1.0 之间的数值，表示渐变中颜色所在的相对位置。例如，0.5 表示颜色会出现在正中间。color 参数必须是一个有效的 CSS 颜色值（如 #FFF， rgba(0,0,0,1)，等等）。
+你可以根据需要添加任意多个色标（color stops）。下面是最简单的线性黑白渐变的例子。
+
+var lineargradient = ctx.createLinearGradient(0,0,150,150);
+lineargradient.addColorStop(0,&apos;white&apos;);
+lineargradient.addColorStop(1,&apos;black&apos;);
+
+
+例子
+function draw() {
+var ctx = document.getElementById(&apos;canvas&apos;).getContext(&apos;2d&apos;);
+
+// 创建渐变
+var radgrad = ctx.createRadialGradient(45,45,10,52,50,30);
+radgrad.addColorStop(0, &apos;#A7D30C&apos;);
+radgrad.addColorStop(0.9, &apos;#019F62&apos;);
+radgrad.addColorStop(1, &apos;rgba(1,159,98,0)&apos;);
+
+var radgrad2 = ctx.createRadialGradient(105,105,20,112,120,50);
+radgrad2.addColorStop(0, &apos;#FF5F98&apos;);
+radgrad2.addColorStop(0.75, &apos;#FF0188&apos;);
+radgrad2.addColorStop(1, &apos;rgba(255,1,136,0)&apos;);
+
+var radgrad3 = ctx.createRadialGradient(95,15,15,102,20,40);
+radgrad3.addColorStop(0, &apos;#00C9FF&apos;);
+radgrad3.addColorStop(0.8, &apos;#00B5E2&apos;);
+radgrad3.addColorStop(1, &apos;rgba(0,201,255,0)&apos;);
+
+var radgrad4 = ctx.createRadialGradient(0,150,50,0,140,90);
+radgrad4.addColorStop(0, &apos;#F4F201&apos;);
+radgrad4.addColorStop(0.8, &apos;#E4C700&apos;);
+radgrad4.addColorStop(1, &apos;rgba(228,199,0,0)&apos;);
+
+// 画图形
+ctx.fillStyle = radgrad4;
+ctx.fillRect(0,0,150,150);
+ctx.fillStyle = radgrad3;
+ctx.fillRect(0,0,150,150);
+ctx.fillStyle = radgrad2;
+ctx.fillRect(0,0,150,150);
+ctx.fillStyle = radgrad;
+ctx.fillRect(0,0,150,150);
+}</code></pre><h1 id="阴影-Shadows"><a href="#阴影-Shadows" class="headerlink" title="阴影 Shadows"></a>阴影 Shadows</h1><pre><code>shadowOffsetX = float
+shadowOffsetX 和 shadowOffsetY 用来设定阴影在 X 和 Y 轴的延伸距离，它们是不受变换矩阵所影响的。负值表示阴影会往上或左延伸，正值则表示会往下或右延伸，它们默认都为 0。
+
+shadowOffsetY = float
+shadowOffsetX 和 shadowOffsetY 用来设定阴影在 X 和 Y 轴的延伸距离，它们是不受变换矩阵所影响的。负值表示阴影会往上或左延伸，正值则表示会往下或右延伸，它们默认都为 0。
+shadowBlur = float
+shadowBlur 用于设定阴影的模糊程度，其数值并不跟像素数量挂钩，也不受变换矩阵的影响，默认为 0。
+shadowColor = color
+shadowColor 是标准的 CSS 颜色值，用于设定阴影颜色效果，默认是全透明的黑色
+
+个例子绘制了带阴影效果的文字。
+
+function draw() {
+var ctx = document.getElementById(&apos;canvas&apos;).getContext(&apos;2d&apos;);
+
+ctx.shadowOffsetX = 2;
+ctx.shadowOffsetY = 2;
+ctx.shadowBlur = 2;
+ctx.shadowColor = &quot;rgba(0, 0, 0, 0.5)&quot;;
+
+ctx.font = &quot;20px Times New Roman&quot;;
+ctx.fillStyle = &quot;Black&quot;;
+ctx.fillText(&quot;Sample String&quot;, 5, 30);
+}</code></pre><h1 id="Canvas-填充规则"><a href="#Canvas-填充规则" class="headerlink" title="Canvas 填充规则"></a>Canvas 填充规则</h1><p>当我们用到 fill（或者 clip和isPointinPath ）你可以选择一个填充规则，该填充规则根据某处在路径的外面或者里面来决定该处是否被填充，这对于自己与自己路径相交或者路径被嵌套的时候是有用的。</p>
+<p>两个可能的值：</p>
+<p> “nonzero”: non-zero winding rule, 默认值.<br> “evenodd”:  even-odd winding rule.</p>
+<pre><code>function draw() {
+var ctx = document.getElementById(&apos;canvas&apos;).getContext(&apos;2d&apos;); 
+ctx.beginPath(); 
+ctx.arc(50, 50, 30, 0, Math.PI*2, true);
+ctx.arc(50, 50, 15, 0, Math.PI*2, true);
+ctx.fill(&quot;evenodd&quot;);
+}</code></pre><h1 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h1><h2 id="绘制文本-1"><a href="#绘制文本-1" class="headerlink" title="绘制文本"></a>绘制文本</h2><pre><code>canvas 提供了两种方法来渲染文本:蛀牙是实心空心的区别
+
+fillText(text, x, y [, maxWidth])
+在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.
+strokeText(text, x, y [, maxWidth])
+在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.</code></pre><h2 id="有样式的文本"><a href="#有样式的文本" class="headerlink" title="有样式的文本"></a>有样式的文本</h2><p>在上面的例子用我们已经使用了 font 来使文本比默认尺寸大一些. 还有更多的属性可以让你改变canvas显示文本的方式：</p>
+<pre><code>font = value
+当前我们用来绘制文本的样式. 这个字符串使用和 CSS font 属性相同的语法. 默认的字体是 10px sans-serif。
+textAlign = value
+文本对齐选项. 可选的值包括：start, end, left, right or center. 默认值是 start。
+textBaseline = value
+基线对齐选项. 可选的值包括：top, hanging, middle, alphabetic, ideographic, bottom。默认值是 alphabetic。
+direction = value
+文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。</code></pre><h2 id="预测量文本宽度"><a href="#预测量文本宽度" class="headerlink" title="预测量文本宽度"></a>预测量文本宽度</h2><p>measureText()<br>将返回一个 TextMetrics对象的宽度、所在像素，这些体现文本特性的属性。<br>下面的代码段将展示如何测量文本来获得它的宽度：</p>
+<pre><code>function draw() {
+var ctx = document.getElementById(&apos;canvas&apos;).getContext(&apos;2d&apos;);
+var text = ctx.measureText(&quot;foo&quot;); // TextMetrics object
+text.width; // 16;
+}</code></pre><h1 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h1><pre><code>function draw() {
+    var ctx = document.getElementById(&apos;canvas&apos;).getContext(&apos;2d&apos;);
+    var img = new Image();
+    img.onload = function(){
+    ctx.drawImage(img,0,0);
+    ctx.beginPath();
+    ctx.moveTo(30,96);
+    ctx.lineTo(70,66);
+    ctx.lineTo(103,76);
+    ctx.lineTo(170,15);
+    ctx.stroke();
+    }
+    img.src = &apos;images/backdrop.png&apos;;
+}</code></pre><h2 id="缩放-Scaling"><a href="#缩放-Scaling" class="headerlink" title="缩放 Scaling"></a>缩放 Scaling</h2><pre><code>drawImage(image, x, y, width, height)
+这个方法多了2个参数：width 和 height，这两个参数用来控制 当向canvas画入时应该缩放的大小</code></pre><h2 id="切片-Slicing"><a href="#切片-Slicing" class="headerlink" title="切片 Slicing"></a>切片 Slicing</h2><pre><code>drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+第一个参数和其它的是相同的，都是一个图像或者另一个 canvas 的引用。其它8个参数最好是参照右边的图解，前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小。
+
+思考：可用画框和图片实现多个画廊</code></pre><h2 id="状态的保存和恢复"><a href="#状态的保存和恢复" class="headerlink" title="状态的保存和恢复"></a>状态的保存和恢复</h2><pre><code>save()
+保存画布(canvas)的所有状态
+restore()
+save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。Canvas 的状态就是当前画面应用的所有样式和变形的一个快照。</code></pre><p>Canvas状态存储在栈中，每当save()方法被调用后，当前的状态就被推送到栈中保存。一个绘画状态包括：</p>
+<ul>
+<li>当前应用的变形（即移动，旋转和缩放，见下）</li>
+<li>以及下面这些属性：strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, lineDashOffset, shadowOffsetX, shadowOffsetY, shadowBlur, shadowColor, globalCompositeOperation, font, textAlign, textBaseline, direction, imageSmoothingEnabled</li>
+<li>当前的裁切路径（clipping path），会在下一节介绍<br>你可以调用任意多次 save方法。每一次调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。</li>
+</ul>
+<h2 id="移动-Translating"><a href="#移动-Translating" class="headerlink" title="移动 Translating"></a>移动 Translating</h2><pre><code>translate(x, y)
+translate 方法接受两个参数。x 是左右偏移量，y 是上下偏移量，如右图所示。</code></pre><h2 id="旋转-Rotating"><a href="#旋转-Rotating" class="headerlink" title="旋转 Rotating"></a>旋转 Rotating</h2><p>它用于以原点为中心旋转 canvas。</p>
+<pre><code>rotate(angle)  
+这个方法只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。  
+旋转的中心点始终是 canvas 的原点，如果要改变它，我们需要用到 translate 方法。</code></pre><h2 id="缩放-Scaling-1"><a href="#缩放-Scaling-1" class="headerlink" title="缩放 Scaling"></a>缩放 Scaling</h2><p>我们用它来增减图形在 canvas 中的像素数目，对形状，位图进行缩小或者放大。  </p>
+<pre><code>scale(x, y)  
+scale  方法可以缩放画布的水平和垂直的单位。两个参数都是实数，可以为负数，x 为水平缩放因子，y 为垂直缩放因子，如果比1小，会比缩放图形， 如果比1大会放大图形。默认值为1， 为实际大小。  
+画布初始情况下， 是以左上角坐标为原点的第一象限。如果参数为负实数， 相当于以x 或 y轴作为对称轴镜像反转（例如， 使用translate(0,canvas.height); scale(1,-1); 以y轴作为对称轴镜像反转， 就可得到著名的笛卡尔坐标系，左下角为原点）。  
+
+默认情况下，canvas 的 1 个单位为 1 个像素。举例说，如果我们设置缩放因子是 0.5，1 个单位就变成对应 0.5 个像素，这样绘制出来的形状就会是原先的一半。同理，设置为 2.0 时，1 个单位就对应变成了 2 像素，绘制的结果就是图形放大了 2 倍。</code></pre><h2 id="变形-Transforms"><a href="#变形-Transforms" class="headerlink" title="变形 Transforms"></a>变形 Transforms</h2><p>允许对变形矩阵直接修改。</p>
+<pre><code>transform(a, b, c, d, e, f)
+这个方法是将当前的变形矩阵乘上一个基于自身参数的矩阵，如下面的矩阵所示：[ a    c    e    b    d    f    0    0    1 ]
+如果任意一个参数是Infinity，变形矩阵也必须被标记为无限大，否则会抛出异常。
+这个函数的参数各自代表如下：
+
+a (m11)
+水平方向的缩放
+b(m12)
+水平方向的倾斜偏移
+c(m21)
+竖直方向的倾斜偏移
+d(m22)
+竖直方向的缩放
+e(dx)
+水平方向的移动
+f(dy)
+竖直方向的移动
+setTransform(a, b, c, d, e, f)
+这个方法会将当前的变形矩阵重置为单位矩阵，然后用相同的参数调用 transform 方法。如果任意一个参数是无限大，那么变形矩阵也必须被标记为无限大，否则会抛出异常。从根本上来说，该方法是取消了当前变形,然后设置为指定的变形,一步完成。
+resetTransform()
+重置当前变形为单位矩阵，它和调用以下语句是一样的：ctx.setTransform(1, 0, 0, 1, 0, 0);</code></pre><h2 id="新图案覆盖原则"><a href="#新图案覆盖原则" class="headerlink" title="新图案覆盖原则"></a>新图案覆盖原则</h2><p><strong>globalCompositeOperation</strong><br>    globalCompositeOperation = type<br>    这个属性设定了在画新图形时采用的遮盖策略，其值是一个标识12种遮盖方式的字符串。</p>
+<pre><code>source-over
+这是默认设置，并在现有画布上下文之上绘制新图形。
+
+
+source-in
+新图形只在新图形和目标画布重叠的地方绘制。其他的都是透明的。
+
+source-out
+在不与现有画布内容重叠的地方绘制新图形。
+
+source-atop
+新图形只在与现有画布内容重叠的地方绘制。
+
+destination-over
+在现有的画布内容后面绘制新的图形。
+
+destination-in
+现有的画布内容保持在新图形和现有画布内容重叠的位置。其他的都是透明的。
+
+destination-out
+现有内容保持在新图形不重叠的地方。
+
+destination-atop
+现有的画布只保留与新图形重叠的部分，新的图形是在画布内容后面绘制的
+
+lighter
+两个重叠图形的颜色是通过颜色值相加来确定的。
+
+copy
+只显示新图形。
+
+xor
+图像中，那些重叠和正常绘制之外的其他地方是透明的。
+
+multiply
+将顶层像素与底层相应像素相乘，结果是一幅更黑暗的图片。
+
+screen
+像素被倒转，相乘，再倒转，结果是一幅更明亮的图片。
+
+overlay
+multiply和screen的结合，原本暗的地方更暗，原本亮的地方更亮。
+
+darken
+保留两个图层中最暗的像素。
+
+lighten
+保留两个图层中最亮的像素。
+
+color-dodge
+将底层除以顶层的反置。
+
+color-burn
+将反置的底层除以顶层，然后将结果反过来。
+
+hard-light
+屏幕相乘（A combination of multiply and screen）类似于叠加，但上下图层互换了
+
+soft-light
+用顶层减去底层或者相反来得到一个正值。
+
+difference
+一个柔和版本的强光（hard-light）。纯黑或纯白不会导致纯黑或纯白。
+
+exclusion
+和difference相似，但对比度较低。
+
+hue
+保留了底层的亮度（luma）和色度（chroma），同时采用了顶层的色调（hue）。
+
+saturation
+保留底层的亮度（luma）和色调（hue），同时采用顶层的色度（chroma）。
+
+color
+保留了底层的亮度（luma），同时采用了顶层的色调(hue)和色度(chroma)。
+
+luminosity
+保持底层的色调（hue）和色度（chroma），同时采用顶层的亮度（luma）。</code></pre><h1 id="裁切路径"><a href="#裁切路径" class="headerlink" title="裁切路径"></a>裁切路径</h1><p>裁切路径和普通的 canvas 图形差不多，不同的是它的作用是遮罩，用来隐藏不需要的部分。如右图所示。红边五角星就是裁切路径，所有在路径以外的部分都不会在 canvas 上绘制出来。</p>
+<p>如果和上面介绍的 globalCompositeOperation 属性作一比较，它可以实现与 source-in 和 source-atop差不多的效果。最重要的区别是裁切路径不会在 canvas 上绘制东西，而且它永远不受新图形的影响。这些特性使得它在特定区域里绘制图形时相当好用。</p>
+<p>在 绘制图形 一章中，只介绍了 stroke 和 fill 方法，这里介绍第三个方法clip</p>
+<pre><code>clip()
+将当前正在构建的路径转换为当前的裁剪路径。
+
+默认情况下，canvas 有一个与它自身一样大的裁切路径（也就是没有裁切效果）。
+
+这个例子，我会用一个圆形的裁切路径来限制随机星星的绘制区域。
+
+function draw() {
+var ctx = document.getElementById(&apos;canvas&apos;).getContext(&apos;2d&apos;);
+ctx.fillRect(0,0,150,150);
+ctx.translate(75,75);
+
+// Create a circular clipping path
+ctx.beginPath();
+ctx.arc(0,0,60,0,Math.PI*2,true);
+ctx.clip();
+
+// draw background
+var lingrad = ctx.createLinearGradient(0,-75,0,75);
+lingrad.addColorStop(0, &apos;#232256&apos;);
+lingrad.addColorStop(1, &apos;#143778&apos;);
+
+ctx.fillStyle = lingrad;
+ctx.fillRect(-75,-75,150,150);
+
+// draw stars
+for (var j=1;j&lt;50;j++){
+    ctx.save();
+    ctx.fillStyle = &apos;#fff&apos;;
+    ctx.translate(75-Math.floor(Math.random()*150),
+                75-Math.floor(Math.random()*150));
+    drawStar(ctx,Math.floor(Math.random()*4)+2);
+    ctx.restore();
+}
+
+}
+function drawStar(ctx,r){
+ctx.save();
+ctx.beginPath()
+ctx.moveTo(r,0);
+for (var i=0;i&lt;9;i++){
+    ctx.rotate(Math.PI/5);
+    if(i%2 == 0) {
+    ctx.lineTo((r/0.525731)*0.200811,0);
+    } else {
+    ctx.lineTo(r,0);
+    }
+}
+ctx.closePath();
+ctx.fill();
+ctx.restore();
+}
+
+首先，我画了一个与 canvas 一样大小的黑色方形作为背景，然后移动原点至中心点。然后用 clip 方法创建一个弧形的裁切路径。裁切路径也属于 canvas 状态的一部分，可以被保存起来。如果我们在创建新裁切路径时想保留原来的裁切路径，我们需要做的就是保存一下 canvas 的状态。
+
+裁切路径创建之后所有出现在它里面的东西才会画出来。在画线性渐变时我们就会注意到这点。然后会绘制出50 颗随机位置分布（经过缩放）的星星，当然也只有在裁切路径里面的星星才会绘制出来。</code></pre><h1 id="基本动画"><a href="#基本动画" class="headerlink" title="基本动画"></a>基本动画</h1><h2 id="动画的基本步骤"><a href="#动画的基本步骤" class="headerlink" title="动画的基本步骤"></a>动画的基本步骤</h2><p>你可以通过以下的步骤来画出一帧:</p>
+<ol>
+<li>清空 canvas<br>除非接下来要画的内容会完全充满 canvas （例如背景图），否则你需要清空所有。最简单的做法就是用 clearRect 方法。</li>
+<li>保存 canvas 状态<br>如果你要改变一些会改变 canvas 状态的设置（样式，变形之类的），又要在每画一帧之时都是原始状态的话，你需要先保存一下。</li>
+<li>绘制动画图形（animated shapes）<br>这一步才是重绘动画帧。</li>
+<li>恢复 canvas 状态<br>如果已经保存了 canvas 的状态，可以先恢复它，然后重绘下一帧。</li>
+</ol>
+<h2 id="有安排的更新画布-Scheduled-updates"><a href="#有安排的更新画布-Scheduled-updates" class="headerlink" title="有安排的更新画布 Scheduled updates"></a>有安排的更新画布 Scheduled updates</h2><p>首先，可以用window.setInterval(), window.setTimeout(),和window.requestAnimationFrame()来设定定期执行一个指定函数。</p>
+<pre><code>setInterval(function, delay)
+当设定好间隔时间后，function会定期执行。
+setTimeout(function, delay)
+在设定好的时间之后执行函数
+requestAnimationFrame(callback)
+告诉浏览器你希望执行一个动画，并在重绘之前，请求浏览器执行一个特定的函数来更新动画。
+如果你并不需要与用户互动，你可以使用setInterval()方法，它就可以定期执行指定代码。如果我们需要做一个游戏，我们可以使用键盘或者鼠标事件配合上setTimeout()方法来实现。通过设置事件监听，我们可以捕捉用户的交互，并执行相应的动作。</code></pre><p>下面的例子，采用 window.requestAnimationFrame()实现动画效果。这个方法提供了更加平缓并更加有效率的方式来执行动画，当系统准备好了重绘条件的时候，才调用绘制动画帧。一般每秒钟回调函数执行60次，也有可能会被降低。想要了解更多关于动画循环的信息，尤其是游戏，可以在Game development zone 参考这篇文章 Anatomy of a video game。</p>
+<h2 id="鼠标追踪动画"><a href="#鼠标追踪动画" class="headerlink" title="鼠标追踪动画"></a>鼠标追踪动画</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+        &lt;script&gt;
+            var cn;
+            //= document.getElementById(&apos;cw&apos;);
+            var c;
+            var u = 10;
+            const m = {
+                x: innerWidth / 2,
+                y: innerHeight / 2
+            };
+            window.onmousemove = function(e) {
+                m.x = e.clientX;
+                m.y = e.clientY;
+
+            }
+            function gc() {
+                var s = &quot;0123456789ABCDEF&quot;;
+                var c = &quot;#&quot;;
+                for (var i = 0; i &lt; 6; i++) {
+                    c += s[Math.ceil(Math.random() * 15)]
+                }
+                return c
+            }
+            var a = [];
+            window.onload = function myfunction() {
+                cn = document.getElementById(&apos;cw&apos;);
+                c = cn.getContext(&apos;2d&apos;);
+
+                for (var i = 0; i &lt; 10; i++) {
+                    var r = 30;
+                    var x = Math.random() * (innerWidth - 2 * r) + r;
+                    var y = Math.random() * (innerHeight - 2 * r) + r;
+                    var t = new ob(innerWidth / 2,innerHeight / 2,5,&quot;red&quot;,Math.random() * 200 + 20,2);
+                    a.push(t);
+                }
+                //cn.style.backgroundColor = &quot;#700bc8&quot;;
+
+                c.lineWidth = &quot;2&quot;;
+                c.globalAlpha = 0.5;
+                resize();
+                anim()
+            }
+            window.onresize = function() {
+
+                resize();
+
+            }
+            function resize() {
+                cn.height = innerHeight;
+                cn.width = innerWidth;
+                for (var i = 0; i &lt; 101; i++) {
+                    var r = 30;
+                    var x = Math.random() * (innerWidth - 2 * r) + r;
+                    var y = Math.random() * (innerHeight - 2 * r) + r;
+                    a[i] = new ob(innerWidth / 2,innerHeight / 2,4,gc(),Math.random() * 200 + 20,0.02);
+
+                }
+                //  a[0] = new ob(innerWidth / 2, innerHeight / 2, 40, &quot;red&quot;, 0.05, 0.05);
+                //a[0].dr();
+            }
+            function ob(x, y, r, cc, o, s) {
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.cc = cc;
+                this.theta = Math.random() * Math.PI * 2;
+                this.s = s;
+                this.o = o;
+                this.t = Math.random() * 150;
+
+                this.o = o;
+                this.dr = function() {
+                    const ls = {
+                        x: this.x,
+                        y: this.y
+                    };
+                    this.theta += this.s;
+                    this.x = m.x + Math.cos(this.theta) * this.t;
+                    this.y = m.y + Math.sin(this.theta) * this.t;
+                    c.beginPath();
+                    c.lineWidth = this.r;
+                    c.strokeStyle = this.cc;
+                    c.moveTo(ls.x, ls.y);
+                    c.lineTo(this.x, this.y);
+                    c.stroke();
+                    c.closePath();
+
+                }
+            }
+            function anim() {
+                requestAnimationFrame(anim);
+                c.fillStyle = &quot;rgba(0,0,0,0.05)&quot;;
+                c.fillRect(0, 0, cn.width, cn.height);
+                a.forEach(function(e, i) {
+                    e.dr();
+                });
+
+            }
+        &lt;/script&gt;
+        &lt;style&gt;
+            #cw {
+                position: fixed;
+                z-index: -1;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: rgba(0,0,0,0.05);
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;canvas id=&quot;cw&quot;&gt;&lt;/canvas&gt;
+        qwerewr    
+
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre><h1 id="像素操作"><a href="#像素操作" class="headerlink" title="像素操作"></a>像素操作</h1><h2 id="ImageData-对象"><a href="#ImageData-对象" class="headerlink" title="ImageData 对象"></a>ImageData 对象</h2><p>ImageData对象中存储着canvas对象真实的像素数据，它包含以下几个只读属性：</p>
+<pre><code>width
+
+图片宽度，单位是像素
+height
+图片高度，单位是像素
+data
+Uint8ClampedArray类型的一维数组，包含着RGBA格式的整型数据，范围在0至255之间（包括255）。</code></pre><p>data属性返回一个 Uint8ClampedArray，它可以被使用作为查看初始像素数据。每个像素用4个1bytes值(按照红，绿，蓝和透明值的顺序; 这就是”RGBA”格式) 来代表。每个颜色值部份用0至255来代表。每个部份被分配到一个在数组内连续的索引，左上角像素的红色部份在数组的索引0位置。像素从左到右被处理，然后往下，遍历整个数组。</p>
+<p>Uint8ClampedArray  包含高度 × 宽度 × 4 bytes数据，索引值从0到(高度×宽度×4)-1  </p>
+<p>例如，要读取图片中位于第50行，第200列的像素的蓝色部份，你会写以下代码：</p>
+<pre><code>blueComponent = imageData.data[((50 * (imageData.width * 4)) + (200 * 4)) + 2];</code></pre><p>根据行、列读取某像素点的R/G/B/A值的公式：</p>
+<pre><code>imageData.data[((50 * (imageData.width * 4)) + (200 * 4)) + 0/1/2/3];</code></pre><p>你可能用会使用Uint8ClampedArray.length属性来读取像素数组的大小（以bytes为单位）：</p>
+<pre><code>var numBytes = imageData.data.length;</code></pre><h2 id="创建一个ImageData对象"><a href="#创建一个ImageData对象" class="headerlink" title="创建一个ImageData对象"></a>创建一个ImageData对象</h2><p>去创建一个新的，空白的ImageData对象，你应该会使用createImageData() 方法。有2个版本的createImageData()方法。</p>
+<pre><code>var myImageData = ctx.createImageData(width, height);</code></pre><p>上面代码创建了一个新的具体特定尺寸的ImageData对象。所有像素被预设为透明黑。</p>
+<p>你也可以创建一个被anotherImageData对象指定的相同像素的ImageData对象。这个新的对象像素全部被预设为透明黑。这个并非复制了图片数据。</p>
+<pre><code>var myImageData = ctx.createImageData(anotherImageData);</code></pre><h2 id="得到场景像素数据"><a href="#得到场景像素数据" class="headerlink" title="得到场景像素数据"></a>得到场景像素数据</h2><p>为了获得一个包含画布场景像素数据的ImageData对像，你可以用getImageData()方法：</p>
+<pre><code>var myImageData = ctx.getImageData(left, top, width, height);
+这个方法会返回一个ImageData对象，它代表了画布区域的对象数据，此画布的四个角落分别表示为(left, top), (left + width, top), (left, top + height), 以及(left + width, top + height)四个点。这些坐标点被设定为画布坐标空间元素。</code></pre><p>注：任何在画布以外的元素都会被返回成一个透明黑的ImageData对像。</p>
+<h2 id="在场景中写入像素数据"><a href="#在场景中写入像素数据" class="headerlink" title="在场景中写入像素数据"></a>在场景中写入像素数据</h2><p>你可以用putImageData()方法去对场景进行像素数据的写入。</p>
+<pre><code>ctx.putImageData(myImageData, dx, dy);
+dx和dy参数表示你希望在场景内左上角绘制的像素数据所得到的设备坐标。</code></pre><h2 id="缩放和反锯齿"><a href="#缩放和反锯齿" class="headerlink" title="缩放和反锯齿"></a>缩放和反锯齿</h2><p>CanvasRenderingContext2D.imageSmoothingEnabled 是 Canvas 2D API 用来设置图片是否平滑的属性，true表示图片平滑（默认值），false表示图片不平滑。当我们获取 imageSmoothingEnabled 属性值时， 它会返回最新设置的值。</p>
+<p> 以缩放画布为例，这个属性对像素为主的游戏很有用。默认的改变大小的算法会造成图片模糊并且破坏图片原有的像素。 如果那样的话，设置属性值为false。 参见 CSS image-rendering 属性。</p>
+<p>注意:您可以使用imageSmoothingQuality属性来调整平滑质量。</p>
+<pre><code>语法
+ctx.imageSmoothingEnabled = value;
+选项
+value
+一个Boolean 类型的值，表示图片是否平滑。
+
+
+    &lt;canvas id=&quot;zoom&quot; width=&quot;300&quot; height=&quot;227&quot;&gt;&lt;/canvas&gt;
+    &lt;div&gt;
+    &lt;label for=&quot;smoothbtn&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;smoothbtn&quot; checked=&quot;checked&quot; id=&quot;smoothbtn&quot;&gt;
+    Enable image smoothing
+    &lt;/label&gt;
+    &lt;/div&gt;
+    var img = new Image();
+    img.src = &apos;https://mdn.mozillademos.org/files/5397/rhino.jpg&apos;;
+    img.onload = function() {
+    draw(this);
+    };
+
+    function draw(img) {
+    var canvas = document.getElementById(&apos;canvas&apos;);
+    var ctx = canvas.getContext(&apos;2d&apos;);
+    ctx.drawImage(img, 0, 0);
+    img.style.display = &apos;none&apos;;
+    var zoomctx = document.getElementById(&apos;zoom&apos;).getContext(&apos;2d&apos;);
+
+    var smoothbtn = document.getElementById(&apos;smoothbtn&apos;);
+    var toggleSmoothing = function(event) {
+        zoomctx.imageSmoothingEnabled = this.checked;
+        zoomctx.mozImageSmoothingEnabled = this.checked;
+        zoomctx.webkitImageSmoothingEnabled = this.checked;
+        zoomctx.msImageSmoothingEnabled = this.checked;
+    };
+    smoothbtn.addEventListener(&apos;change&apos;, toggleSmoothing);
+
+    var zoom = function(event) {
+        var x = event.layerX;
+        var y = event.layerY;
+        zoomctx.drawImage(canvas,
+                        Math.abs(x - 5),
+                        Math.abs(y - 5),
+                        10, 10,
+                        0, 0,
+                        200, 200);
+    };
+
+    canvas.addEventListener(&apos;mousemove&apos;, zoom);
+    }</code></pre><h2 id="保存图片"><a href="#保存图片" class="headerlink" title="保存图片"></a>保存图片</h2><p>HTMLCanvasElement  提供一个toDataURL()方法，此方法在保存图片的时候非常有用。它返回一个包含被类型参数规定的图像表现格式的数据链接。返回的图片分辨率是96dpi。</p>
+<pre><code>canvas.toDataURL(&apos;image/png&apos;)
+默认设定。创建一个PNG图片。
+Default setting. Creates a PNG image.
+canvas.toDataURL(&apos;image/jpeg&apos;, quality)
+创建一个JPG图片。你可以有选择地提供从0到1的品质量，1表示最好品质，0基本不被辨析但有比较小的文件大小。
+当你从画布中生成了一个数据链接，例如，你可以将它用于任何&lt;image&gt;元素，或者将它放在一个有download属性的超链接里用于保存到本地。
+
+你也可以从画布中创建一个Blob对像。
+
+canvas.toBlob(callback, type, encoderOptions)</code></pre><h1 id="点击区域和无障碍访问"><a href="#点击区域和无障碍访问" class="headerlink" title="点击区域和无障碍访问"></a>点击区域和无障碍访问</h1><h2 id="点击区域"><a href="#点击区域" class="headerlink" title="点击区域"></a>点击区域</h2><p>点击区域（hit region）<br>判断鼠标坐标是否在canvas上一个特定区域里一直是个有待解决的问题。hit region API让你可以在canvas上定义一个区域，这让无障碍工具获取canvas上的交互内容成为可能。它能让你更容易地进行点击检测并把事件转发到DOM元素去。这个API有以下三个方法（都是实验性特性，请先在浏览器兼容表上确认再使用）。</p>
+<pre><code>CanvasRenderingContext2D.addHitRegion() 
+在canvas上添加一个点击区域。
+CanvasRenderingContext2D.removeHitRegion() 
+从canvas上移除指定id的点击区域。
+CanvasRenderingContext2D.clearHitRegions() 
+移除canvas上的所有点击区域。</code></pre><p>你可以把一个点击区域添加到路径里并检测MouseEvent.region属性来测试你的鼠标有没有点击这个区域，例：</p>
+<pre><code>&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+var canvas = document.getElementById(&quot;canvas&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);
+
+ctx.beginPath();
+ctx.arc(70, 80, 10, 0, 2 * Math.PI, false);
+ctx.fill();
+ctx.addHitRegion({id: &quot;circle&quot;});
+
+canvas.addEventListener(&quot;mousemove&quot;, function(event){
+if(event.region) {
+    alert(&quot;hit region: &quot; + event.region);
+}
+});
+&lt;/script&gt;
+addHitRegion()方法也可以带一个control选项来指定把事件转发到哪个元素上（canvas里的元素）。
+
+ctx.addHitRegion({control: element});
+把这个特性用在&lt;input&gt;元素上会很有用。</code></pre><h2 id="焦点圈"><a href="#焦点圈" class="headerlink" title="焦点圈"></a>焦点圈</h2><p>当用键盘控制时，焦点圈是一个能帮我们在页面上快速导航的标记。要在canvas上绘制焦点圈，可以使用drawFocusIfNeeded 属性。</p>
+<pre><code>CanvasRenderingContext2D.drawFocusIfNeeded() 
+如果给定的元素获得了焦点，这个方法会沿着在当前的路径画个焦点圈。
+另外，scrollPathIntoView()方法可以让一个元素获得焦点的时候在屏幕上可见(滚动到元素所在的区域)。
+
+CanvasRenderingContext2D.scrollPathIntoView() 
+把当前的路径或者一个给定的路径滚动到显示区域内。</code></pre><h2 id="内容兼容"><a href="#内容兼容" class="headerlink" title="内容兼容"></a>内容兼容</h2><p>&lt;canvas&gt; … &lt;/canvas&gt;标签里的内容被可以对一些不支持canvas的浏览器提供兼容。这对残疾用户设备也很有用（比如屏幕阅读器），这样它们就可以读取并解释DOM里的子节点。在html5accessibility.com有个很好的例子来演示它如何运作。</p>
+<pre><code>&lt;canvas&gt; 
+&lt;h2&gt;Shapes&lt;/h2&gt; 
+&lt;p&gt;A rectangle with a black border. 
+In the background is a pink circle. 
+Partially overlaying the &lt;a href=&quot;http://en.wikipedia.org/wiki/Circle&quot; onfocus=&quot;drawCircle();&quot; onblur=&quot;drawPicture();&quot;&gt;circle&lt;/a&gt;. 
+Partially overlaying the circle is a green 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Square&quot; onfocus=&quot;drawSquare();&quot; onblur=&quot;drawPicture();&quot;&gt;square&lt;/a&gt; 
+and a purple &lt;a href=&quot;http://en.wikipedia.org/wiki/Triangle&quot; onfocus=&quot;drawTriangle();&quot; onblur=&quot;drawPicture();&quot;&gt;triangle&lt;/a&gt;,
+both of which are semi-opaque, so the full circle can be seen underneath.&lt;/p&gt; 
+&lt;/canvas&gt;</code></pre><h2 id="ARIA-规则"><a href="#ARIA-规则" class="headerlink" title="ARIA 规则"></a>ARIA 规则</h2><p>Accessible Rich Internet Applications (ARIA) 定义了让Web内容和Web应用更容易被有身体缺陷的人获取的办法。你可以用ARIA属性来描述canvas元素的行为和存在目的。详情见ARIA和 ARIA 技术。</p>
+<pre><code>&lt;canvas id=&quot;button&quot; tabindex=&quot;0&quot; role=&quot;button&quot; aria-pressed=&quot;false&quot; aria-label=&quot;Start game&quot;&gt;&lt;/canvas&gt;</code></pre><h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><p>&lt;canvas&gt;元素是众多广泛使用的网络2D图像渲染标准之一。它被广泛用于游戏及复杂的图像可视化中。然而，随着网站和应用将canvas画布推至极限，性能开始成为问题。此文目标是给使用canvas画布元素的优化带来建议，去保证你的网站或者应用表现卓越。</p>
+<p>性能贴士<br>下面是一些改善性能的建议</p>
+<h2 id="在离屏canvas上预渲染相似的图形或重复的对象"><a href="#在离屏canvas上预渲染相似的图形或重复的对象" class="headerlink" title="在离屏canvas上预渲染相似的图形或重复的对象"></a>在离屏canvas上预渲染相似的图形或重复的对象</h2><p>如果发现自己在每个动画帧上重复了一些相同的绘制操作，请考虑将其分流到屏幕外的画布上。 然后，您可以根据需要频繁地将屏幕外图像渲染到主画布上，而不必首先重复生成该图像的步骤。</p>
+<pre><code>myEntity.offscreenCanvas = document.createElement(&quot;canvas&quot;);
+myEntity.offscreenCanvas.width = myEntity.width;
+myEntity.offscreenCanvas.height = myEntity.height;
+myEntity.offscreenContext = myEntity.offscreenCanvas.getContext(&quot;2d&quot;);
+
+myEntity.render(myEntity.offscreenContext);</code></pre><h2 id="避免浮点数的坐标点，用整数取而代之"><a href="#避免浮点数的坐标点，用整数取而代之" class="headerlink" title="避免浮点数的坐标点，用整数取而代之"></a>避免浮点数的坐标点，用整数取而代之</h2><p>当你画一个没有整数坐标点的对象时会发生子像素渲染。</p>
+<pre><code>ctx.drawImage(myImage, 0.3, 0.5);</code></pre><p>浏览器为了达到抗锯齿的效果会做额外的运算。为了避免这种情况，请保证在你调用drawImage()函数时，用Math.floor()函数对所有的坐标点取整。</p>
+<h2 id="不要在用drawImage时缩放图像"><a href="#不要在用drawImage时缩放图像" class="headerlink" title="不要在用drawImage时缩放图像_"></a>不要在用drawImage时缩放图像_</h2><p>在离屏canvas中缓存图片的不同尺寸，而不要用drawImage()去缩放它们。</p>
+<h2 id="使用多层画布去画一个复杂的场景"><a href="#使用多层画布去画一个复杂的场景" class="headerlink" title="使用多层画布去画一个复杂的场景"></a>使用多层画布去画一个复杂的场景</h2><p>在您的应用程序中，您可能会发现某些对象需要经常移动或更改，而其他对象则保持相对静态。 在这种情况下，可能的优化是使用多个&lt;canvas&gt;元素对您的项目进行分层。</p>
+<p>例如，假设您有一个游戏，其UI位于顶部，中间是游戏性动作，底部是静态背景。 在这种情况下，您可以将游戏分成三个&lt;canvas&gt;层。 UI将仅在用户输入时发生变化，游戏层随每个新框架发生变化，并且背景通常保持不变。</p>
+<pre><code>&lt;div id=&quot;stage&quot;&gt;
+&lt;canvas id=&quot;ui-layer&quot; width=&quot;480&quot; height=&quot;320&quot;&gt;&lt;/canvas&gt;
+&lt;canvas id=&quot;game-layer&quot; width=&quot;480&quot; height=&quot;320&quot;&gt;&lt;/canvas&gt;
+&lt;canvas id=&quot;background-layer&quot; width=&quot;480&quot; height=&quot;320&quot;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+#stage {
+    width: 480px;
+    height: 320px;
+    position: relative;
+    border: 2px solid black
+}
+canvas { position: absolute; }
+#ui-layer { z-index: 3 }
+#game-layer { z-index: 2 }
+#background-layer { z-index: 1 }
+&lt;/style&gt;</code></pre><h2 id="用CSS设置大的背景图"><a href="#用CSS设置大的背景图" class="headerlink" title="用CSS设置大的背景图"></a>用CSS设置大的背景图</h2><p>如果像大多数游戏那样，你有一张静态的背景图，用一个静态的<div>元素，结合background 特性，以及将它置于画布元素之后。这么做可以避免在每一帧在画布上绘制大图。</p>
+<h2 id="用CSS-transforms特性缩放画布"><a href="#用CSS-transforms特性缩放画布" class="headerlink" title="用CSS transforms特性缩放画布"></a>用CSS transforms特性缩放画布</h2><p>CSS transforms 使用GPU，因此速度更快。 最好的情况是不直接缩放画布，或者具有较小的画布并按比例放大，而不是较大的画布并按比例缩小。</p>
+<pre><code>var scaleX = window.innerWidth / canvas.width;
+var scaleY = window.innerHeight / canvas.height;
+
+var scaleToFit = Math.min(scaleX, scaleY);
+var scaleToCover = Math.max(scaleX, scaleY);
+
+stage.style.transformOrigin = &apos;0 0&apos;; //scale from top left
+stage.style.transform = &apos;scale(&apos; + scaleToFit + &apos;)&apos;;</code></pre><h2 id="关闭透明度"><a href="#关闭透明度" class="headerlink" title="关闭透明度"></a>关闭透明度</h2><p>如果你的游戏使用画布而且不需要透明，当使用 HTMLCanvasElement.getContext() 创建一个绘图上下文时把 alpha 选项设置为 false 。这个选项可以帮助浏览器进行内部优化。</p>
+<pre><code>var ctx = canvas.getContext(&apos;2d&apos;, { alpha: false });</code></pre><h2 id="更多的贴士"><a href="#更多的贴士" class="headerlink" title="更多的贴士"></a>更多的贴士</h2><ul>
+<li>将画布的函数调用集合到一起（例如，画一条折线，而不要画多条分开的直线）</li>
+<li>避免不必要的画布状态改变</li>
+<li>渲染画布中的不同点，而非整个新状态</li>
+<li>尽可能避免 shadowBlur特性</li>
+<li>尽可能避免text rendering</li>
+<li>尝试不同的方法来清除画布(clearRect() vs. fillRect() vs. 调整   canvas大小)</li>
+<li>有动画，请使用window.requestAnimationFrame() 而非window.setInterval()</li>
+<li>请谨慎使用大型物理库</li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">kukuboy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.dingyahui.top/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">http://blog.dingyahui.top/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.dingyahui.top" target="_blank">丁程程</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/canvas/">canvas</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechatPay.png" alt="万一你" onclick="window.open('/img/wechatPay.png')"/><div class="post-qr-code__desc">万一你</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="扫了呢" onclick="window.open('/img/alipay.jpg')"/><div class="post-qr-code__desc">扫了呢</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/10/09/es6%E6%96%B0%E7%89%B9%E6%80%A7/"><img class="prev-cover" data-src="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">es6新特性</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/21/vue-router%E5%AE%9E%E7%8E%B0404/"><img class="next-cover" data-src="https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">vue-router实现404</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'OXMpc23ouNcJM90vFtdyOsIN-gzGzoHsz',
+  appKey: '7dvA6AdSIvjSbSvwaAzwq09I',
+  placeholder: '留下你的邮箱，被回复可以收到邮件奥,如果留言失效，可以发邮件给我2294211995@qq.com',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: true,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" style="background-image: url(https://i.loli.net/2021/02/23/xToKC3tEq46AdDm.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By kukuboy</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="icp"><a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener"><img class="icp-icon" src="/img/icp.png"/><span>豫ICP备20023310号</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script></body></html>

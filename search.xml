@@ -43,30 +43,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css</title>
-    <url>/2020/07/22/css/</url>
-    <content><![CDATA[<h1 id="html居中的方法"><a href="#html居中的方法" class="headerlink" title="html居中的方法"></a>html居中的方法</h1><blockquote>
-<p>可做对应修改值居中水平方向或者竖直方向</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="css画三角形或者平行四边形"><a href="#css画三角形或者平行四边形" class="headerlink" title="css画三角形或者平行四边形"></a>css画三角形或者平行四边形</h1><blockquote>
-<p>主要利用的边框拥有一定的厚度后，在转角处是以div的中心到角的线平分的，这个时候利用透明即可实现</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 三角形 */</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-right</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">100px</span> solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 平行四边形 */</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-right</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">100px</span> solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>css</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html居中的方法</tag>
-        <tag>css画三角形或者平行四边形</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>canvas相关知识</title>
     <url>/2020/09/22/canvas%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<p>此文章做个人笔记，仅供参阅，来源：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API" target="_blank" rel="noopener">Canvas</a></p>
@@ -958,6 +934,30 @@ var difference = new Set([...a].filter(x =&gt; !b.has(x))); // {1}</code></pre>]
       </tags>
   </entry>
   <entry>
+    <title>css</title>
+    <url>/2020/07/22/css/</url>
+    <content><![CDATA[<h1 id="html居中的方法"><a href="#html居中的方法" class="headerlink" title="html居中的方法"></a>html居中的方法</h1><blockquote>
+<p>可做对应修改值居中水平方向或者竖直方向</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="css画三角形或者平行四边形"><a href="#css画三角形或者平行四边形" class="headerlink" title="css画三角形或者平行四边形"></a>css画三角形或者平行四边形</h1><blockquote>
+<p>主要利用的边框拥有一定的厚度后，在转角处是以div的中心到角的线平分的，这个时候利用透明即可实现</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 三角形 */</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-right</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">100px</span> solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 平行四边形 */</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-right</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">100px</span> solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html居中的方法</tag>
+        <tag>css画三角形或者平行四边形</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>express</title>
     <url>/2020/09/14/express/</url>
     <content><![CDATA[<h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1><pre><code>mkdir helloExpress
@@ -1657,242 +1657,6 @@ return newObj;
       </tags>
   </entry>
   <entry>
-    <title>js遍历</title>
-    <url>/2021/02/25/js%E9%81%8D%E5%8E%86/</url>
-    <content><![CDATA[<h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><ul>
-<li><p>返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。</p>
-</li>
-<li><p>按照原始数组元素顺序依次处理元素。</p>
-</li>
-<li><p>不会改变原数组</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.map(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue*index)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h1><ul>
-<li><p>创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。</p>
-</li>
-<li><p>不会改变原数组</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.filter(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue&gt;index)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><ul>
-<li><p>返回通过测试（函数内判断）的数组的第一个元素的值。</p>
-</li>
-<li><p>方法为数组中的每个元素都调用一次函数执行：</p>
-<ul>
-<li>当数组中的元素在测试条件时返回 true 时, find() 返回符合条件的元素，之后的值不会再调用执行函数。</li>
-<li>如果没有符合条件的元素返回 undefined</li>
-</ul>
-</li>
-<li><p>并没有改变数组的原始值。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.find(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue===index)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h1 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h1><ul>
-<li><p>返回传入一个测试条件（函数）符合条件的数组第一个元素位置。</p>
-</li>
-<li><p>方法为数组中的每个元素都调用一次函数执行：</p>
-<ul>
-<li>当数组中的元素在测试条件时返回 true 时, findIndex() 返回符合条件的元素的索引位置，之后的值不会再调用执行函数。</li>
-<li>如果没有符合条件的元素返回 -1</li>
-</ul>
-</li>
-<li><p>并没有改变数组的原始值。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.findIndex(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue===index)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h1 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h1><ul>
-<li>用于调用数组的每个元素，并将元素传递给回调函数。</li>
-<li>遍历之后添加的元素不会被遍历</li>
-<li>不会改变原数组</li>
-<li>没办法终止<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> sum=<span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> arr1 = arr.forEach(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>sum+=currentValue)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="every"><a href="#every" class="headerlink" title="every"></a>every</h1><ul>
-<li>测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值</li>
-<li>若收到一个空数组，此方法在一切情况下都会返回 true<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.every(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue&lt;<span class="number">10</span>)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># entries()，keys() 和 values() </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">+ 用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> elem <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(elem);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a'</span></span><br><span class="line"><span class="comment">// 'b'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [index, elem] <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index, elem);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0 "a"</span></span><br><span class="line"><span class="comment">// 1 "b"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果不使用<span class="keyword">for</span>...of循环，可以手动调用遍历器对象的next方法，进行遍历。</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> letter = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">let</span> entries = letter.entries();</span><br><span class="line"><span class="built_in">console</span>.log(entries.next().value); <span class="comment">// [0, 'a']</span></span><br><span class="line"><span class="built_in">console</span>.log(entries.next().value); <span class="comment">// [1, 'b']</span></span><br><span class="line"><span class="built_in">console</span>.log(entries.next().value); <span class="comment">// [2, 'c']</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>es6</tag>
-        <tag>数组</tag>
-        <tag>遍历</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>markdown</title>
-    <url>/2020/07/22/markdown/</url>
-    <content><![CDATA[<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><pre><code>#一级标题
-##二级标题
-###三级标题</code></pre><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><hr>
-<pre><code>代码 前用一个tab或者四个空格
-
-this is code 
-before is a tab or four space
-少部分区块
-`代码`
-可以指定一部分预言
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">代码</span><br></pre></td></tr></table></figure></code></pre><hr>
-<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><pre><code>---
-***</code></pre><hr>
-<hr>
-<h1 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h1><pre><code>*斜体文本*  
-_斜体文本_  
-**粗体文本**  
-__粗体文本__  
-***粗斜体文本***  
-___粗斜体文本___  </code></pre><p>效果</p>
-<p><em>斜体文本</em><br><em>斜体文本</em><br><strong>粗体文本</strong><br><strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong><br><strong><em>粗斜体文本</em></strong>  </p>
-<hr>
-<h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><pre><code>- 无序列表
-- 无序列表</code></pre><ul>
-<li><p>无序列表</p>
-</li>
-<li><h2 id="无序列表-1"><a href="#无序列表-1" class="headerlink" title="无序列表"></a>无序列表</h2><h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><ol>
-<li>有序列表</li>
-<li>有序列表</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li><p>有序列表</p>
-</li>
-<li><p>有序列表</p>
-<hr>
-<h1 id="嵌套列表"><a href="#嵌套列表" class="headerlink" title="嵌套列表"></a>嵌套列表</h1><ul>
-<li>嵌套列表<ul>
-<li>嵌套列表</li>
-<li>嵌套列表</li>
-</ul>
-<ul>
-<li>嵌套列表<ul>
-<li>嵌套列表</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>嵌套列表</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>嵌套列表<ul>
-<li>嵌套列表</li>
-<li>嵌套列表</li>
-</ul>
-<ul>
-<li>嵌套列表<ul>
-<li>嵌套列表</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>嵌套列表</li>
-</ul>
-<hr>
-<h1 id="文字超链"><a href="#文字超链" class="headerlink" title="文字超链"></a>文字超链</h1><pre><code>Tooltips可省略
-[不如](http://bruce-sha.github.io &quot;不如的博客&quot;)
-[不如][1]
-
-[1]:http://bruce-sha.github.io
-
-直接使用链接地址
-&lt;http://blog.dingyahui.top&gt;</code></pre><p> <a href="http://bruce-sha.github.io" target="_blank" rel="noopener" title="不如的博客">不如</a>   </p>
-<p> <a href="http://bruce-sha.github.io" target="_blank" rel="noopener">不如</a></p>
-<p> <a href="../_assets/images/vue生命周期图示.png">不如</a></p>
-<p> <a href="http://blog.dingyahui.top">http://blog.dingyahui.top</a></p>
-<hr>
-<h1 id="图片超链"><a href="#图片超链" class="headerlink" title="图片超链"></a>图片超链</h1><p><strong>前面加入!即可显示图片内容</strong></p>
-<pre><code> 多个感叹号，Tooltips可省略，要设置大小只能借助HTML标记
- ![GitHub Mark](http://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png &quot;GitHub Mark&quot;)
-
-![alt 属性文本](图片地址 &quot;可选标题&quot;)
-
-可以直接使用img标签，指定宽度
-&lt;img src = &quot;http://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png&quot;/&gt;</code></pre><p><img src="http://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Mark" title="GitHub Mark"> </p>
-<hr>
-<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><pre><code>Markdown中的转义字符为\，转义的有：
-\\ 反斜杠
-\` 反引号
-\* 星号
-\_ 下划线
-\{\} 大括号
-\[\] 中括号
-\(\) 小括号
-\# 井号
-\+ 加号
-\- 减号
-\. 英文句号
-\! 感叹号</code></pre><hr>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><pre><code>aaaa
-&lt;!--注释内容 --&gt;</code></pre><p>aaaa</p>
-<!-- 注释内容 -->
-
-
-<h1 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h1><pre><code>&gt;区块内容
-&gt;&gt;区块内容
-&gt;&gt;&gt;区块内容</code></pre><blockquote>
-<p>区块内容</p>
-<blockquote>
-<p>区块内容</p>
-<blockquote>
-<p>区块内容</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><pre><code>| 表头 | 表头 |
-| ---- | ---- |
-| 内容 | 内容 |
-| 内容 | 内容 |</code></pre><table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>内容</td>
-<td>内容</td>
-</tr>
-<tr>
-<td>内容</td>
-<td>内容</td>
-</tr>
-</tbody></table>
-<h1 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h1><pre><code>~~sdadadada~~</code></pre><p><del>sdasdadssa</del></p>
-<h1 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h1><pre><code>&lt;u&gt;这是个带脚注的文本&lt;/u&gt;</code></pre><p><u>这是个带脚注的文本</u></p>
-<h1 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h1><pre><code>[^这是个带脚注的文本]
-[^这是个带脚注的文本]:这个是它的脚注</code></pre><p><a href="这个是它的脚注">^这是个带脚注的文本</a></p>
-<h1 id="高级技巧"><a href="#高级技巧" class="headerlink" title="高级技巧"></a>高级技巧</h1><pre><code>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。
-
-目前支持的 HTML 元素有：&lt;kbd&gt; &lt;b&gt; &lt;i&gt; &lt;em&gt; &lt;sup&gt; &lt;sub&gt; &lt;br&gt;等 ，如：
-
-使用 &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt; 重启电脑</code></pre><p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑</p>
-]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js基本属性-不常见</title>
     <url>/2021/07/19/js%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7-%E4%B8%8D%E5%B8%B8%E8%A7%81/</url>
     <content><![CDATA[<h1 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h1><blockquote>
@@ -2076,347 +1840,239 @@ prop
       </tags>
   </entry>
   <entry>
-    <title>rem相关</title>
-    <url>/2020/08/20/rem%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><pre><code>let clientWidth = document.documentElement.clientWidth;
-if (!clientWidth) return;
-let pxOneRem = clientWidth / 7.5;
-document.documentElement.style.fontSize = pxOneRem + &quot;px&quot;;</code></pre><blockquote>
-<p>个人理解:设置html样式的font-size为10px,则1rem为未10px<br>在设备的适配中，尤其是手机设备中，由于不同设备的尺寸大小，纵横比差距过大，所以会导致使用<br>px往往不能满足这些需求。使用百分比在纵横比不同的手机上表现差距也会很大。故可以采用rem。</p>
-</blockquote>
-<blockquote>
-<p>通过获取设备html的宽度，然后除于10,100,7.5,25这些你自定义的值，在此以7.5为例。<br>那么7.5rem便是100vw，即宽度的100%。如果除的值是100，那么rem和vw便会有很多的相似点，<br>但也会有不同的地方，如若手机字体方法，则同时rem也会改变。</p>
-</blockquote>
-<h2 id="问题修复"><a href="#问题修复" class="headerlink" title="问题修复"></a>问题修复</h2><blockquote>
-<p>那么在一些改变字体的手机上，可能会出现实际的rem值比你想要的偏大，导致页面效果异常。<br>旧手机这个现象比较常见，则可以采用下列的方法进行修复，<br>这里放在vue的钩子中</p>
-</blockquote>
-<pre><code>data () {
-  return {
-      resizeEvt: &quot;orientationchange&quot; in window ? &quot;orientationchange&quot; : &quot;resize&quot;
-  }
- }
-destroyed() {
-  window.removeEventListener(this.resizeEvt, this.adjustRem(), false);
- },
- mounted() {
-   this.init();
- },
- methods: {
-   init() {
-     // 调整rem尺寸
-     this.adjustRem();
-     // 修复字体放大手机上rem尺寸错误的问题
-     window.addEventListener(this.resizeEvt, this.adjustRem(), false);
-   },
-   adjustRem() {
-     console.log(&quot;触发了尺寸检测变化&quot;);
-     let clientWidth = document.documentElement.clientWidth;
-     if (!clientWidth) return;
-     let pxOneRem = clientWidth / 7.5;
-     document.documentElement.style.fontSize = pxOneRem + &quot;px&quot;;
-     // 纠错函数
-     function adapt() {
-       let d = window.document.createElement(&quot;div&quot;);
-       d.style.width = &quot;1rem&quot;;
-       d.style.display = &quot;none&quot;;
-       let head = window.document.getElementsByTagName(&quot;head&quot;)[0];
-       head.appendChild(d);
-       let defaultFontSize = parseFloat(
-         window.getComputedStyle(d, null).getPropertyValue(&quot;width&quot;)
-       );
-       return defaultFontSize;
-     }
-     pxOneRem = (pxOneRem * pxOneRem) / adapt();
-     document.documentElement.style.fontSize = pxOneRem + &quot;px&quot;;
-   },
-  }</code></pre><blockquote>
-<p>实测有用, 如有问题评论区留言即可</p>
-</blockquote>
+    <title>js遍历</title>
+    <url>/2021/02/25/js%E9%81%8D%E5%8E%86/</url>
+    <content><![CDATA[<h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><ul>
+<li><p>返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。</p>
+</li>
+<li><p>按照原始数组元素顺序依次处理元素。</p>
+</li>
+<li><p>不会改变原数组</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.map(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue*index)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h1><ul>
+<li><p>创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。</p>
+</li>
+<li><p>不会改变原数组</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.filter(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue&gt;index)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><ul>
+<li><p>返回通过测试（函数内判断）的数组的第一个元素的值。</p>
+</li>
+<li><p>方法为数组中的每个元素都调用一次函数执行：</p>
+<ul>
+<li>当数组中的元素在测试条件时返回 true 时, find() 返回符合条件的元素，之后的值不会再调用执行函数。</li>
+<li>如果没有符合条件的元素返回 undefined</li>
+</ul>
+</li>
+<li><p>并没有改变数组的原始值。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.find(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue===index)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h1 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h1><ul>
+<li><p>返回传入一个测试条件（函数）符合条件的数组第一个元素位置。</p>
+</li>
+<li><p>方法为数组中的每个元素都调用一次函数执行：</p>
+<ul>
+<li>当数组中的元素在测试条件时返回 true 时, findIndex() 返回符合条件的元素的索引位置，之后的值不会再调用执行函数。</li>
+<li>如果没有符合条件的元素返回 -1</li>
+</ul>
+</li>
+<li><p>并没有改变数组的原始值。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.findIndex(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue===index)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h1 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h1><ul>
+<li>用于调用数组的每个元素，并将元素传递给回调函数。</li>
+<li>遍历之后添加的元素不会被遍历</li>
+<li>不会改变原数组</li>
+<li>没办法终止<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> sum=<span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> arr1 = arr.forEach(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>sum+=currentValue)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="every"><a href="#every" class="headerlink" title="every"></a>every</h1><ul>
+<li>测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值</li>
+<li>若收到一个空数组，此方法在一切情况下都会返回 true<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.every(<span class="function">(<span class="params">currentValue,index,array</span>)=&gt;</span>currentValue&lt;<span class="number">10</span>)</span><br><span class="line"><span class="comment">// currentValue 必须。当前元素的值</span></span><br><span class="line"><span class="comment">// index 可选。当前元素的索引值</span></span><br><span class="line"><span class="comment">// array 可选。当前元素属于的数组对象</span></span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># entries()，keys() 和 values() </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">+ 用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> elem <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(elem);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a'</span></span><br><span class="line"><span class="comment">// 'b'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [index, elem] <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index, elem);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0 "a"</span></span><br><span class="line"><span class="comment">// 1 "b"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果不使用<span class="keyword">for</span>...of循环，可以手动调用遍历器对象的next方法，进行遍历。</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> letter = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">let</span> entries = letter.entries();</span><br><span class="line"><span class="built_in">console</span>.log(entries.next().value); <span class="comment">// [0, 'a']</span></span><br><span class="line"><span class="built_in">console</span>.log(entries.next().value); <span class="comment">// [1, 'b']</span></span><br><span class="line"><span class="built_in">console</span>.log(entries.next().value); <span class="comment">// [2, 'c']</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>前端</category>
-        <category>rem</category>
       </categories>
       <tags>
-        <tag>vue</tag>
-        <tag>rem</tag>
+        <tag>es6</tag>
+        <tag>数组</tag>
+        <tag>遍历</tag>
       </tags>
   </entry>
   <entry>
-    <title>svg</title>
-    <url>/2021/04/13/svg/</url>
-    <content><![CDATA[<h1 id="svg路径"><a href="#svg路径" class="headerlink" title="svg路径"></a>svg路径</h1><h2 id="path"><a href="#path" class="headerlink" title="path"></a>path</h2><blockquote>
-<p><path> 标签用来定义路径。</p>
-</blockquote>
-<h3 id="d"><a href="#d" class="headerlink" title="d"></a>d</h3><blockquote>
-<p>该属性定义了一个路径</p>
-</blockquote>
-<ul>
-<li>下面的命令可用于路径数据：</li>
+    <title>markdown</title>
+    <url>/2020/07/22/markdown/</url>
+    <content><![CDATA[<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><pre><code>#一级标题
+##二级标题
+###三级标题</code></pre><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><hr>
+<pre><code>代码 前用一个tab或者四个空格
+
+this is code 
+before is a tab or four space
+少部分区块
+`代码`
+可以指定一部分预言
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">代码</span><br></pre></td></tr></table></figure></code></pre><hr>
+<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><pre><code>---
+***</code></pre><hr>
+<hr>
+<h1 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h1><pre><code>*斜体文本*  
+_斜体文本_  
+**粗体文本**  
+__粗体文本__  
+***粗斜体文本***  
+___粗斜体文本___  </code></pre><p>效果</p>
+<p><em>斜体文本</em><br><em>斜体文本</em><br><strong>粗体文本</strong><br><strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong><br><strong><em>粗斜体文本</em></strong>  </p>
+<hr>
+<h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><pre><code>- 无序列表
+- 无序列表</code></pre><ul>
+<li><p>无序列表</p>
+</li>
+<li><h2 id="无序列表-1"><a href="#无序列表-1" class="headerlink" title="无序列表"></a>无序列表</h2><h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><ol>
+<li>有序列表</li>
+<li>有序列表</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li><p>有序列表</p>
+</li>
+<li><p>有序列表</p>
+<hr>
+<h1 id="嵌套列表"><a href="#嵌套列表" class="headerlink" title="嵌套列表"></a>嵌套列表</h1><ul>
+<li>嵌套列表<ul>
+<li>嵌套列表</li>
+<li>嵌套列表</li>
 </ul>
 <ul>
-<li><p>M = moveto </p>
-<ul>
-<li>移动到点对应位置，与上个点之间没有路径</li>
-<li>M x,y</li>
-</ul>
-</li>
-<li><p>L = lineto</p>
-<ul>
-<li>与上个点之间绘制一条直线</li>
-<li>L x, y</li>
-</ul>
-</li>
-<li><p>H = horizontal lineto</p>
-<ul>
-<li>与上个点之间绘制一条水平的线</li>
-<li>H x, y</li>
-</ul>
-</li>
-<li><p>V = vertical lineto</p>
-<ul>
-<li>与上个点之间绘制一条垂直的线</li>
-<li>V x, y</li>
-</ul>
-</li>
-<li><p>C = curveto</p>
-<ul>
-<li><p>Curvto命令指定了一个贝塞尔曲线。有两种类型的贝塞尔曲线：立方曲线和二次方曲线。</p>
-</li>
-<li><p>二次方贝塞尔曲线是一种特殊的立方贝塞尔曲线，在这里，控制点的两端是相同的。二次方贝塞尔曲线的句法是”Q cx, cy  x, y“或”q dcx, dcy dx, dy“。cx和cy都是控制点的绝对坐标，而dcx和dcy分别是控制点在x和y方向上的距离。 </p>
-</li>
-<li><p>立方贝赛尔曲线遵守二次方贝赛尔曲线同样的概念，但是它需要考虑两个控制点。立方贝塞尔曲线的句法是：”C c1x,c1y c2x,c2y x,y“或者”c dc1x,dc1y dc2x,dc2y dx,dy“，在这里，c1x、c1y和c2x、c2y是分别是初始点和结束点的控制点的绝对坐标。dc1x、dc1y和dc2x、dc2y都是相对于初始点，而不是相对于结束点的。dx和dy分别是向右和向下的距离。 </p>
-</li>
-<li><p>最后，所有的贝塞尔曲线命令可以制作出一个多边贝塞尔图形，先初始化命令，然后多次指定所有的参数，就可以制作出一个多边贝赛尔图形。因此，下面的两个命令可以创建完全相同的路径：</p>
-<pre><code>&lt;path d=&quot;c 50,0 50,100 100,100 50,0 50,-100 100,-100&quot; /&gt;
-&lt;path d=&quot;c 50,0 50,100 100,100 c 50,0 50,-100 100,-100&quot; /&gt;</code></pre></li>
-</ul>
-</li>
-<li><p>S = smooth curveto</p>
-<ul>
-<li>因为它假定第一个控制点是从前一个控制点关于前一个点的反射，或者说如果没有前一个控制点的话它实际上就是前一个点。</li>
-<li>S用来创建立方贝塞尔曲线，语法是”S cx,cy x,y“或者”s dcx,dcy dx,dy“，在这里(d)cx指定第二个控制点。</li>
-</ul>
-</li>
-<li><p>Q = quadratic Belzier curve</p>
-<ul>
-<li>二次方贝塞尔曲线的句法是”Q cx, cy  x, y“或”q dcx, dcy dx, dy“。cx和cy都是控制点的绝对坐标，而dcx和dcy分别是控制点在x和y方向上的距离。</li>
-</ul>
-</li>
-<li><p>T = smooth quadratic Belzier curveto</p>
-<ul>
-<li>因为它假定第一个控制点是从前一个控制点关于前一个点的反射，或者说如果没有前一个控制点的话它实际上就是前一个点。</li>
-<li>T的句法是”T x,y“或者”t dx,dy“，分别对应于绝对坐标和相对距离，用来创建二次方贝塞尔曲线</li>
-</ul>
-</li>
-<li><p>A = elliptical Arc</p>
-<ul>
-<li>”A rx,ry xAxisRotate LargeArcFlag,SweepFlag x,y“。解构它，rx和ry分别是x和y方向的半径，而LargeArcFlag的值要到是0要么是1，用来确定是要画小弧（0）还是画大弧（1）。SweepFlag也要么是0要么是1，用来确定弧是顺时针方向（1）还是逆时针方向（0）。x和y是目的地的坐标。虽然xAxisRotate支持改变x轴相对于当前引用框架的方向，但是在Gecko 7中，这个参数看起来没什么效果。</li>
-</ul>
-</li>
-<li><p>Z = closepath</p>
-<ul>
-<li>ClosePath命令将在当前路径从，从当前点到第一个点简单画一条直线。它是最简单的命令</li>
+<li>嵌套列表<ul>
+<li>嵌套列表</li>
 </ul>
 </li>
 </ul>
+</li>
+<li>嵌套列表</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>嵌套列表<ul>
+<li>嵌套列表</li>
+<li>嵌套列表</li>
+</ul>
+<ul>
+<li>嵌套列表<ul>
+<li>嵌套列表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>嵌套列表</li>
+</ul>
+<hr>
+<h1 id="文字超链"><a href="#文字超链" class="headerlink" title="文字超链"></a>文字超链</h1><pre><code>Tooltips可省略
+[不如](http://bruce-sha.github.io &quot;不如的博客&quot;)
+[不如][1]
+
+[1]:http://bruce-sha.github.io
+
+直接使用链接地址
+&lt;http://blog.dingyahui.top&gt;</code></pre><p> <a href="http://bruce-sha.github.io" target="_blank" rel="noopener" title="不如的博客">不如</a>   </p>
+<p> <a href="http://bruce-sha.github.io" target="_blank" rel="noopener">不如</a></p>
+<p> <a href="../_assets/images/vue生命周期图示.png">不如</a></p>
+<p> <a href="http://blog.dingyahui.top">http://blog.dingyahui.top</a></p>
+<hr>
+<h1 id="图片超链"><a href="#图片超链" class="headerlink" title="图片超链"></a>图片超链</h1><p><strong>前面加入!即可显示图片内容</strong></p>
+<pre><code> 多个感叹号，Tooltips可省略，要设置大小只能借助HTML标记
+ ![GitHub Mark](http://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png &quot;GitHub Mark&quot;)
+
+![alt 属性文本](图片地址 &quot;可选标题&quot;)
+
+可以直接使用img标签，指定宽度
+&lt;img src = &quot;http://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png&quot;/&gt;</code></pre><p><img src= "/img/loading.gif" data-src="http://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Mark" title="GitHub Mark"> </p>
+<hr>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><pre><code>Markdown中的转义字符为\，转义的有：
+\\ 反斜杠
+\` 反引号
+\* 星号
+\_ 下划线
+\{\} 大括号
+\[\] 中括号
+\(\) 小括号
+\# 井号
+\+ 加号
+\- 减号
+\. 英文句号
+\! 感叹号</code></pre><hr>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><pre><code>aaaa
+&lt;!--注释内容 --&gt;</code></pre><p>aaaa</p>
+<!-- 注释内容 -->
+
+
+<h1 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h1><pre><code>&gt;区块内容
+&gt;&gt;区块内容
+&gt;&gt;&gt;区块内容</code></pre><blockquote>
+<p>区块内容</p>
 <blockquote>
-<p>注释：以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位。</p>
-</blockquote>
+<p>区块内容</p>
 <blockquote>
-<p>请把下面的代码拷贝到记事本，然后把文件保存为 “path1.svg”。把此文件放入您的 web 目录：</p>
+<p>区块内容</p>
 </blockquote>
-<pre><code>&lt;?xml version=&quot;1.0&quot; standalone=&quot;no&quot;?&gt;
-&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; 
-&quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;
-
-&lt;svg width=&quot;100%&quot; height=&quot;100%&quot; version=&quot;1.1&quot;
-xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-
-&lt;path d=&quot;M250 150 L150 350 L350 350 Z&quot; /&gt;
-
-&lt;/svg&gt;</code></pre><blockquote>
-<p>上面的例子定义了一条路径，它开始于位置 250 150，到达位置 150 350，然后从那里开始到 350 350，最后在 250 150 关闭路径。</p>
 </blockquote>
-<blockquote>
-<p>下面的例子创建了一个螺旋：</p>
 </blockquote>
-<pre><code>&lt;?xml version=&quot;1.0&quot; standalone=&quot;no&quot;?&gt;
-&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; 
-&quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><pre><code>| 表头 | 表头 |
+| ---- | ---- |
+| 内容 | 内容 |
+| 内容 | 内容 |</code></pre><table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+</tbody></table>
+<h1 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h1><pre><code>~~sdadadada~~</code></pre><p><del>sdasdadssa</del></p>
+<h1 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h1><pre><code>&lt;u&gt;这是个带脚注的文本&lt;/u&gt;</code></pre><p><u>这是个带脚注的文本</u></p>
+<h1 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h1><pre><code>[^这是个带脚注的文本]
+[^这是个带脚注的文本]:这个是它的脚注</code></pre><p><a href="这个是它的脚注">^这是个带脚注的文本</a></p>
+<h1 id="高级技巧"><a href="#高级技巧" class="headerlink" title="高级技巧"></a>高级技巧</h1><pre><code>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。
 
-&lt;svg width=&quot;100%&quot; height=&quot;100%&quot; version=&quot;1.1&quot;
-xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+目前支持的 HTML 元素有：&lt;kbd&gt; &lt;b&gt; &lt;i&gt; &lt;em&gt; &lt;sup&gt; &lt;sub&gt; &lt;br&gt;等 ，如：
 
-&lt;path d=&quot;M153 334
-C153 334 151 334 151 334
-C151 339 153 344 156 344
-C164 344 171 339 171 334
-C171 322 164 314 156 314
-C142 314 131 322 131 334
-C131 350 142 364 156 364
-C175 364 191 350 191 334
-C191 311 175 294 156 294
-C131 294 111 311 111 334
-C111 361 131 384 156 384
-C186 384 211 361 211 334
-C211 300 186 274 156 274&quot;
-style=&quot;fill:white;stroke:red;stroke-width:2&quot;/&gt;
-
-&lt;/svg&gt;</code></pre><h2 id="Stroke属性"><a href="#Stroke属性" class="headerlink" title="Stroke属性"></a>Stroke属性</h2><h3 id="Stroke"><a href="#Stroke" class="headerlink" title="Stroke"></a>Stroke</h3><blockquote>
-<p>Stroke属性定义一条线，文本或元素轮廓颜色：</p>
-</blockquote>
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <g fill="none">
-  <path stroke="red" d="M5 20 l215 0" />
-  <path stroke="blue" d="M5 40 l215 0" />
-  <path stroke="black" d="M5 60 l215 0" />
-  </g>
-  </svg>
-
-<pre><code>下面是SVG代码：
-实例
-&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;
-&lt;g fill=&quot;none&quot;&gt;
-&lt;path stroke=&quot;red&quot; d=&quot;M5 20 l215 0&quot; /&gt;
-&lt;path stroke=&quot;blue&quot; d=&quot;M5 40 l215 0&quot; /&gt;
-&lt;path stroke=&quot;black&quot; d=&quot;M5 60 l215 0&quot; /&gt;
-&lt;/g&gt;
-&lt;/svg&gt;</code></pre><h3 id="stroke-width"><a href="#stroke-width" class="headerlink" title="stroke-width"></a>stroke-width</h3><blockquote>
-<p>stroke- width属性定义了一条线，文本或元素轮廓厚度：</p>
-</blockquote>
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <g fill="none" stroke="black">
-  <path stroke-width="2" d="M5 20 l215 0" />
-  <path stroke-width="4" d="M5 40 l215 0" />
-  <path stroke-width="6" d="M5 60 l215 0" />
-  </g>
-  </svg>
-
-
-<p>下面是SVG代码：</p>
-<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;
-&lt;g fill=&quot;none&quot; stroke=&quot;black&quot;&gt;
-&lt;path stroke-width=&quot;2&quot; d=&quot;M5 20 l215 0&quot; /&gt;
-&lt;path stroke-width=&quot;4&quot; d=&quot;M5 40 l215 0&quot; /&gt;
-&lt;path stroke-width=&quot;6&quot; d=&quot;M5 60 l215 0&quot; /&gt;
-&lt;/g&gt;
-&lt;/svg&gt;</code></pre><h3 id="stroke-linecap"><a href="#stroke-linecap" class="headerlink" title="stroke-linecap"></a>stroke-linecap</h3><blockquote>
-<p>strokelinecap属性定义不同类型的开放路径的终结：</p>
-</blockquote>
-<p>实例</p>
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <g fill="none" stroke="black" stroke-width="6">
-  <path stroke-linecap="butt" d="M5 20 l215 0" />
-  <path stroke-linecap="round" d="M5 40 l215 0" />
-  <path stroke-linecap="square" d="M5 60 l215 0" />
-  </g>
-  </svg>
-
-<p>下面是SVG代码：</p>
-<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;
-&lt;g fill=&quot;none&quot; stroke=&quot;black&quot; stroke-width=&quot;6&quot;&gt;
-&lt;path stroke-linecap=&quot;butt&quot; d=&quot;M5 20 l215 0&quot; /&gt;
-&lt;path stroke-linecap=&quot;round&quot; d=&quot;M5 40 l215 0&quot; /&gt;
-&lt;path stroke-linecap=&quot;square&quot; d=&quot;M5 60 l215 0&quot; /&gt;
-&lt;/g&gt;
-&lt;/svg&gt;</code></pre><h3 id="stroke-dasharray"><a href="#stroke-dasharray" class="headerlink" title="stroke-dasharray"></a>stroke-dasharray</h3><blockquote>
-<p>strokedasharray属性用于创建虚线：</p>
-</blockquote>
-<p>实例</p>
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <g fill="none" stroke="black" stroke-width="4">
-  <path stroke-dasharray="5,5" d="M5 20 l215 0" />
-  <path stroke-dasharray="10,10" d="M5 40 l215 0" />
-  <path stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
-  </g>
-  </svg>
-
-<p>下面是SVG代码：</p>
-<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;
-&lt;g fill=&quot;none&quot; stroke=&quot;black&quot; stroke-width=&quot;4&quot;&gt;
-&lt;path stroke-dasharray=&quot;5,5&quot; d=&quot;M5 20 l215 0&quot; /&gt;
-&lt;path stroke-dasharray=&quot;10,10&quot; d=&quot;M5 40 l215 0&quot; /&gt;
-&lt;path stroke-dasharray=&quot;20,10,5,5,5,10&quot; d=&quot;M5 60 l215 0&quot; /&gt;
-&lt;/g&gt;
-&lt;/svg&gt;</code></pre>]]></content>
+使用 &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt; 重启电脑</code></pre><p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑</p>
+]]></content>
       <categories>
-        <category>前端</category>
-        <category>svg</category>
+        <category>markdown</category>
       </categories>
       <tags>
-        <tag>svg</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>scss函数</title>
-    <url>/2020/07/23/scss%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="Scss函数"><a href="#Scss函数" class="headerlink" title="Scss函数"></a>Scss函数</h1><h2 id="abs-number-绝对值"><a href="#abs-number-绝对值" class="headerlink" title="abs($number) 绝对值"></a>abs($number) 绝对值</h2><blockquote>
-<p>说明：取变量的绝对值，可以包含单位。<br>返回类型：number</p>
-</blockquote>
-<pre><code>@debug abs(-10);   // 10
-@debug abs(-10in); // 10in
-@debug abs(-10px); // 10px</code></pre><h2 id="ceil-number-向高位取整"><a href="#ceil-number-向高位取整" class="headerlink" title="ceil($number) 向高位取整"></a>ceil($number) 向高位取整</h2><blockquote>
-<p>说明：把数值中的小数舍去，取下一个整数。返回类型：number</p>
-</blockquote>
-<pre><code>@debug ceil(4); // 4
-@debug ceil(4.2); // 5
-@debug ceil(4.9); // 5</code></pre><h2 id="comparable-number-number2-判断单位"><a href="#comparable-number-number2-判断单位" class="headerlink" title="comparable($number,$number2) 判断单位"></a>comparable($number,$number2) 判断单位</h2><blockquote>
-<p>说明：判断$number和$number2是否有同类型的单位，例如px和px，cm和mm等。如果返回true，这两个变量可以相加、相减、比较，否则对$number和$number2进行上述运算时会报错。<br>返回类型：boolean</p>
-</blockquote>
-<pre><code>@debug comparable(2px, 1px); // true
-@debug comparable(100px, 3em); // false
-@debug comparable(10cm, 3mm); // true</code></pre><h2 id="floor-number-向低位取整"><a href="#floor-number-向低位取整" class="headerlink" title="floor($number) 向低位取整"></a>floor($number) 向低位取整</h2><blockquote>
-<p>说明：把数值中的小数舍去。<br>返回类型：number</p>
-</blockquote>
-<pre><code>@debug floor(4); // 4
-@debug floor(4.2); // 4
-@debug floor(4.9); // 4</code></pre><h2 id="max-number…-取最大值"><a href="#max-number…-取最大值" class="headerlink" title="max($number…) 取最大值"></a>max($number…) 取最大值</h2><blockquote>
-<p>说明：参数中最大的一个数。如果参数是数组，则需要在后面添加…才能执行，不然会报错<br>返回类型：number</p>
-</blockquote>
-<pre><code>@debug max(1px, 4px); // 4px
-$widths: 50px, 30px, 100px;
-@debug max($widths...); // 100px</code></pre><h2 id="min-number…-取最小值"><a href="#min-number…-取最小值" class="headerlink" title="min($number…) 取最小值"></a>min($number…) 取最小值</h2><blockquote>
-<p>说明：参数中最小的一个数。如果参数是数组，则需要在后面添加…才能执行，不然会报错<br>返回类型：number</p>
-</blockquote>
-<pre><code>@debug min(1px, 4px); // 1px
-$widths: 50px, 30px, 100px;
-@debug min($widths...); // 30px</code></pre><h2 id="percentage-number-转换为百分比"><a href="#percentage-number-转换为百分比" class="headerlink" title="percentage($number) 转换为百分比"></a>percentage($number) 转换为百分比</h2><blockquote>
-<p>说明：把没有单位的值转换为百分比，通常是0到1的浮点数，带单位会报错。此函数和$number * 100%效果是一样的。<br>返回类型：number</p>
-</blockquote>
-<pre><code>@debug percentage(0.2); // 20%
-$number : 0.2;
-@debug $number * 100%;  // 20%
-@debug percentage(100px / 50px); // 200%  100px和50px带单位，但是除法运算后是2，不带单位</code></pre><h2 id="random-limit-null-生成随机数"><a href="#random-limit-null-生成随机数" class="headerlink" title="random($limit:null)  生成随机数"></a>random($limit:null)  生成随机数</h2><blockquote>
-<p>说明：生成随机数。参数$limit默认为null，为随机数最大值。<br>返回类型：number<br>如果$limit为null时，结果介于0与1之间。</p>
-</blockquote>
-<pre><code>@debug random(); // 0.2821251858
-@debug random(); // 0.6221325814</code></pre><blockquote>
-<p>如果$limit不为空时，结果介于1与$limit之间，参数必须大于或等于1，而且为整数，否则报错。</p>
-</blockquote>
-<pre><code>@debug random(10); // 4
-@debug random(10000); // 5373</code></pre><h2 id="round-number-四舍五入"><a href="#round-number-四舍五入" class="headerlink" title="round($number) 四舍五入"></a>round($number) 四舍五入</h2><blockquote>
-<p>说明：四舍五入（0.5进位操作）<br>返回类型：number</p>
-</blockquote>
-<pre><code>@debug round(4); // 4
-@debug round(4.2); // 4
-@debug round(4.9); // 5</code></pre><h2 id="unit-number-取单位"><a href="#unit-number-取单位" class="headerlink" title="unit($number) 取单位"></a>unit($number) 取单位</h2><blockquote>
-<p>说明：获取参数的单位，字符串形式返回<br>返回类型：quoted string<br>注意：这个方法是用于调试的，不保证输出结果和发布的一致</p>
-</blockquote>
-<pre><code>@debug unit(100); // &quot;&quot;
-@debug unit(100px); // &quot;px&quot;
-@debug unit(5px * 10px); // &quot;px*px&quot;
-@debug unit(5px / 1s); // &quot;px/s&quot;</code></pre><h2 id="unitless-number"><a href="#unitless-number" class="headerlink" title="unitless($number)"></a>unitless($number)</h2><blockquote>
-<p>说明：判断$number是否没有单位<br>返回类型：boolean</p>
-</blockquote>
-<pre><code>@debug unitless(100); // true</code></pre>]]></content>
-      <categories>
-        <category>前端</category>
-        <category>css</category>
-        <category>scss</category>
-      </categories>
-      <tags>
-        <tag>scss</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -3061,6 +2717,350 @@ esc退出到命令模式
       </tags>
   </entry>
   <entry>
+    <title>rem相关</title>
+    <url>/2020/08/20/rem%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><pre><code>let clientWidth = document.documentElement.clientWidth;
+if (!clientWidth) return;
+let pxOneRem = clientWidth / 7.5;
+document.documentElement.style.fontSize = pxOneRem + &quot;px&quot;;</code></pre><blockquote>
+<p>个人理解:设置html样式的font-size为10px,则1rem为未10px<br>在设备的适配中，尤其是手机设备中，由于不同设备的尺寸大小，纵横比差距过大，所以会导致使用<br>px往往不能满足这些需求。使用百分比在纵横比不同的手机上表现差距也会很大。故可以采用rem。</p>
+</blockquote>
+<blockquote>
+<p>通过获取设备html的宽度，然后除于10,100,7.5,25这些你自定义的值，在此以7.5为例。<br>那么7.5rem便是100vw，即宽度的100%。如果除的值是100，那么rem和vw便会有很多的相似点，<br>但也会有不同的地方，如若手机字体方法，则同时rem也会改变。</p>
+</blockquote>
+<h2 id="问题修复"><a href="#问题修复" class="headerlink" title="问题修复"></a>问题修复</h2><blockquote>
+<p>那么在一些改变字体的手机上，可能会出现实际的rem值比你想要的偏大，导致页面效果异常。<br>旧手机这个现象比较常见，则可以采用下列的方法进行修复，<br>这里放在vue的钩子中</p>
+</blockquote>
+<pre><code>data () {
+  return {
+      resizeEvt: &quot;orientationchange&quot; in window ? &quot;orientationchange&quot; : &quot;resize&quot;
+  }
+ }
+destroyed() {
+  window.removeEventListener(this.resizeEvt, this.adjustRem(), false);
+ },
+ mounted() {
+   this.init();
+ },
+ methods: {
+   init() {
+     // 调整rem尺寸
+     this.adjustRem();
+     // 修复字体放大手机上rem尺寸错误的问题
+     window.addEventListener(this.resizeEvt, this.adjustRem(), false);
+   },
+   adjustRem() {
+     console.log(&quot;触发了尺寸检测变化&quot;);
+     let clientWidth = document.documentElement.clientWidth;
+     if (!clientWidth) return;
+     let pxOneRem = clientWidth / 7.5;
+     document.documentElement.style.fontSize = pxOneRem + &quot;px&quot;;
+     // 纠错函数
+     function adapt() {
+       let d = window.document.createElement(&quot;div&quot;);
+       d.style.width = &quot;1rem&quot;;
+       d.style.display = &quot;none&quot;;
+       let head = window.document.getElementsByTagName(&quot;head&quot;)[0];
+       head.appendChild(d);
+       let defaultFontSize = parseFloat(
+         window.getComputedStyle(d, null).getPropertyValue(&quot;width&quot;)
+       );
+       return defaultFontSize;
+     }
+     pxOneRem = (pxOneRem * pxOneRem) / adapt();
+     document.documentElement.style.fontSize = pxOneRem + &quot;px&quot;;
+   },
+  }</code></pre><blockquote>
+<p>实测有用, 如有问题评论区留言即可</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>rem</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>rem</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>scss函数</title>
+    <url>/2020/07/23/scss%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="Scss函数"><a href="#Scss函数" class="headerlink" title="Scss函数"></a>Scss函数</h1><h2 id="abs-number-绝对值"><a href="#abs-number-绝对值" class="headerlink" title="abs($number) 绝对值"></a>abs($number) 绝对值</h2><blockquote>
+<p>说明：取变量的绝对值，可以包含单位。<br>返回类型：number</p>
+</blockquote>
+<pre><code>@debug abs(-10);   // 10
+@debug abs(-10in); // 10in
+@debug abs(-10px); // 10px</code></pre><h2 id="ceil-number-向高位取整"><a href="#ceil-number-向高位取整" class="headerlink" title="ceil($number) 向高位取整"></a>ceil($number) 向高位取整</h2><blockquote>
+<p>说明：把数值中的小数舍去，取下一个整数。返回类型：number</p>
+</blockquote>
+<pre><code>@debug ceil(4); // 4
+@debug ceil(4.2); // 5
+@debug ceil(4.9); // 5</code></pre><h2 id="comparable-number-number2-判断单位"><a href="#comparable-number-number2-判断单位" class="headerlink" title="comparable($number,$number2) 判断单位"></a>comparable($number,$number2) 判断单位</h2><blockquote>
+<p>说明：判断$number和$number2是否有同类型的单位，例如px和px，cm和mm等。如果返回true，这两个变量可以相加、相减、比较，否则对$number和$number2进行上述运算时会报错。<br>返回类型：boolean</p>
+</blockquote>
+<pre><code>@debug comparable(2px, 1px); // true
+@debug comparable(100px, 3em); // false
+@debug comparable(10cm, 3mm); // true</code></pre><h2 id="floor-number-向低位取整"><a href="#floor-number-向低位取整" class="headerlink" title="floor($number) 向低位取整"></a>floor($number) 向低位取整</h2><blockquote>
+<p>说明：把数值中的小数舍去。<br>返回类型：number</p>
+</blockquote>
+<pre><code>@debug floor(4); // 4
+@debug floor(4.2); // 4
+@debug floor(4.9); // 4</code></pre><h2 id="max-number…-取最大值"><a href="#max-number…-取最大值" class="headerlink" title="max($number…) 取最大值"></a>max($number…) 取最大值</h2><blockquote>
+<p>说明：参数中最大的一个数。如果参数是数组，则需要在后面添加…才能执行，不然会报错<br>返回类型：number</p>
+</blockquote>
+<pre><code>@debug max(1px, 4px); // 4px
+$widths: 50px, 30px, 100px;
+@debug max($widths...); // 100px</code></pre><h2 id="min-number…-取最小值"><a href="#min-number…-取最小值" class="headerlink" title="min($number…) 取最小值"></a>min($number…) 取最小值</h2><blockquote>
+<p>说明：参数中最小的一个数。如果参数是数组，则需要在后面添加…才能执行，不然会报错<br>返回类型：number</p>
+</blockquote>
+<pre><code>@debug min(1px, 4px); // 1px
+$widths: 50px, 30px, 100px;
+@debug min($widths...); // 30px</code></pre><h2 id="percentage-number-转换为百分比"><a href="#percentage-number-转换为百分比" class="headerlink" title="percentage($number) 转换为百分比"></a>percentage($number) 转换为百分比</h2><blockquote>
+<p>说明：把没有单位的值转换为百分比，通常是0到1的浮点数，带单位会报错。此函数和$number * 100%效果是一样的。<br>返回类型：number</p>
+</blockquote>
+<pre><code>@debug percentage(0.2); // 20%
+$number : 0.2;
+@debug $number * 100%;  // 20%
+@debug percentage(100px / 50px); // 200%  100px和50px带单位，但是除法运算后是2，不带单位</code></pre><h2 id="random-limit-null-生成随机数"><a href="#random-limit-null-生成随机数" class="headerlink" title="random($limit:null)  生成随机数"></a>random($limit:null)  生成随机数</h2><blockquote>
+<p>说明：生成随机数。参数$limit默认为null，为随机数最大值。<br>返回类型：number<br>如果$limit为null时，结果介于0与1之间。</p>
+</blockquote>
+<pre><code>@debug random(); // 0.2821251858
+@debug random(); // 0.6221325814</code></pre><blockquote>
+<p>如果$limit不为空时，结果介于1与$limit之间，参数必须大于或等于1，而且为整数，否则报错。</p>
+</blockquote>
+<pre><code>@debug random(10); // 4
+@debug random(10000); // 5373</code></pre><h2 id="round-number-四舍五入"><a href="#round-number-四舍五入" class="headerlink" title="round($number) 四舍五入"></a>round($number) 四舍五入</h2><blockquote>
+<p>说明：四舍五入（0.5进位操作）<br>返回类型：number</p>
+</blockquote>
+<pre><code>@debug round(4); // 4
+@debug round(4.2); // 4
+@debug round(4.9); // 5</code></pre><h2 id="unit-number-取单位"><a href="#unit-number-取单位" class="headerlink" title="unit($number) 取单位"></a>unit($number) 取单位</h2><blockquote>
+<p>说明：获取参数的单位，字符串形式返回<br>返回类型：quoted string<br>注意：这个方法是用于调试的，不保证输出结果和发布的一致</p>
+</blockquote>
+<pre><code>@debug unit(100); // &quot;&quot;
+@debug unit(100px); // &quot;px&quot;
+@debug unit(5px * 10px); // &quot;px*px&quot;
+@debug unit(5px / 1s); // &quot;px/s&quot;</code></pre><h2 id="unitless-number"><a href="#unitless-number" class="headerlink" title="unitless($number)"></a>unitless($number)</h2><blockquote>
+<p>说明：判断$number是否没有单位<br>返回类型：boolean</p>
+</blockquote>
+<pre><code>@debug unitless(100); // true</code></pre>]]></content>
+      <categories>
+        <category>前端</category>
+        <category>css</category>
+        <category>scss</category>
+      </categories>
+      <tags>
+        <tag>scss</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>svg</title>
+    <url>/2021/04/13/svg/</url>
+    <content><![CDATA[<h1 id="svg路径"><a href="#svg路径" class="headerlink" title="svg路径"></a>svg路径</h1><h2 id="path"><a href="#path" class="headerlink" title="path"></a>path</h2><blockquote>
+<p><path> 标签用来定义路径。</p>
+</blockquote>
+<h3 id="d"><a href="#d" class="headerlink" title="d"></a>d</h3><blockquote>
+<p>该属性定义了一个路径</p>
+</blockquote>
+<ul>
+<li>下面的命令可用于路径数据：</li>
+</ul>
+<ul>
+<li><p>M = moveto </p>
+<ul>
+<li>移动到点对应位置，与上个点之间没有路径</li>
+<li>M x,y</li>
+</ul>
+</li>
+<li><p>L = lineto</p>
+<ul>
+<li>与上个点之间绘制一条直线</li>
+<li>L x, y</li>
+</ul>
+</li>
+<li><p>H = horizontal lineto</p>
+<ul>
+<li>与上个点之间绘制一条水平的线</li>
+<li>H x, y</li>
+</ul>
+</li>
+<li><p>V = vertical lineto</p>
+<ul>
+<li>与上个点之间绘制一条垂直的线</li>
+<li>V x, y</li>
+</ul>
+</li>
+<li><p>C = curveto</p>
+<ul>
+<li><p>Curvto命令指定了一个贝塞尔曲线。有两种类型的贝塞尔曲线：立方曲线和二次方曲线。</p>
+</li>
+<li><p>二次方贝塞尔曲线是一种特殊的立方贝塞尔曲线，在这里，控制点的两端是相同的。二次方贝塞尔曲线的句法是”Q cx, cy  x, y“或”q dcx, dcy dx, dy“。cx和cy都是控制点的绝对坐标，而dcx和dcy分别是控制点在x和y方向上的距离。 </p>
+</li>
+<li><p>立方贝赛尔曲线遵守二次方贝赛尔曲线同样的概念，但是它需要考虑两个控制点。立方贝塞尔曲线的句法是：”C c1x,c1y c2x,c2y x,y“或者”c dc1x,dc1y dc2x,dc2y dx,dy“，在这里，c1x、c1y和c2x、c2y是分别是初始点和结束点的控制点的绝对坐标。dc1x、dc1y和dc2x、dc2y都是相对于初始点，而不是相对于结束点的。dx和dy分别是向右和向下的距离。 </p>
+</li>
+<li><p>最后，所有的贝塞尔曲线命令可以制作出一个多边贝塞尔图形，先初始化命令，然后多次指定所有的参数，就可以制作出一个多边贝赛尔图形。因此，下面的两个命令可以创建完全相同的路径：</p>
+<pre><code>&lt;path d=&quot;c 50,0 50,100 100,100 50,0 50,-100 100,-100&quot; /&gt;
+&lt;path d=&quot;c 50,0 50,100 100,100 c 50,0 50,-100 100,-100&quot; /&gt;</code></pre></li>
+</ul>
+</li>
+<li><p>S = smooth curveto</p>
+<ul>
+<li>因为它假定第一个控制点是从前一个控制点关于前一个点的反射，或者说如果没有前一个控制点的话它实际上就是前一个点。</li>
+<li>S用来创建立方贝塞尔曲线，语法是”S cx,cy x,y“或者”s dcx,dcy dx,dy“，在这里(d)cx指定第二个控制点。</li>
+</ul>
+</li>
+<li><p>Q = quadratic Belzier curve</p>
+<ul>
+<li>二次方贝塞尔曲线的句法是”Q cx, cy  x, y“或”q dcx, dcy dx, dy“。cx和cy都是控制点的绝对坐标，而dcx和dcy分别是控制点在x和y方向上的距离。</li>
+</ul>
+</li>
+<li><p>T = smooth quadratic Belzier curveto</p>
+<ul>
+<li>因为它假定第一个控制点是从前一个控制点关于前一个点的反射，或者说如果没有前一个控制点的话它实际上就是前一个点。</li>
+<li>T的句法是”T x,y“或者”t dx,dy“，分别对应于绝对坐标和相对距离，用来创建二次方贝塞尔曲线</li>
+</ul>
+</li>
+<li><p>A = elliptical Arc</p>
+<ul>
+<li>”A rx,ry xAxisRotate LargeArcFlag,SweepFlag x,y“。解构它，rx和ry分别是x和y方向的半径，而LargeArcFlag的值要到是0要么是1，用来确定是要画小弧（0）还是画大弧（1）。SweepFlag也要么是0要么是1，用来确定弧是顺时针方向（1）还是逆时针方向（0）。x和y是目的地的坐标。虽然xAxisRotate支持改变x轴相对于当前引用框架的方向，但是在Gecko 7中，这个参数看起来没什么效果。</li>
+</ul>
+</li>
+<li><p>Z = closepath</p>
+<ul>
+<li>ClosePath命令将在当前路径从，从当前点到第一个点简单画一条直线。它是最简单的命令</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注释：以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位。</p>
+</blockquote>
+<blockquote>
+<p>请把下面的代码拷贝到记事本，然后把文件保存为 “path1.svg”。把此文件放入您的 web 目录：</p>
+</blockquote>
+<pre><code>&lt;?xml version=&quot;1.0&quot; standalone=&quot;no&quot;?&gt;
+&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; 
+&quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;
+
+&lt;svg width=&quot;100%&quot; height=&quot;100%&quot; version=&quot;1.1&quot;
+xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+
+&lt;path d=&quot;M250 150 L150 350 L350 350 Z&quot; /&gt;
+
+&lt;/svg&gt;</code></pre><blockquote>
+<p>上面的例子定义了一条路径，它开始于位置 250 150，到达位置 150 350，然后从那里开始到 350 350，最后在 250 150 关闭路径。</p>
+</blockquote>
+<blockquote>
+<p>下面的例子创建了一个螺旋：</p>
+</blockquote>
+<pre><code>&lt;?xml version=&quot;1.0&quot; standalone=&quot;no&quot;?&gt;
+&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; 
+&quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;
+
+&lt;svg width=&quot;100%&quot; height=&quot;100%&quot; version=&quot;1.1&quot;
+xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+
+&lt;path d=&quot;M153 334
+C153 334 151 334 151 334
+C151 339 153 344 156 344
+C164 344 171 339 171 334
+C171 322 164 314 156 314
+C142 314 131 322 131 334
+C131 350 142 364 156 364
+C175 364 191 350 191 334
+C191 311 175 294 156 294
+C131 294 111 311 111 334
+C111 361 131 384 156 384
+C186 384 211 361 211 334
+C211 300 186 274 156 274&quot;
+style=&quot;fill:white;stroke:red;stroke-width:2&quot;/&gt;
+
+&lt;/svg&gt;</code></pre><h2 id="Stroke属性"><a href="#Stroke属性" class="headerlink" title="Stroke属性"></a>Stroke属性</h2><h3 id="Stroke"><a href="#Stroke" class="headerlink" title="Stroke"></a>Stroke</h3><blockquote>
+<p>Stroke属性定义一条线，文本或元素轮廓颜色：</p>
+</blockquote>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <g fill="none">
+  <path stroke="red" d="M5 20 l215 0" />
+  <path stroke="blue" d="M5 40 l215 0" />
+  <path stroke="black" d="M5 60 l215 0" />
+  </g>
+  </svg>
+
+<pre><code>下面是SVG代码：
+实例
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;
+&lt;g fill=&quot;none&quot;&gt;
+&lt;path stroke=&quot;red&quot; d=&quot;M5 20 l215 0&quot; /&gt;
+&lt;path stroke=&quot;blue&quot; d=&quot;M5 40 l215 0&quot; /&gt;
+&lt;path stroke=&quot;black&quot; d=&quot;M5 60 l215 0&quot; /&gt;
+&lt;/g&gt;
+&lt;/svg&gt;</code></pre><h3 id="stroke-width"><a href="#stroke-width" class="headerlink" title="stroke-width"></a>stroke-width</h3><blockquote>
+<p>stroke- width属性定义了一条线，文本或元素轮廓厚度：</p>
+</blockquote>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <g fill="none" stroke="black">
+  <path stroke-width="2" d="M5 20 l215 0" />
+  <path stroke-width="4" d="M5 40 l215 0" />
+  <path stroke-width="6" d="M5 60 l215 0" />
+  </g>
+  </svg>
+
+
+<p>下面是SVG代码：</p>
+<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;
+&lt;g fill=&quot;none&quot; stroke=&quot;black&quot;&gt;
+&lt;path stroke-width=&quot;2&quot; d=&quot;M5 20 l215 0&quot; /&gt;
+&lt;path stroke-width=&quot;4&quot; d=&quot;M5 40 l215 0&quot; /&gt;
+&lt;path stroke-width=&quot;6&quot; d=&quot;M5 60 l215 0&quot; /&gt;
+&lt;/g&gt;
+&lt;/svg&gt;</code></pre><h3 id="stroke-linecap"><a href="#stroke-linecap" class="headerlink" title="stroke-linecap"></a>stroke-linecap</h3><blockquote>
+<p>strokelinecap属性定义不同类型的开放路径的终结：</p>
+</blockquote>
+<p>实例</p>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <g fill="none" stroke="black" stroke-width="6">
+  <path stroke-linecap="butt" d="M5 20 l215 0" />
+  <path stroke-linecap="round" d="M5 40 l215 0" />
+  <path stroke-linecap="square" d="M5 60 l215 0" />
+  </g>
+  </svg>
+
+<p>下面是SVG代码：</p>
+<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;
+&lt;g fill=&quot;none&quot; stroke=&quot;black&quot; stroke-width=&quot;6&quot;&gt;
+&lt;path stroke-linecap=&quot;butt&quot; d=&quot;M5 20 l215 0&quot; /&gt;
+&lt;path stroke-linecap=&quot;round&quot; d=&quot;M5 40 l215 0&quot; /&gt;
+&lt;path stroke-linecap=&quot;square&quot; d=&quot;M5 60 l215 0&quot; /&gt;
+&lt;/g&gt;
+&lt;/svg&gt;</code></pre><h3 id="stroke-dasharray"><a href="#stroke-dasharray" class="headerlink" title="stroke-dasharray"></a>stroke-dasharray</h3><blockquote>
+<p>strokedasharray属性用于创建虚线：</p>
+</blockquote>
+<p>实例</p>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <g fill="none" stroke="black" stroke-width="4">
+  <path stroke-dasharray="5,5" d="M5 20 l215 0" />
+  <path stroke-dasharray="10,10" d="M5 40 l215 0" />
+  <path stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
+  </g>
+  </svg>
+
+<p>下面是SVG代码：</p>
+<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;&gt;
+&lt;g fill=&quot;none&quot; stroke=&quot;black&quot; stroke-width=&quot;4&quot;&gt;
+&lt;path stroke-dasharray=&quot;5,5&quot; d=&quot;M5 20 l215 0&quot; /&gt;
+&lt;path stroke-dasharray=&quot;10,10&quot; d=&quot;M5 40 l215 0&quot; /&gt;
+&lt;path stroke-dasharray=&quot;20,10,5,5,5,10&quot; d=&quot;M5 60 l215 0&quot; /&gt;
+&lt;/g&gt;
+&lt;/svg&gt;</code></pre>]]></content>
+      <categories>
+        <category>前端</category>
+        <category>svg</category>
+      </categories>
+      <tags>
+        <tag>svg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>.sync</title>
     <url>/2020/07/28/sync/</url>
     <content><![CDATA[<h1 id="sync修饰符"><a href="#sync修饰符" class="headerlink" title=".sync修饰符"></a>.sync修饰符</h1><blockquote>
@@ -3687,6 +3687,52 @@ class Location {
       </tags>
   </entry>
   <entry>
+    <title>vue-router实现404</title>
+    <url>/2020/09/21/vue-router%E5%AE%9E%E7%8E%B0404/</url>
+    <content><![CDATA[<h1 id="实现页面跳转到404页面"><a href="#实现页面跳转到404页面" class="headerlink" title="实现页面跳转到404页面"></a>实现页面跳转到404页面</h1><pre><code>const page404 = {
+path: &quot;/*&quot;,
+name: &quot;error_404&quot;,
+hidden: true,
+meta: {
+    title: &quot;404-页面不存在&quot;
+},
+component: () =&gt; import(&quot;../views/error_page/404.vue&quot;)
+};
+const routes = [
+{
+    path: &quot;/&quot;,
+    // name: &quot;Home&quot;,
+    component: () =&gt; import(&quot;../views/Home&quot;),
+},
+page500,
+page404
+];
+//添加其他页面请写在page404之前，否则会覆盖匹配</code></pre><h1 id="实现不存页面均跳转到首页"><a href="#实现不存页面均跳转到首页" class="headerlink" title="实现不存页面均跳转到首页"></a>实现不存页面均跳转到首页</h1><pre><code>const pageNotFound = {
+path: &quot;/*&quot;,
+component: NotFoundComponent
+};
+const routes = [
+{
+    path: &quot;/&quot;,
+    // name: &quot;Home&quot;,
+    component: () =&gt; import(&quot;../views/Home&quot;),
+},
+pageNotFound
+];
+//添加其他页面请写在pageNotFound之前，否则会覆盖匹配</code></pre>]]></content>
+      <categories>
+        <category>前端</category>
+        <category>vue</category>
+        <category>vue-router</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue-router</tag>
+        <tag>vue-cli3</tag>
+        <tag>404</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vue.config.js</title>
     <url>/2020/08/31/vue-config-js/</url>
     <content><![CDATA[<h1 id="vue-config-js文件配置"><a href="#vue-config-js文件配置" class="headerlink" title="vue.config.js文件配置"></a>vue.config.js文件配置</h1><blockquote>
@@ -3783,390 +3829,8 @@ module.exports = {
       </categories>
       <tags>
         <tag>vue</tag>
+        <tag>vue-cli3</tag>
         <tag>config</tag>
-        <tag>vue-cli3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue-router实现404</title>
-    <url>/2020/09/21/vue-router%E5%AE%9E%E7%8E%B0404/</url>
-    <content><![CDATA[<h1 id="实现页面跳转到404页面"><a href="#实现页面跳转到404页面" class="headerlink" title="实现页面跳转到404页面"></a>实现页面跳转到404页面</h1><pre><code>const page404 = {
-path: &quot;/*&quot;,
-name: &quot;error_404&quot;,
-hidden: true,
-meta: {
-    title: &quot;404-页面不存在&quot;
-},
-component: () =&gt; import(&quot;../views/error_page/404.vue&quot;)
-};
-const routes = [
-{
-    path: &quot;/&quot;,
-    // name: &quot;Home&quot;,
-    component: () =&gt; import(&quot;../views/Home&quot;),
-},
-page500,
-page404
-];
-//添加其他页面请写在page404之前，否则会覆盖匹配</code></pre><h1 id="实现不存页面均跳转到首页"><a href="#实现不存页面均跳转到首页" class="headerlink" title="实现不存页面均跳转到首页"></a>实现不存页面均跳转到首页</h1><pre><code>const pageNotFound = {
-path: &quot;/*&quot;,
-component: NotFoundComponent
-};
-const routes = [
-{
-    path: &quot;/&quot;,
-    // name: &quot;Home&quot;,
-    component: () =&gt; import(&quot;../views/Home&quot;),
-},
-pageNotFound
-];
-//添加其他页面请写在pageNotFound之前，否则会覆盖匹配</code></pre>]]></content>
-      <categories>
-        <category>前端</category>
-        <category>vue</category>
-        <category>vue-router</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue-cli3</tag>
-        <tag>vue-router</tag>
-        <tag>404</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vuex_state数据刷新丢失问题</title>
-    <url>/2020/09/04/vuex-state%E6%95%B0%E6%8D%AE%E5%88%B7%E6%96%B0%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<blockquote>
-<p>在使用vuex存储数据进行调试的过程中，刷新会直接丢失数据，在这里直接敷上解决方法</p>
-</blockquote>
-<blockquote>
-<p>此项目由vue-cli3建立</p>
-</blockquote>
-<h1 id="store-index-js文件"><a href="#store-index-js文件" class="headerlink" title="store,index.js文件"></a>store,index.js文件</h1><pre><code>/*
-* @Description:
-* @Author: 水印红枫
-* @Date: 2020-07-02 16:46:07
-* @LastEditors: 水印红枫
-*/
-import Vue from &quot;vue&quot;;
-import Vuex from &quot;vuex&quot;;
-import { cmd } from &quot;@/util/myUtil&quot;;
-
-Vue.use(Vuex);
-
-const store = new Vuex.Store({
-state: sessionStorage.getItem(&quot;state&quot;)
-    ? JSON.parse(sessionStorage.getItem(&quot;state&quot;))
-    : {
-        currentPage: &quot;/&quot;
-    },
-getters: {
-    currentPage(state) {
-    return state.currentPage;
-    }
-},
-mutations: {
-    setcurrentPage(state, val) {
-    state.currentPage = val;
-    }
-},
-actions: {
-    setcurrentPage({ commit }, val) {
-    commit(&quot;setcurrentPage&quot;, val);
-    }
-}
-});
-export default store;</code></pre><h2 id="app-vue-或者home-vue中"><a href="#app-vue-或者home-vue中" class="headerlink" title="app.vue 或者home.vue中"></a>app.vue 或者home.vue中</h2><pre><code>destroyed() {
-    window.removeEventListener(&quot;unload&quot;, this.saveState); // 解决刷新后vux内容丢失问题
-},
-mounted() {
-    this.init();
-},
-methods: {
-    init() {
-    // 解决刷新后vux内容丢失问题
-    window.addEventListener(&quot;unload&quot;, this.saveState);
-    },
-    saveState() {
-    sessionStorage.setItem(&quot;state&quot;, JSON.stringify(this.$store.state));
-    // 需要在刷新时进行操作可在这里
-    // sessionStorage.setItem(&quot;state_page&quot;, 1);
-    this.clearState();
-    },
-    clearState() {
-    //刷新后需要清空的数据放在这里处理
-    },
-}</code></pre>]]></content>
-      <categories>
-        <category>前端</category>
-        <category>vue</category>
-        <category>vuex</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue-cli3</tag>
-        <tag>vuex</tag>
-        <tag>state刷新丢失</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue常用api</title>
-    <url>/2020/11/24/vue%E5%B8%B8%E7%94%A8api/</url>
-    <content><![CDATA[<h1 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h1><p><strong>可卸载main.js中</strong></p>
-<h2 id="silent"><a href="#silent" class="headerlink" title="silent"></a>silent</h2><p><strong>控制使用</strong></p>
-<ul>
-<li><p>类型：boolean</p>
-</li>
-<li><p>默认值：false</p>
-</li>
-<li><p>用法：</p>
-</li>
-</ul>
-<pre><code>Vue.config.silent = true</code></pre><p>取消 Vue 所有的日志与警告。</p>
-<h2 id="keyCodes"><a href="#keyCodes" class="headerlink" title="keyCodes"></a>keyCodes</h2><p><strong>控制按键绑定对应功能</strong></p>
-<ul>
-<li><p>类型：{ [key: string]: number | Array<number> }</p>
-</li>
-<li><p>默认值：{}</p>
-</li>
-<li><p>用法：</p>
-</li>
-</ul>
-<pre><code>Vue.config.keyCodes = {
-v: 86,
-f1: 112,
-// camelCase 不可用
-mediaPlayPause: 179,
-// 取而代之的是 kebab-case 且用双引号括起来
-&quot;media-play-pause&quot;: 179,
-up: [38, 87]
-}
-&lt;input type=&quot;text&quot; @keyup.media-play-pause=&quot;method&quot;&gt;</code></pre><p>给 v-on 自定义键位别名。</p>
-<h2 id="performance"><a href="#performance" class="headerlink" title="performance"></a>performance</h2><p><strong>查看性能</strong></p>
-<ul>
-<li><p>2.2.0 新增</p>
-</li>
-<li><p>类型：boolean</p>
-</li>
-<li><p>默认值：false (自 2.2.3 起)</p>
-</li>
-<li><p>用法：</p>
-</li>
-</ul>
-<p>设置为 true 以在浏览器开发工具的性能/时间线面板中启用对组件初始化、编译、渲染和打补丁的性能追踪。只适用于开发模式和支持 performance.mark API 的浏览器上。</p>
-<h2 id="productionTip"><a href="#productionTip" class="headerlink" title="productionTip"></a>productionTip</h2><p><strong>该项配置可去除开发时当前路由跳转提示</strong></p>
-<ul>
-<li><p>2.2.0 新增</p>
-</li>
-<li><p>类型：boolean</p>
-</li>
-<li><p>默认值：true</p>
-</li>
-<li><p>用法：</p>
-</li>
-</ul>
-<p>设置为 false 以阻止 vue 在启动时生成生产提示。</p>
-<h1 id="api"><a href="#api" class="headerlink" title="api"></a>api</h1><h2 id="Vue-extend-options"><a href="#Vue-extend-options" class="headerlink" title="Vue.extend( options )"></a>Vue.extend( options )</h2><p><strong>可以理解为vue文件</strong></p>
-<ul>
-<li><p>参数：</p>
-<pre><code>{Object} options</code></pre></li>
-<li><p>用法：</p>
-</li>
-</ul>
-<p>使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。</p>
-<p>data 选项是特例，需要注意 - 在 Vue.extend() 中它必须是函数</p>
-<pre><code>&lt;div id=&quot;mount-point&quot;&gt;&lt;/div&gt;
-// 创建构造器
-var Profile = Vue.extend({
-template: &apos;&lt;p&gt;{{firstName}} {{lastName}} aka {{alias}}&lt;/p&gt;&apos;,
-data: function () {
-    return {
-    firstName: &apos;Walter&apos;,
-    lastName: &apos;White&apos;,
-    alias: &apos;Heisenberg&apos;
-    }
-}
-})
-// 创建 Profile 实例，并挂载到一个元素上。
-new Profile().$mount(&apos;#mount-point&apos;)</code></pre><p>结果如下：</p>
-<pre><code>&lt;p&gt;Walter White aka Heisenberg&lt;/p&gt;</code></pre><h2 id="Vue-nextTick-callback-context"><a href="#Vue-nextTick-callback-context" class="headerlink" title="Vue.nextTick( [callback, context] )"></a>Vue.nextTick( [callback, context] )</h2><p><strong>可用于等待页面渲染完成</strong></p>
-<ul>
-<li><p>参数：</p>
-<pre><code>{Function} [callback]
-{Object} [context]</code></pre></li>
-<li><p>用法：</p>
-</li>
-</ul>
-<p>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。</p>
-<pre><code>// 修改数据
-vm.msg = &apos;Hello&apos;
-// DOM 还没有更新
-Vue.nextTick(function () {
-// DOM 更新了
-})
-
-// 作为一个 Promise 使用 (2.1.0 起新增，详见接下来的提示)
-Vue.nextTick()
-.then(function () {
-    // DOM 更新了
-})</code></pre><p>2.1.0 起新增：如果没有提供回调且在支持 Promise 的环境中，则返回一个 Promise。请注意 Vue 不自带 Promise 的 polyfill，所以如果你的目标浏览器不原生支持 Promise (IE：你们都看我干嘛)，你得自己提供 polyfill。</p>
-<h2 id="Vue-set-target-propertyName-index-value"><a href="#Vue-set-target-propertyName-index-value" class="headerlink" title="Vue.set( target, propertyName/index, value )"></a>Vue.set( target, propertyName/index, value )</h2><p><strong>可触发视图更新</strong></p>
-<ul>
-<li><p>参数：</p>
-<p>  {Object | Array} target<br>  {string | number} propertyName/index<br>  {any} value<br>返回值：设置的值。</p>
-</li>
-<li><p>用法：</p>
-</li>
-</ul>
-<p>向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新 property，因为 Vue 无法探测普通的新增 property (比如 this.myObject.newProperty = ‘hi’)</p>
-<p>注意对象不能是 Vue 实例，或者 Vue 实例的根数据对象。</p>
-<h2 id="Vue-delete-target-propertyName-index"><a href="#Vue-delete-target-propertyName-index" class="headerlink" title="Vue.delete( target, propertyName/index )"></a>Vue.delete( target, propertyName/index )</h2><p><strong>可触发视图更新</strong></p>
-<ul>
-<li><p>参数：</p>
-<p>  {Object | Array} target<br>  {string | number} propertyName/index<br>仅在 2.2.0+ 版本中支持 Array + index 用法。</p>
-</li>
-<li><p>用法：</p>
-</li>
-</ul>
-<p>删除对象的 property。如果对象是响应式的，确保删除能触发更新视图。这个方法主要用于避开 Vue 不能检测到 property 被删除的限制，但是你应该很少会使用它。</p>
-<p>在 2.2.0+ 中同样支持在数组上工作。</p>
-<p>目标对象不能是一个 Vue 实例或 Vue 实例的根数据对象。</p>
-<h1 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h1><blockquote>
-<p>所有的生命周期钩子自动绑定 this 上下文到实例中，因此你可以访问数据，对 |property 和方法进行运算。这意味着你不能使用箭头函数来定义一个生命周期方法 (例如 created: () =&gt; this.fetchTodos())。这是因为箭头函数绑定了父上下文，因此 this 与你期待的 Vue 实例不同，this.fetchTodos 的行为未定义。</p>
-</blockquote>
-<h2 id="生命周期图"><a href="#生命周期图" class="headerlink" title="生命周期图"></a>生命周期图</h2><p><img src="/img/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA.png" alt="生命周期图示"></p>
-<h2 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。</p>
-<h2 id="created"><a href="#created" class="headerlink" title="created"></a>created</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。</p>
-<h2 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>在挂载开始之前被调用：相关的 render 函数首次被调用。</p>
-<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
-<h2 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。</p>
-<p><strong>注意 mounted 不会保证所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染完毕，可以在 mounted 内部使用 vm.$nextTick：</strong></p>
-<pre><code>mounted: function () {
-this.$nextTick(function () {
-    // Code that will run only after the
-    // entire view has been rendered
-})
-}</code></pre><p>该钩子在服务器端渲染期间不被调用。</p>
-<h2 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>数据更新时调用，发生在虚拟 DOM 打补丁之前。这里适合在更新之前访问现有的 DOM，比如手动移除已添加的事件监听器。</p>
-<p><strong>该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行。</strong></p>
-<h2 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。</p>
-<p>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或 watcher 取而代之。</p>
-<p>注意 updated 不会保证所有的子组件也都一起被重绘。如果你希望等到整个视图都重绘完毕，可以在 updated 里使用 vm.$nextTick：</p>
-<pre><code>updated: function () {
-this.$nextTick(function () {
-    // Code that will run only after the
-    // entire view has been re-rendered
-})
-}</code></pre><p>该钩子在服务器端渲染期间不被调用。</p>
-<h2 id="activated"><a href="#activated" class="headerlink" title="activated"></a>activated</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>被 keep-alive 缓存的组件激活时调用。</p>
-<p>该钩子在服务器端渲染期间不被调用。</p>
-<ul>
-<li>参考：</li>
-</ul>
-<p><a href="https://cn.vuejs.org/v2/api/#keep-alive" target="_blank" rel="noopener">构建组件 - keep-alive</a><br><a href="https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%9C%A8%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BD%BF%E7%94%A8-keep-alive" target="_blank" rel="noopener">动态组件 - keep-alive</a></p>
-<h2 id="deactivated"><a href="#deactivated" class="headerlink" title="deactivated"></a>deactivated</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>被 keep-alive 缓存的组件停用时调用。</p>
-<p>该钩子在服务器端渲染期间不被调用。</p>
-<ul>
-<li>参考：</li>
-</ul>
-<p><a href="https://cn.vuejs.org/v2/api/#keep-alive" target="_blank" rel="noopener">构建组件 - keep-alive</a><br><a href="https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%9C%A8%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BD%BF%E7%94%A8-keep-alive" target="_blank" rel="noopener">动态组件 - keep-alive</a></p>
-<h2 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>实例销毁之前调用。在这一步，实例仍然完全可用。</p>
-<p>该钩子在服务器端渲染期间不被调用。</p>
-<h2 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h2><ul>
-<li><p>类型：Function</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。</p>
-<p>该钩子在服务器端渲染期间不被调用。</p>
-<h2 id="errorCaptured"><a href="#errorCaptured" class="headerlink" title="errorCaptured"></a>errorCaptured</h2><blockquote>
-<p>2.5.0+ 新增</p>
-</blockquote>
-<ul>
-<li><p>类型：(err: Error, vm: Component, info: string) =&gt; ?boolean</p>
-</li>
-<li><p>详细：</p>
-</li>
-</ul>
-<p>当捕获一个来自子孙组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 false 以阻止该错误继续向上传播。</p>
-<blockquote>
-<p>你可以在此钩子中修改组件的状态。因此在捕获错误时，在模板或渲染函数中有一个条件判断来绕过其它内容就很重要；不然该组件可能会进入一个无限的渲染循环。</p>
-</blockquote>
-<ul>
-<li>错误传播规则</li>
-</ul>
-<ul>
-<li><p>默认情况下，如果全局的 config.errorHandler 被定义，所有的错误仍会发送它，因此这些错误仍然会向单一的分析服务的地方进行汇报。</p>
-</li>
-<li><p>如果一个组件的继承或父级从属链路中存在多个 errorCaptured 钩子，则它们将会被相同的错误逐个唤起。</p>
-</li>
-<li><p>如果此 errorCaptured 钩子自身抛出了一个错误，则这个新错误和原本被捕获的错误都会发送给全局的 config.errorHandler。</p>
-</li>
-<li><p>一个 errorCaptured 钩子能够返回 false 以阻止错误继续向上传播。本质上是说“这个错误已经被搞定了且应该被忽略”。它会阻止其它任何会被这个错误唤起的 errorCaptured 钩子和全局的 config.errorHandler。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>vue</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -4348,6 +4012,522 @@ return {
       <tags>
         <tag>vue</tag>
         <tag>mixin混入</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue混入文件的几大用法</title>
+    <url>/2020/12/01/vue%E6%B7%B7%E5%85%A5%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%A0%E5%A4%A7%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><strong>该用法未采用全局混入，采用引入混用</strong><br><strong>文件格式为正常的vue文件</strong></p>
+<p>方法为：</p>
+<pre><code>import mixins from &quot;@/util/mixins&quot;;
+
+export default {
+name: &quot;NewGift&quot;,
+components: {},
+mixins: [mixins],
+}</code></pre><h1 id="显示页面加载时间"><a href="#显示页面加载时间" class="headerlink" title="显示页面加载时间"></a>显示页面加载时间</h1><pre><code>created() {
+    console.time(&quot;页面加载时间：&quot;);
+    document.getElementById(&quot;app&quot;).classList.add(&quot;viewFilter&quot;);
+    mixin_time = setTimeout(() =&gt; {
+    console.log(&quot;开始出现加载条&quot;);
+    this.$Dialog.ViewLoading();
+    }, 1000);
+},
+mounted() {
+    console.timeEnd(&quot;页面加载时间：&quot;);
+    // setTimeout(() =&gt; {
+    document.getElementById(&quot;app&quot;).classList.remove(&quot;viewFilter&quot;);
+    this.$Dialog.ViewLoading({
+    state: &quot;end&quot;
+    });
+    clearTimeout(mixin_time);
+    // }, 100000);
+},</code></pre><h1 id="存放一些通用变量，如放在vuex-getter里的值"><a href="#存放一些通用变量，如放在vuex-getter里的值" class="headerlink" title="存放一些通用变量，如放在vuex getter里的值"></a>存放一些通用变量，如放在vuex getter里的值</h1><pre><code>import { mapGetters } from &quot;vuex&quot;;
+computed: {
+    //计算属性
+    ...mapGetters([&quot;loginSign&quot;])
+},</code></pre><h1 id="页面加载过慢时增加等待"><a href="#页面加载过慢时增加等待" class="headerlink" title="页面加载过慢时增加等待"></a>页面加载过慢时增加等待</h1><p><strong>this.$Dialog.ViewLoading();为显示一个遮罩层覆盖页面，出现加载条</strong></p>
+<pre><code>let mixin_time;
+export default {
+destroyed() {
+    clearTimeout(mixin_time);
+},
+created() {
+    mixin_time = setTimeout(() =&gt; {
+    console.log(&quot;开始出现加载条&quot;);
+    this.$Dialog.ViewLoading();
+    }, 1000);
+},
+mounted() {
+    this.$Dialog.ViewLoading({
+    state: &quot;end&quot;
+    });
+},</code></pre><h1 id="页面加载完成前增加模糊"><a href="#页面加载完成前增加模糊" class="headerlink" title="页面加载完成前增加模糊"></a>页面加载完成前增加模糊</h1><pre><code>export default {
+created() {
+    document.getElementById(&quot;app&quot;).classList.add(&quot;viewFilter&quot;);
+},
+mounted() {
+    document.getElementById(&quot;app&quot;).classList.remove(&quot;viewFilter&quot;);
+},</code></pre><h1 id="部分内容接口请求完成前模糊内容"><a href="#部分内容接口请求完成前模糊内容" class="headerlink" title="部分内容接口请求完成前模糊内容"></a>部分内容接口请求完成前模糊内容</h1><p><strong>js</strong></p>
+<pre><code>//array内容为ref名字的数字，如：
+//&lt;div ref=&quot;answer1&quot;&gt;&lt;/div&gt;
+//&lt;div ref=&quot;answer2&quot;&gt;&lt;/div&gt;
+//array=[&quot;answer1&quot;,&quot;answer2&quot;]
+methods: {
+    RequestInit(array) {
+    try {
+        for (let i of array) {
+        if (this.$refs[i]._isVue) this.$refs[i].$el.classList.add(&quot;filter10&quot;);
+        else this.$refs[i].classList.add(&quot;filter10&quot;);
+        }
+    } catch (e) {
+        console.log(&quot;混入函数出错：&quot;, e);
+    }
+    },
+    RequestSuccess(array) {
+    try {
+        this.$nextTick(() =&gt; {
+        for (let i of array) {
+            if (this.$refs[i]._isVue)
+            this.$refs[i].$el.classList.remove(&quot;filter10&quot;);
+            else this.$refs[i].classList.remove(&quot;filter10&quot;);
+        }
+        });
+    } catch (e) {
+        console.log(&quot;混入函数出错：&quot;, e);
+    }
+    },
+    RequestFail(array) {
+    try {
+        for (let i of array) {
+        if (this.$refs[i]._isVue) {
+            this.$refs[i].$el.classList.add(&quot;filterFail&quot;);
+            this.$refs[i].$el.addEventListener(&quot;click&quot;, () =&gt;
+            this.failClick(this.$refs[i].$el, i)
+            );
+        } else {
+            this.$refs[i].classList.add(&quot;filterFail&quot;);
+            this.$refs[i].addEventListener(&quot;click&quot;, () =&gt;
+            this.failClick(this.$refs[i], i)
+            );
+        }
+        }
+    } catch (e) {
+        console.log(&quot;混入函数出错：&quot;, e);
+    }
+    },
+    failClick(el, name) {
+    if (el.classList.value.indexOf(&quot;filterFail&quot;) &lt; 0) return;
+    el.classList.remove(&quot;filterFail&quot;);
+    el.removeEventListener(&quot;click&quot;, () =&gt; this.failClick(el, name));
+    // 重新请求函数
+    try {
+        eval(&quot;this.&quot; + name + &quot;()&quot;);
+    } catch (e) {
+        console.log(&quot;重复请求失败&quot;, e);
+    }
+    }
+}</code></pre><p><strong>scss</strong></p>
+<pre><code>.filter10{
+position: relative;
+*{
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    pointer-events: none;
+}
+&amp;::after{
+    content: &quot;&quot;;
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    width: 30%;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #e83030;
+    animation: move 1s linear 0s infinite normal;
+}
+@keyframes move {
+    0%{
+    left: 20%;
+    width: 0;
+    }
+    25%{
+    left: 20%;
+    width: 30%;
+    }
+    50%{
+    left: 50%;
+    width: 30%;
+    }
+    75%{
+    left: 80%;
+    width: 0%;
+    }
+    100%{
+    left: 80%;
+    width: 0%;
+    }
+}
+&amp;.filterFail::after{
+    font-size: 0.3rem;
+    line-height: 0.6rem;
+    color: #FFFFFF;
+    content: &quot;点击重试&quot;;
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    height: 0.6rem;
+    width: 40%;
+    border-radius: 0.3rem;
+    box-shadow: 0 5px 20px #000000;
+    animation:none;
+}
+}</code></pre>]]></content>
+      <categories>
+        <category>前端</category>
+        <category>vue</category>
+        <category>mixin</category>
+        <category>mixin.js</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>mixin混入</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue常用api</title>
+    <url>/2020/11/24/vue%E5%B8%B8%E7%94%A8api/</url>
+    <content><![CDATA[<h1 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h1><p><strong>可卸载main.js中</strong></p>
+<h2 id="silent"><a href="#silent" class="headerlink" title="silent"></a>silent</h2><p><strong>控制使用</strong></p>
+<ul>
+<li><p>类型：boolean</p>
+</li>
+<li><p>默认值：false</p>
+</li>
+<li><p>用法：</p>
+</li>
+</ul>
+<pre><code>Vue.config.silent = true</code></pre><p>取消 Vue 所有的日志与警告。</p>
+<h2 id="keyCodes"><a href="#keyCodes" class="headerlink" title="keyCodes"></a>keyCodes</h2><p><strong>控制按键绑定对应功能</strong></p>
+<ul>
+<li><p>类型：{ [key: string]: number | Array<number> }</p>
+</li>
+<li><p>默认值：{}</p>
+</li>
+<li><p>用法：</p>
+</li>
+</ul>
+<pre><code>Vue.config.keyCodes = {
+v: 86,
+f1: 112,
+// camelCase 不可用
+mediaPlayPause: 179,
+// 取而代之的是 kebab-case 且用双引号括起来
+&quot;media-play-pause&quot;: 179,
+up: [38, 87]
+}
+&lt;input type=&quot;text&quot; @keyup.media-play-pause=&quot;method&quot;&gt;</code></pre><p>给 v-on 自定义键位别名。</p>
+<h2 id="performance"><a href="#performance" class="headerlink" title="performance"></a>performance</h2><p><strong>查看性能</strong></p>
+<ul>
+<li><p>2.2.0 新增</p>
+</li>
+<li><p>类型：boolean</p>
+</li>
+<li><p>默认值：false (自 2.2.3 起)</p>
+</li>
+<li><p>用法：</p>
+</li>
+</ul>
+<p>设置为 true 以在浏览器开发工具的性能/时间线面板中启用对组件初始化、编译、渲染和打补丁的性能追踪。只适用于开发模式和支持 performance.mark API 的浏览器上。</p>
+<h2 id="productionTip"><a href="#productionTip" class="headerlink" title="productionTip"></a>productionTip</h2><p><strong>该项配置可去除开发时当前路由跳转提示</strong></p>
+<ul>
+<li><p>2.2.0 新增</p>
+</li>
+<li><p>类型：boolean</p>
+</li>
+<li><p>默认值：true</p>
+</li>
+<li><p>用法：</p>
+</li>
+</ul>
+<p>设置为 false 以阻止 vue 在启动时生成生产提示。</p>
+<h1 id="api"><a href="#api" class="headerlink" title="api"></a>api</h1><h2 id="Vue-extend-options"><a href="#Vue-extend-options" class="headerlink" title="Vue.extend( options )"></a>Vue.extend( options )</h2><p><strong>可以理解为vue文件</strong></p>
+<ul>
+<li><p>参数：</p>
+<pre><code>{Object} options</code></pre></li>
+<li><p>用法：</p>
+</li>
+</ul>
+<p>使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。</p>
+<p>data 选项是特例，需要注意 - 在 Vue.extend() 中它必须是函数</p>
+<pre><code>&lt;div id=&quot;mount-point&quot;&gt;&lt;/div&gt;
+// 创建构造器
+var Profile = Vue.extend({
+template: &apos;&lt;p&gt;{{firstName}} {{lastName}} aka {{alias}}&lt;/p&gt;&apos;,
+data: function () {
+    return {
+    firstName: &apos;Walter&apos;,
+    lastName: &apos;White&apos;,
+    alias: &apos;Heisenberg&apos;
+    }
+}
+})
+// 创建 Profile 实例，并挂载到一个元素上。
+new Profile().$mount(&apos;#mount-point&apos;)</code></pre><p>结果如下：</p>
+<pre><code>&lt;p&gt;Walter White aka Heisenberg&lt;/p&gt;</code></pre><h2 id="Vue-nextTick-callback-context"><a href="#Vue-nextTick-callback-context" class="headerlink" title="Vue.nextTick( [callback, context] )"></a>Vue.nextTick( [callback, context] )</h2><p><strong>可用于等待页面渲染完成</strong></p>
+<ul>
+<li><p>参数：</p>
+<pre><code>{Function} [callback]
+{Object} [context]</code></pre></li>
+<li><p>用法：</p>
+</li>
+</ul>
+<p>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。</p>
+<pre><code>// 修改数据
+vm.msg = &apos;Hello&apos;
+// DOM 还没有更新
+Vue.nextTick(function () {
+// DOM 更新了
+})
+
+// 作为一个 Promise 使用 (2.1.0 起新增，详见接下来的提示)
+Vue.nextTick()
+.then(function () {
+    // DOM 更新了
+})</code></pre><p>2.1.0 起新增：如果没有提供回调且在支持 Promise 的环境中，则返回一个 Promise。请注意 Vue 不自带 Promise 的 polyfill，所以如果你的目标浏览器不原生支持 Promise (IE：你们都看我干嘛)，你得自己提供 polyfill。</p>
+<h2 id="Vue-set-target-propertyName-index-value"><a href="#Vue-set-target-propertyName-index-value" class="headerlink" title="Vue.set( target, propertyName/index, value )"></a>Vue.set( target, propertyName/index, value )</h2><p><strong>可触发视图更新</strong></p>
+<ul>
+<li><p>参数：</p>
+<p>  {Object | Array} target<br>  {string | number} propertyName/index<br>  {any} value<br>返回值：设置的值。</p>
+</li>
+<li><p>用法：</p>
+</li>
+</ul>
+<p>向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新 property，因为 Vue 无法探测普通的新增 property (比如 this.myObject.newProperty = ‘hi’)</p>
+<p>注意对象不能是 Vue 实例，或者 Vue 实例的根数据对象。</p>
+<h2 id="Vue-delete-target-propertyName-index"><a href="#Vue-delete-target-propertyName-index" class="headerlink" title="Vue.delete( target, propertyName/index )"></a>Vue.delete( target, propertyName/index )</h2><p><strong>可触发视图更新</strong></p>
+<ul>
+<li><p>参数：</p>
+<p>  {Object | Array} target<br>  {string | number} propertyName/index<br>仅在 2.2.0+ 版本中支持 Array + index 用法。</p>
+</li>
+<li><p>用法：</p>
+</li>
+</ul>
+<p>删除对象的 property。如果对象是响应式的，确保删除能触发更新视图。这个方法主要用于避开 Vue 不能检测到 property 被删除的限制，但是你应该很少会使用它。</p>
+<p>在 2.2.0+ 中同样支持在数组上工作。</p>
+<p>目标对象不能是一个 Vue 实例或 Vue 实例的根数据对象。</p>
+<h1 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h1><blockquote>
+<p>所有的生命周期钩子自动绑定 this 上下文到实例中，因此你可以访问数据，对 |property 和方法进行运算。这意味着你不能使用箭头函数来定义一个生命周期方法 (例如 created: () =&gt; this.fetchTodos())。这是因为箭头函数绑定了父上下文，因此 this 与你期待的 Vue 实例不同，this.fetchTodos 的行为未定义。</p>
+</blockquote>
+<h2 id="生命周期图"><a href="#生命周期图" class="headerlink" title="生命周期图"></a>生命周期图</h2><p><img src= "/img/loading.gif" data-src="/img/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA.png" alt="生命周期图示"></p>
+<h2 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。</p>
+<h2 id="created"><a href="#created" class="headerlink" title="created"></a>created</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。</p>
+<h2 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在挂载开始之前被调用：相关的 render 函数首次被调用。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<h2 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。</p>
+<p><strong>注意 mounted 不会保证所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染完毕，可以在 mounted 内部使用 vm.$nextTick：</strong></p>
+<pre><code>mounted: function () {
+this.$nextTick(function () {
+    // Code that will run only after the
+    // entire view has been rendered
+})
+}</code></pre><p>该钩子在服务器端渲染期间不被调用。</p>
+<h2 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>数据更新时调用，发生在虚拟 DOM 打补丁之前。这里适合在更新之前访问现有的 DOM，比如手动移除已添加的事件监听器。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行。</strong></p>
+<h2 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。</p>
+<p>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或 watcher 取而代之。</p>
+<p>注意 updated 不会保证所有的子组件也都一起被重绘。如果你希望等到整个视图都重绘完毕，可以在 updated 里使用 vm.$nextTick：</p>
+<pre><code>updated: function () {
+this.$nextTick(function () {
+    // Code that will run only after the
+    // entire view has been re-rendered
+})
+}</code></pre><p>该钩子在服务器端渲染期间不被调用。</p>
+<h2 id="activated"><a href="#activated" class="headerlink" title="activated"></a>activated</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>被 keep-alive 缓存的组件激活时调用。</p>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+<ul>
+<li>参考：</li>
+</ul>
+<p><a href="https://cn.vuejs.org/v2/api/#keep-alive" target="_blank" rel="noopener">构建组件 - keep-alive</a><br><a href="https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%9C%A8%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BD%BF%E7%94%A8-keep-alive" target="_blank" rel="noopener">动态组件 - keep-alive</a></p>
+<h2 id="deactivated"><a href="#deactivated" class="headerlink" title="deactivated"></a>deactivated</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>被 keep-alive 缓存的组件停用时调用。</p>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+<ul>
+<li>参考：</li>
+</ul>
+<p><a href="https://cn.vuejs.org/v2/api/#keep-alive" target="_blank" rel="noopener">构建组件 - keep-alive</a><br><a href="https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%9C%A8%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BD%BF%E7%94%A8-keep-alive" target="_blank" rel="noopener">动态组件 - keep-alive</a></p>
+<h2 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例销毁之前调用。在这一步，实例仍然完全可用。</p>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+<h2 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h2><ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。</p>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+<h2 id="errorCaptured"><a href="#errorCaptured" class="headerlink" title="errorCaptured"></a>errorCaptured</h2><blockquote>
+<p>2.5.0+ 新增</p>
+</blockquote>
+<ul>
+<li><p>类型：(err: Error, vm: Component, info: string) =&gt; ?boolean</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>当捕获一个来自子孙组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 false 以阻止该错误继续向上传播。</p>
+<blockquote>
+<p>你可以在此钩子中修改组件的状态。因此在捕获错误时，在模板或渲染函数中有一个条件判断来绕过其它内容就很重要；不然该组件可能会进入一个无限的渲染循环。</p>
+</blockquote>
+<ul>
+<li>错误传播规则</li>
+</ul>
+<ul>
+<li><p>默认情况下，如果全局的 config.errorHandler 被定义，所有的错误仍会发送它，因此这些错误仍然会向单一的分析服务的地方进行汇报。</p>
+</li>
+<li><p>如果一个组件的继承或父级从属链路中存在多个 errorCaptured 钩子，则它们将会被相同的错误逐个唤起。</p>
+</li>
+<li><p>如果此 errorCaptured 钩子自身抛出了一个错误，则这个新错误和原本被捕获的错误都会发送给全局的 config.errorHandler。</p>
+</li>
+<li><p>一个 errorCaptured 钩子能够返回 false 以阻止错误继续向上传播。本质上是说“这个错误已经被搞定了且应该被忽略”。它会阻止其它任何会被这个错误唤起的 errorCaptured 钩子和全局的 config.errorHandler。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vuex_state数据刷新丢失问题</title>
+    <url>/2020/09/04/vuex-state%E6%95%B0%E6%8D%AE%E5%88%B7%E6%96%B0%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<blockquote>
+<p>在使用vuex存储数据进行调试的过程中，刷新会直接丢失数据，在这里直接敷上解决方法</p>
+</blockquote>
+<blockquote>
+<p>此项目由vue-cli3建立</p>
+</blockquote>
+<h1 id="store-index-js文件"><a href="#store-index-js文件" class="headerlink" title="store,index.js文件"></a>store,index.js文件</h1><pre><code>/*
+* @Description:
+* @Author: 水印红枫
+* @Date: 2020-07-02 16:46:07
+* @LastEditors: 水印红枫
+*/
+import Vue from &quot;vue&quot;;
+import Vuex from &quot;vuex&quot;;
+import { cmd } from &quot;@/util/myUtil&quot;;
+
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+state: sessionStorage.getItem(&quot;state&quot;)
+    ? JSON.parse(sessionStorage.getItem(&quot;state&quot;))
+    : {
+        currentPage: &quot;/&quot;
+    },
+getters: {
+    currentPage(state) {
+    return state.currentPage;
+    }
+},
+mutations: {
+    setcurrentPage(state, val) {
+    state.currentPage = val;
+    }
+},
+actions: {
+    setcurrentPage({ commit }, val) {
+    commit(&quot;setcurrentPage&quot;, val);
+    }
+}
+});
+export default store;</code></pre><h2 id="app-vue-或者home-vue中"><a href="#app-vue-或者home-vue中" class="headerlink" title="app.vue 或者home.vue中"></a>app.vue 或者home.vue中</h2><pre><code>destroyed() {
+    window.removeEventListener(&quot;unload&quot;, this.saveState); // 解决刷新后vux内容丢失问题
+},
+mounted() {
+    this.init();
+},
+methods: {
+    init() {
+    // 解决刷新后vux内容丢失问题
+    window.addEventListener(&quot;unload&quot;, this.saveState);
+    },
+    saveState() {
+    sessionStorage.setItem(&quot;state&quot;, JSON.stringify(this.$store.state));
+    // 需要在刷新时进行操作可在这里
+    // sessionStorage.setItem(&quot;state_page&quot;, 1);
+    this.clearState();
+    },
+    clearState() {
+    //刷新后需要清空的数据放在这里处理
+    },
+}</code></pre>]]></content>
+      <categories>
+        <category>前端</category>
+        <category>vue</category>
+        <category>vuex</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue-cli3</tag>
+        <tag>vuex</tag>
+        <tag>state刷新丢失</tag>
       </tags>
   </entry>
   <entry>
@@ -4639,196 +4819,34 @@ return {
       </tags>
   </entry>
   <entry>
-    <title>vue混入文件的几大用法</title>
-    <url>/2020/12/01/vue%E6%B7%B7%E5%85%A5%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%A0%E5%A4%A7%E7%94%A8%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><strong>该用法未采用全局混入，采用引入混用</strong><br><strong>文件格式为正常的vue文件</strong></p>
-<p>方法为：</p>
-<pre><code>import mixins from &quot;@/util/mixins&quot;;
+    <title>回流和重绘</title>
+    <url>/2020/12/01/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/</url>
+    <content><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h2><p>回流即为重排<br>当render tree的内容因为尺寸，布局，隐藏，位置改变而改变时需要重新构建，即为回流<br>页面至少需要一次回流，即为页面第一次加载的时候</p>
+<h2 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h2><p>当render tree的的一些元素需要更新属性，只影响该元素的外观，不影响布局的，即为重绘</p>
+<h2 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h2><p>回流完即会引起重绘，所以可以说回流一定会重绘，而重绘不一定会回流</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><blockquote>
+<p>由介绍可知，回流的代价一定比重绘高，所以减少回流即可在性能上做到提升</p>
+</blockquote>
+<h2 id="动画脱离文档流"><a href="#动画脱离文档流" class="headerlink" title="动画脱离文档流"></a>动画脱离文档流</h2><p>如果页面中存在动画效果，如果在文档流中即可导致页面回流，这个时候脱离文档流，及使用定位的方式便可实现优化</p>
+<h2 id="样式统一改变"><a href="#样式统一改变" class="headerlink" title="样式统一改变"></a>样式统一改变</h2><p>现在很多浏览器已经有了自己的队列，所以这个方式并一定可以优化，但一些样式如scrolleft,clientheight,等样式会清空样式，所以在使用的时候需要注意一下</p>
+<p>方法一，样式的逐项改变换位统一改变</p>
+<pre><code>dom.style.height=&apos;100px&apos;
+dom.style.marginLeft=&apos;20px&apos;
 
-export default {
-name: &quot;NewGift&quot;,
-components: {},
-mixins: [mixins],
-}</code></pre><h1 id="显示页面加载时间"><a href="#显示页面加载时间" class="headerlink" title="显示页面加载时间"></a>显示页面加载时间</h1><pre><code>created() {
-    console.time(&quot;页面加载时间：&quot;);
-    document.getElementById(&quot;app&quot;).classList.add(&quot;viewFilter&quot;);
-    mixin_time = setTimeout(() =&gt; {
-    console.log(&quot;开始出现加载条&quot;);
-    this.$Dialog.ViewLoading();
-    }, 1000);
-},
-mounted() {
-    console.timeEnd(&quot;页面加载时间：&quot;);
-    // setTimeout(() =&gt; {
-    document.getElementById(&quot;app&quot;).classList.remove(&quot;viewFilter&quot;);
-    this.$Dialog.ViewLoading({
-    state: &quot;end&quot;
-    });
-    clearTimeout(mixin_time);
-    // }, 100000);
-},</code></pre><h1 id="存放一些通用变量，如放在vuex-getter里的值"><a href="#存放一些通用变量，如放在vuex-getter里的值" class="headerlink" title="存放一些通用变量，如放在vuex getter里的值"></a>存放一些通用变量，如放在vuex getter里的值</h1><pre><code>import { mapGetters } from &quot;vuex&quot;;
-computed: {
-    //计算属性
-    ...mapGetters([&quot;loginSign&quot;])
-},</code></pre><h1 id="页面加载过慢时增加等待"><a href="#页面加载过慢时增加等待" class="headerlink" title="页面加载过慢时增加等待"></a>页面加载过慢时增加等待</h1><p><strong>this.$Dialog.ViewLoading();为显示一个遮罩层覆盖页面，出现加载条</strong></p>
-<pre><code>let mixin_time;
-export default {
-destroyed() {
-    clearTimeout(mixin_time);
-},
-created() {
-    mixin_time = setTimeout(() =&gt; {
-    console.log(&quot;开始出现加载条&quot;);
-    this.$Dialog.ViewLoading();
-    }, 1000);
-},
-mounted() {
-    this.$Dialog.ViewLoading({
-    state: &quot;end&quot;
-    });
-},</code></pre><h1 id="页面加载完成前增加模糊"><a href="#页面加载完成前增加模糊" class="headerlink" title="页面加载完成前增加模糊"></a>页面加载完成前增加模糊</h1><pre><code>export default {
-created() {
-    document.getElementById(&quot;app&quot;).classList.add(&quot;viewFilter&quot;);
-},
-mounted() {
-    document.getElementById(&quot;app&quot;).classList.remove(&quot;viewFilter&quot;);
-},</code></pre><h1 id="部分内容接口请求完成前模糊内容"><a href="#部分内容接口请求完成前模糊内容" class="headerlink" title="部分内容接口请求完成前模糊内容"></a>部分内容接口请求完成前模糊内容</h1><p><strong>js</strong></p>
-<pre><code>//array内容为ref名字的数字，如：
-//&lt;div ref=&quot;answer1&quot;&gt;&lt;/div&gt;
-//&lt;div ref=&quot;answer2&quot;&gt;&lt;/div&gt;
-//array=[&quot;answer1&quot;,&quot;answer2&quot;]
-methods: {
-    RequestInit(array) {
-    try {
-        for (let i of array) {
-        if (this.$refs[i]._isVue) this.$refs[i].$el.classList.add(&quot;filter10&quot;);
-        else this.$refs[i].classList.add(&quot;filter10&quot;);
-        }
-    } catch (e) {
-        console.log(&quot;混入函数出错：&quot;, e);
-    }
-    },
-    RequestSuccess(array) {
-    try {
-        this.$nextTick(() =&gt; {
-        for (let i of array) {
-            if (this.$refs[i]._isVue)
-            this.$refs[i].$el.classList.remove(&quot;filter10&quot;);
-            else this.$refs[i].classList.remove(&quot;filter10&quot;);
-        }
-        });
-    } catch (e) {
-        console.log(&quot;混入函数出错：&quot;, e);
-    }
-    },
-    RequestFail(array) {
-    try {
-        for (let i of array) {
-        if (this.$refs[i]._isVue) {
-            this.$refs[i].$el.classList.add(&quot;filterFail&quot;);
-            this.$refs[i].$el.addEventListener(&quot;click&quot;, () =&gt;
-            this.failClick(this.$refs[i].$el, i)
-            );
-        } else {
-            this.$refs[i].classList.add(&quot;filterFail&quot;);
-            this.$refs[i].addEventListener(&quot;click&quot;, () =&gt;
-            this.failClick(this.$refs[i], i)
-            );
-        }
-        }
-    } catch (e) {
-        console.log(&quot;混入函数出错：&quot;, e);
-    }
-    },
-    failClick(el, name) {
-    if (el.classList.value.indexOf(&quot;filterFail&quot;) &lt; 0) return;
-    el.classList.remove(&quot;filterFail&quot;);
-    el.removeEventListener(&quot;click&quot;, () =&gt; this.failClick(el, name));
-    // 重新请求函数
-    try {
-        eval(&quot;this.&quot; + name + &quot;()&quot;);
-    } catch (e) {
-        console.log(&quot;重复请求失败&quot;, e);
-    }
-    }
-}</code></pre><p><strong>scss</strong></p>
-<pre><code>.filter10{
-position: relative;
-*{
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    pointer-events: none;
-}
-&amp;::after{
-    content: &quot;&quot;;
-    position: absolute;
-    left: 20%;
-    top: 40%;
-    width: 30%;
-    height: 2px;
-    border-radius: 1px;
-    background-color: #e83030;
-    animation: move 1s linear 0s infinite normal;
-}
-@keyframes move {
-    0%{
-    left: 20%;
-    width: 0;
-    }
-    25%{
-    left: 20%;
-    width: 30%;
-    }
-    50%{
-    left: 50%;
-    width: 30%;
-    }
-    75%{
-    left: 80%;
-    width: 0%;
-    }
-    100%{
-    left: 80%;
-    width: 0%;
-    }
-}
-&amp;.filterFail::after{
-    font-size: 0.3rem;
-    line-height: 0.6rem;
-    color: #FFFFFF;
-    content: &quot;点击重试&quot;;
-    position: absolute;
-    left: 30%;
-    top: 40%;
-    height: 0.6rem;
-    width: 40%;
-    border-radius: 0.3rem;
-    box-shadow: 0 5px 20px #000000;
-    animation:none;
-}
-}</code></pre>]]></content>
+改为dom.style.cssText=&quot;height:&apos;100px&apos;;margin-left:&apos;20px&apos;</code></pre><p>方法二，直接改变类名</p>
+<pre><code>dom.classList.remove(&quot;filter10&quot;);
+dom.classList.add(&quot;filter&quot;);</code></pre><h2 id="css硬件加速"><a href="#css硬件加速" class="headerlink" title="css硬件加速"></a>css硬件加速</h2><p>该方法须GPU支持，开始后一些动画样式的改变便不会再引起回流</p>
+<h2 id="隐藏元素"><a href="#隐藏元素" class="headerlink" title="隐藏元素"></a>隐藏元素</h2><p>先隐藏元素，修改后再显示</p>
+<h2 id="复制元素"><a href="#复制元素" class="headerlink" title="复制元素"></a>复制元素</h2><p>修改复制后的元素，修改完成后再显示</p>
+]]></content>
       <categories>
         <category>前端</category>
-        <category>vue</category>
-        <category>mixin</category>
-        <category>mixin.js</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-        <tag>mixin混入</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端常见问题</title>
-    <url>/2021/03/10/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="安卓中img标签图片正常显示，ios不显示问题"><a href="#安卓中img标签图片正常显示，ios不显示问题" class="headerlink" title="安卓中img标签图片正常显示，ios不显示问题"></a>安卓中img标签图片正常显示，ios不显示问题</h1><pre><code>安卓与ios存在层级渲染不同的问题，看是否图片存在z-index过低的原因，
-在ios中渲染可能会低于背景
-故消失看不见</code></pre>]]></content>
-      <categories>
-        <category>前端</category>
+        <category>优化</category>
+        <category>回流和重绘</category>
       </categories>
       <tags>
         <tag>前端</tag>
+        <tag>回流和重绘</tag>
       </tags>
   </entry>
   <entry>
@@ -4882,37 +4900,6 @@ console.log(entries.next().value); // [2, &apos;c&apos;]</code></pre><h1 id="对
       </tags>
   </entry>
   <entry>
-    <title>回流和重绘</title>
-    <url>/2020/12/01/%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98/</url>
-    <content><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h2><p>回流即为重排<br>当render tree的内容因为尺寸，布局，隐藏，位置改变而改变时需要重新构建，即为回流<br>页面至少需要一次回流，即为页面第一次加载的时候</p>
-<h2 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h2><p>当render tree的的一些元素需要更新属性，只影响该元素的外观，不影响布局的，即为重绘</p>
-<h2 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h2><p>回流完即会引起重绘，所以可以说回流一定会重绘，而重绘不一定会回流</p>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><blockquote>
-<p>由介绍可知，回流的代价一定比重绘高，所以减少回流即可在性能上做到提升</p>
-</blockquote>
-<h2 id="动画脱离文档流"><a href="#动画脱离文档流" class="headerlink" title="动画脱离文档流"></a>动画脱离文档流</h2><p>如果页面中存在动画效果，如果在文档流中即可导致页面回流，这个时候脱离文档流，及使用定位的方式便可实现优化</p>
-<h2 id="样式统一改变"><a href="#样式统一改变" class="headerlink" title="样式统一改变"></a>样式统一改变</h2><p>现在很多浏览器已经有了自己的队列，所以这个方式并一定可以优化，但一些样式如scrolleft,clientheight,等样式会清空样式，所以在使用的时候需要注意一下</p>
-<p>方法一，样式的逐项改变换位统一改变</p>
-<pre><code>dom.style.height=&apos;100px&apos;
-dom.style.marginLeft=&apos;20px&apos;
-
-改为dom.style.cssText=&quot;height:&apos;100px&apos;;margin-left:&apos;20px&apos;</code></pre><p>方法二，直接改变类名</p>
-<pre><code>dom.classList.remove(&quot;filter10&quot;);
-dom.classList.add(&quot;filter&quot;);</code></pre><h2 id="css硬件加速"><a href="#css硬件加速" class="headerlink" title="css硬件加速"></a>css硬件加速</h2><p>该方法须GPU支持，开始后一些动画样式的改变便不会再引起回流</p>
-<h2 id="隐藏元素"><a href="#隐藏元素" class="headerlink" title="隐藏元素"></a>隐藏元素</h2><p>先隐藏元素，修改后再显示</p>
-<h2 id="复制元素"><a href="#复制元素" class="headerlink" title="复制元素"></a>复制元素</h2><p>修改复制后的元素，修改完成后再显示</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>优化</category>
-        <category>回流和重绘</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>回流和重绘</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>字重</title>
     <url>/2020/07/23/%E5%AD%97%E9%87%8D/</url>
     <content><![CDATA[<h1 id="字重"><a href="#字重" class="headerlink" title="字重"></a>字重</h1><pre><code>渺 100－UltraLight/HairLine
@@ -4936,6 +4923,19 @@ dom.classList.add(&quot;filter&quot;);</code></pre><h2 id="css硬件加速"><a h
       </categories>
       <tags>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端常见问题</title>
+    <url>/2021/03/10/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="安卓中img标签图片正常显示，ios不显示问题"><a href="#安卓中img标签图片正常显示，ios不显示问题" class="headerlink" title="安卓中img标签图片正常显示，ios不显示问题"></a>安卓中img标签图片正常显示，ios不显示问题</h1><pre><code>安卓与ios存在层级渲染不同的问题，看是否图片存在z-index过低的原因，
+在ios中渲染可能会低于背景
+故消失看不见</code></pre>]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -5023,32 +5023,6 @@ npm install hexo-server --save
       </tags>
   </entry>
   <entry>
-    <title>沪港通</title>
-    <url>/2020/07/31/%E6%B2%AA%E6%B8%AF%E9%80%9A/</url>
-    <content><![CDATA[<h1 id="沪港通"><a href="#沪港通" class="headerlink" title="沪港通"></a>沪港通</h1><ol>
-<li><p>沪股通</p>
-<pre><code>《上海证券交易所沪港通业务实施办法规定》，沪股通股票包括以下范围内的股票
-（1） 上证180指数成分股
-（2） 上证380指数成分股
-（3） A+H股上市公司的本所上市A股
- 在本所上市公司股票风险警示板交易的互票（即ST,*ST股票和退市整理股票），暂停上市的股票，以外币报价交易的股票（即B股）和具有本所认定的其他特殊情形的股票，不纳入沪股通股票。经监管所机构批准，本所可以调和智能沪股通股票的范围</code></pre></li>
-<li><p>港股通</p>
-<pre><code>（1）恒生综合大型股指数的成分股
-（2）恒生综合中型股指数的成分股
-（3）A+H上市公司的H股
-本所上市A股为风险警示版股票或者暂停上市股票的A+H股上市公司的相应H股，同时有股票在本所以外的内地证券交易所上市的发行人的股票，在联交所以港币以外货币报价交易的股票和具有本所认定的其他特殊情形的股票，不纳入港股通股票</code></pre></li>
-</ol>
-]]></content>
-      <categories>
-        <category>金融</category>
-        <category>股票</category>
-        <category>沪港通</category>
-      </categories>
-      <tags>
-        <tag>沪港通</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>有限责任公司</title>
     <url>/2020/07/27/%E6%9C%89%E9%99%90%E8%B4%A3%E4%BB%BB%E5%85%AC%E5%8F%B8/</url>
     <content><![CDATA[<h1 id="有限责任有限公司"><a href="#有限责任有限公司" class="headerlink" title="有限责任有限公司"></a>有限责任有限公司</h1><blockquote>
@@ -5071,111 +5045,48 @@ npm install hexo-server --save
       </tags>
   </entry>
   <entry>
-    <title>组件挂载式使用</title>
-    <url>/2020/11/10/%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E5%BC%8F%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><h2 id="关键文件dialog-js"><a href="#关键文件dialog-js" class="headerlink" title="关键文件dialog.js"></a>关键文件dialog.js</h2><pre><code>/*
-* @Description:
-* @Author: 水印红枫
-* @Date: 2020-07-02 16:46:07
-* @LastEditors: 水印红枫
-*/
-
-import Vue from &quot;vue&quot;;
-
-import Toast from &quot;./toast&quot;;
-
-const Dialog = {
-install(Vue) {
-    Object.defineProperty(Vue.prototype, &quot;$Dialog&quot;, {
-    value: this,
-    writable: false
-    });
-},
-Toast(options = {}) {
-    const ToastFrame = Vue.extend(Toast);
-    let vm = document.getElementById(&quot;toast&quot;);
-    if (vm !== null) {
-    document.body.removeChild(vm);
-    }
-    let div = document.createElement(&quot;div&quot;);
-    div.id = &quot;Toast&quot;;
-    document.body.appendChild(div);
-    let $vm = new ToastFrame({
-    el: &quot;#Toast&quot;
-    });
-    if (typeof options === &quot;object&quot;) {
-    Object.assign($vm, options);
-    } else if (typeof options === &quot;string&quot; || typeof options === &quot;number&quot;) {
-    $vm.content = options;
-    }
-},
-}
-export default Dialog;</code></pre><h2 id="引入方法"><a href="#引入方法" class="headerlink" title="引入方法"></a>引入方法</h2><pre><code>__在main.js中使用vue.use即可__
-
-import Vue from &quot;vue&quot;;
-import dialog from &quot;@/util/dialog/dialog&quot;;
-Vue.use(dialog);</code></pre><h2 id="组件相关更改"><a href="#组件相关更改" class="headerlink" title="组件相关更改"></a>组件相关更改</h2><pre><code>接受数据同样使用props
-
-props:{
-    data:{
-        type: Object,
-        default:()=&gt;{
-            return {text : &quot;&quot;}
-        }
-    },
-    id:{
-        type: String,
-        default:&quot;111&quot;
-    },
-    dialogAction: {
-        type: Function,
-        default: value =&gt; {
-            return value;
-        }
-    }
-}
-
-销毁不再使用v-show或v-if,使用
-
-close() {
-  this.dialogAction(&quot;close&quot;);
-  let vm = document.getElementById(&quot;Toast&quot;);
-  if (vm !== null) {
-    document.body.removeChild(vm);
-  }
-},</code></pre><h2 id="组件使用"><a href="#组件使用" class="headerlink" title="组件使用"></a>组件使用</h2><pre><code>this.$Dialog.Toast({
-    data:{},
-    id:&quot;222&quot;,
-    dialogAction: val =&gt; {
-        console.log(val)
-    }
-})
-
-该函数可接受关闭回馈以及组件向外传递数据</code></pre>]]></content>
-      <categories>
-        <category>前端</category>
-        <category>vue</category>
-        <category>组件</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-        <tag>组件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网站信息</title>
-    <url>/2020/09/14/%E7%BD%91%E7%AB%99%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<h1 id="网站采用技术-hexo"><a href="#网站采用技术-hexo" class="headerlink" title="网站采用技术 hexo"></a>网站采用技术 hexo</h1><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">官方文档</a></p>
-<h1 id="网站采用主题-butterfly"><a href="#网站采用主题-butterfly" class="headerlink" title="网站采用主题 butterfly"></a>网站采用主题 butterfly</h1><p><a href="https://demo.jerryc.me/" target="_blank" rel="noopener">官方文档</a></p>
-<h1 id="网站评论支持-leancloud-valine"><a href="#网站评论支持-leancloud-valine" class="headerlink" title="网站评论支持 leancloud valine"></a>网站评论支持 leancloud valine</h1><p><a href="https://www.leancloud.cn/" target="_blank" rel="noopener">官方文档</a><br><a href="http://blog.dingyahui.top/2020/09/15/评论支持leancloudvaline/">技术使用介绍</a></p>
-<h1 id="网站娱乐支持-hexo-douban"><a href="#网站娱乐支持-hexo-douban" class="headerlink" title="网站娱乐支持 hexo-douban"></a>网站娱乐支持 hexo-douban</h1><p><a href="https://github.com/mythsman/hexo-douban/" target="_blank" rel="noopener">官方文档</a></p>
+    <title>期货交易</title>
+    <url>/2020/07/28/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93/</url>
+    <content><![CDATA[<h1 id="期货交易"><a href="#期货交易" class="headerlink" title="期货交易"></a>期货交易</h1><blockquote>
+<p>期货交易具有高信用的特征，集中表现为期货交易的保证金制度</p>
+</blockquote>
+<h2 id="期货交易所"><a href="#期货交易所" class="headerlink" title="期货交易所"></a>期货交易所</h2><blockquote>
+<p>由国务院期货监督管路机构审批。期货交易所不以营利为目的，按照其章程的规定实行自律管理。期货交易所以其全部财产承担民事责任。期货交易所的负责人由国务院监督管理机构任免，期货交易所履行下列职责</p>
+</blockquote>
+<ol>
+<li>提供提货交易的场所，设施和服务</li>
+<li>设计期货合约，安排期货合约上市</li>
+<li>组织并监督期货交易，结算和交割</li>
+<li>为期货交易提供集中履约担保</li>
+<li>按照章程和交易规则对会员进行监督管理</li>
+<li>国务院期货监督管理机构规定的其他职责</li>
+</ol>
+<blockquote>
+<p>经中国证监监督管理委员会批准，期货交易所可以采取会员制或者公司制的组织形式，会员制期货交易所的注册资本划分为均等份额，由会员出资认缴。期货交易所的会员是指根据有关法律，行政法规和规章的规定，经交易所批准，有权在交易所从事交易或者结算业务的在中华人民共和国境内登记注册的企业法人或者其他经济组织。交易所会员按照业务范围分为期货公司和非期货公司微信。会员大会是期货交易所的权力机构，由全体会员组成。期货交易所设理事会，每届任期3年，理事会是会员大会的常设机构，对会员大会负责。会员大会由理事会召集，一般情况下每年召开一次。<br>期货交易所可以实行会员分级结算制度。实行会员分级结算制度的交易所的会员分为结算会员和非结算会员。根据业务范围不同，结算会员可分为交易结算会员，全面结算会员，特别结算会员和交易会员</p>
+</blockquote>
+<h2 id="期货公司设立的条件"><a href="#期货公司设立的条件" class="headerlink" title="期货公司设立的条件"></a>期货公司设立的条件</h2><blockquote>
+<p>申请设立期货公司，应当符合《中华人民共和国公司法》，并且</p>
+</blockquote>
+<ol>
+<li>注册资本最低限额为人民币3000万元</li>
+<li>董事，监事，高级管理人员具备任职条件，从业人员具有期货从业资格</li>
+<li>有符合法律，行政法规规定的公司章程</li>
+<li>主要股东以及实际控制人具有持续盈利能力，信誉良好，最近三年无重大违法违规纪律</li>
+<li>有合格的经营场所和业务设施</li>
+<li>有健全的风险管理和内部控制制度</li>
+<li>国务院期货监督管理机构规定的其他条件</li>
+</ol>
+<blockquote>
+<p>国务院期货监督管理机构根据审慎监管原则和各项业务的风险程度，可以提高注册资本最低限额。注册资本应当是实缴资本。股本应当以货币或者期货公司经营必须的非货币财产出资，货币出资比例不得低于85%<br>国务院期货监督机构应当在手里期货公司设立申请之日起6个月内，根据审慎监管原则进行审查，做出批准或者不批准的决定。未经国务院期货监督管理机构批准，任何单位和隔热不得委托或者接受他人委托持有或者管理期货公司的股权</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>网站</category>
+        <category>金融</category>
+        <category>期货交易所</category>
       </categories>
       <tags>
-        <tag>主题</tag>
-        <tag>引擎</tag>
+        <tag>期货交易所</tag>
+        <tag>期货交易</tag>
       </tags>
   </entry>
   <entry>
@@ -5246,51 +5157,6 @@ close() {
         <tag>vscode</tag>
         <tag>格式化</tag>
         <tag>setting.json配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>期货交易</title>
-    <url>/2020/07/28/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93/</url>
-    <content><![CDATA[<h1 id="期货交易"><a href="#期货交易" class="headerlink" title="期货交易"></a>期货交易</h1><blockquote>
-<p>期货交易具有高信用的特征，集中表现为期货交易的保证金制度</p>
-</blockquote>
-<h2 id="期货交易所"><a href="#期货交易所" class="headerlink" title="期货交易所"></a>期货交易所</h2><blockquote>
-<p>由国务院期货监督管路机构审批。期货交易所不以营利为目的，按照其章程的规定实行自律管理。期货交易所以其全部财产承担民事责任。期货交易所的负责人由国务院监督管理机构任免，期货交易所履行下列职责</p>
-</blockquote>
-<ol>
-<li>提供提货交易的场所，设施和服务</li>
-<li>设计期货合约，安排期货合约上市</li>
-<li>组织并监督期货交易，结算和交割</li>
-<li>为期货交易提供集中履约担保</li>
-<li>按照章程和交易规则对会员进行监督管理</li>
-<li>国务院期货监督管理机构规定的其他职责</li>
-</ol>
-<blockquote>
-<p>经中国证监监督管理委员会批准，期货交易所可以采取会员制或者公司制的组织形式，会员制期货交易所的注册资本划分为均等份额，由会员出资认缴。期货交易所的会员是指根据有关法律，行政法规和规章的规定，经交易所批准，有权在交易所从事交易或者结算业务的在中华人民共和国境内登记注册的企业法人或者其他经济组织。交易所会员按照业务范围分为期货公司和非期货公司微信。会员大会是期货交易所的权力机构，由全体会员组成。期货交易所设理事会，每届任期3年，理事会是会员大会的常设机构，对会员大会负责。会员大会由理事会召集，一般情况下每年召开一次。<br>期货交易所可以实行会员分级结算制度。实行会员分级结算制度的交易所的会员分为结算会员和非结算会员。根据业务范围不同，结算会员可分为交易结算会员，全面结算会员，特别结算会员和交易会员</p>
-</blockquote>
-<h2 id="期货公司设立的条件"><a href="#期货公司设立的条件" class="headerlink" title="期货公司设立的条件"></a>期货公司设立的条件</h2><blockquote>
-<p>申请设立期货公司，应当符合《中华人民共和国公司法》，并且</p>
-</blockquote>
-<ol>
-<li>注册资本最低限额为人民币3000万元</li>
-<li>董事，监事，高级管理人员具备任职条件，从业人员具有期货从业资格</li>
-<li>有符合法律，行政法规规定的公司章程</li>
-<li>主要股东以及实际控制人具有持续盈利能力，信誉良好，最近三年无重大违法违规纪律</li>
-<li>有合格的经营场所和业务设施</li>
-<li>有健全的风险管理和内部控制制度</li>
-<li>国务院期货监督管理机构规定的其他条件</li>
-</ol>
-<blockquote>
-<p>国务院期货监督管理机构根据审慎监管原则和各项业务的风险程度，可以提高注册资本最低限额。注册资本应当是实缴资本。股本应当以货币或者期货公司经营必须的非货币财产出资，货币出资比例不得低于85%<br>国务院期货监督机构应当在手里期货公司设立申请之日起6个月内，根据审慎监管原则进行审查，做出批准或者不批准的决定。未经国务院期货监督管理机构批准，任何单位和隔热不得委托或者接受他人委托持有或者管理期货公司的股权</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>金融</category>
-        <category>期货交易所</category>
-      </categories>
-      <tags>
-        <tag>期货交易所</tag>
-        <tag>期货交易</tag>
       </tags>
   </entry>
   <entry>
@@ -5522,6 +5388,140 @@ close() {
         <tag>最小生成树Prim算法</tag>
         <tag>最小生成树Kruskal算法</tag>
         <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网站信息</title>
+    <url>/2020/09/14/%E7%BD%91%E7%AB%99%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<h1 id="网站采用技术-hexo"><a href="#网站采用技术-hexo" class="headerlink" title="网站采用技术 hexo"></a>网站采用技术 hexo</h1><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">官方文档</a></p>
+<h1 id="网站采用主题-butterfly"><a href="#网站采用主题-butterfly" class="headerlink" title="网站采用主题 butterfly"></a>网站采用主题 butterfly</h1><p><a href="https://demo.jerryc.me/" target="_blank" rel="noopener">官方文档</a></p>
+<h1 id="网站评论支持-leancloud-valine"><a href="#网站评论支持-leancloud-valine" class="headerlink" title="网站评论支持 leancloud valine"></a>网站评论支持 leancloud valine</h1><p><a href="https://www.leancloud.cn/" target="_blank" rel="noopener">官方文档</a><br><a href="http://blog.dingyahui.top/2020/09/15/评论支持leancloudvaline/">技术使用介绍</a></p>
+<h1 id="网站娱乐支持-hexo-douban"><a href="#网站娱乐支持-hexo-douban" class="headerlink" title="网站娱乐支持 hexo-douban"></a>网站娱乐支持 hexo-douban</h1><p><a href="https://github.com/mythsman/hexo-douban/" target="_blank" rel="noopener">官方文档</a></p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>主题</tag>
+        <tag>引擎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>沪港通</title>
+    <url>/2020/07/31/%E6%B2%AA%E6%B8%AF%E9%80%9A/</url>
+    <content><![CDATA[<h1 id="沪港通"><a href="#沪港通" class="headerlink" title="沪港通"></a>沪港通</h1><ol>
+<li><p>沪股通</p>
+<pre><code>《上海证券交易所沪港通业务实施办法规定》，沪股通股票包括以下范围内的股票
+（1） 上证180指数成分股
+（2） 上证380指数成分股
+（3） A+H股上市公司的本所上市A股
+ 在本所上市公司股票风险警示板交易的互票（即ST,*ST股票和退市整理股票），暂停上市的股票，以外币报价交易的股票（即B股）和具有本所认定的其他特殊情形的股票，不纳入沪股通股票。经监管所机构批准，本所可以调和智能沪股通股票的范围</code></pre></li>
+<li><p>港股通</p>
+<pre><code>（1）恒生综合大型股指数的成分股
+（2）恒生综合中型股指数的成分股
+（3）A+H上市公司的H股
+本所上市A股为风险警示版股票或者暂停上市股票的A+H股上市公司的相应H股，同时有股票在本所以外的内地证券交易所上市的发行人的股票，在联交所以港币以外货币报价交易的股票和具有本所认定的其他特殊情形的股票，不纳入港股通股票</code></pre></li>
+</ol>
+]]></content>
+      <categories>
+        <category>金融</category>
+        <category>股票</category>
+        <category>沪港通</category>
+      </categories>
+      <tags>
+        <tag>沪港通</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>组件挂载式使用</title>
+    <url>/2020/11/10/%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E5%BC%8F%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><h2 id="关键文件dialog-js"><a href="#关键文件dialog-js" class="headerlink" title="关键文件dialog.js"></a>关键文件dialog.js</h2><pre><code>/*
+* @Description:
+* @Author: 水印红枫
+* @Date: 2020-07-02 16:46:07
+* @LastEditors: 水印红枫
+*/
+
+import Vue from &quot;vue&quot;;
+
+import Toast from &quot;./toast&quot;;
+
+const Dialog = {
+install(Vue) {
+    Object.defineProperty(Vue.prototype, &quot;$Dialog&quot;, {
+    value: this,
+    writable: false
+    });
+},
+Toast(options = {}) {
+    const ToastFrame = Vue.extend(Toast);
+    let vm = document.getElementById(&quot;toast&quot;);
+    if (vm !== null) {
+    document.body.removeChild(vm);
+    }
+    let div = document.createElement(&quot;div&quot;);
+    div.id = &quot;Toast&quot;;
+    document.body.appendChild(div);
+    let $vm = new ToastFrame({
+    el: &quot;#Toast&quot;
+    });
+    if (typeof options === &quot;object&quot;) {
+    Object.assign($vm, options);
+    } else if (typeof options === &quot;string&quot; || typeof options === &quot;number&quot;) {
+    $vm.content = options;
+    }
+},
+}
+export default Dialog;</code></pre><h2 id="引入方法"><a href="#引入方法" class="headerlink" title="引入方法"></a>引入方法</h2><pre><code>__在main.js中使用vue.use即可__
+
+import Vue from &quot;vue&quot;;
+import dialog from &quot;@/util/dialog/dialog&quot;;
+Vue.use(dialog);</code></pre><h2 id="组件相关更改"><a href="#组件相关更改" class="headerlink" title="组件相关更改"></a>组件相关更改</h2><pre><code>接受数据同样使用props
+
+props:{
+    data:{
+        type: Object,
+        default:()=&gt;{
+            return {text : &quot;&quot;}
+        }
+    },
+    id:{
+        type: String,
+        default:&quot;111&quot;
+    },
+    dialogAction: {
+        type: Function,
+        default: value =&gt; {
+            return value;
+        }
+    }
+}
+
+销毁不再使用v-show或v-if,使用
+
+close() {
+  this.dialogAction(&quot;close&quot;);
+  let vm = document.getElementById(&quot;Toast&quot;);
+  if (vm !== null) {
+    document.body.removeChild(vm);
+  }
+},</code></pre><h2 id="组件使用"><a href="#组件使用" class="headerlink" title="组件使用"></a>组件使用</h2><pre><code>this.$Dialog.Toast({
+    data:{},
+    id:&quot;222&quot;,
+    dialogAction: val =&gt; {
+        console.log(val)
+    }
+})
+
+该函数可接受关闭回馈以及组件向外传递数据</code></pre>]]></content>
+      <categories>
+        <category>前端</category>
+        <category>vue</category>
+        <category>组件</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>组件</tag>
       </tags>
   </entry>
   <entry>
